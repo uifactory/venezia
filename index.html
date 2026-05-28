@@ -525,6 +525,7 @@
               <label for="msg">Nachricht</label>
               <textarea id="msg" name="message" placeholder="Wobei können wir Sie unterstützen?" required></textarea>
               <button class="btn primary" type="submit">Anfrage per E-Mail senden</button>
+              <p id="form-status" class="muted" aria-live="polite"></p>
             </form>
           </article>
         </div>
@@ -541,14 +542,19 @@
       document.getElementById("year").textContent = String(new Date().getFullYear());
       document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault();
+        const form = event.currentTarget;
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("msg").value.trim();
+        const status = document.getElementById("form-status");
         const subject = encodeURIComponent("Neue Anfrage über venezia-sales.com");
         const body = encodeURIComponent(
           "Name: " + name + "\nE-Mail: " + email + "\n\nNachricht:\n" + message
         );
+        status.textContent =
+          "Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, senden Sie bitte direkt an info@venezia-sales.com.";
         window.location.href = "mailto:info@venezia-sales.com?subject=" + subject + "&body=" + body;
+        form.reset();
       });
     </script>
   </body>
