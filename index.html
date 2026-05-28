@@ -670,7 +670,7 @@
         </div>
         <div>
           <p class="footer-title" data-i18n="footer_contact">Kontakt</p>
-          <p class="muted" data-i18n="footer_address">
+          <p class="muted" data-i18n="footer_address" data-i18n-format="html">
             Venezia Sales Solution<br />International Sports Sales & Business Development<br />Deutschland / Italien
           </p>
         </div>
@@ -840,11 +840,13 @@
       function applyLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
+        const activeTranslations = translations[lang];
+
         document.querySelectorAll("[data-i18n]").forEach((node) => {
           const key = node.getAttribute("data-i18n");
-          if (translations[lang][key] !== undefined) {
-            const value = translations[lang][key];
-            if (node.tagName === "P" && key === "footer_address") {
+          if (activeTranslations[key] !== undefined) {
+            const value = activeTranslations[key];
+            if (node.getAttribute("data-i18n-format") === "html") {
               node.innerHTML = value.replace(/\n/g, "<br />");
             } else {
               node.textContent = value;
@@ -861,13 +863,16 @@
 
         langButton.textContent = lang === "de" ? "EN" : "DE";
         status.textContent = "";
+        try {
+          localStorage.setItem("venezia-lang", lang);
+        } catch (_error) {}
       }
 
       langButton.addEventListener("click", () => {
         applyLanguage(currentLang === "de" ? "en" : "de");
       });
 
-      document.getElementById("year").textContent = String(new Date().getFullYear());
+      document.getElementById("year").textContent = new Date().getFullYear();
       document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault();
         const form = event.currentTarget;
@@ -877,7 +882,7 @@
         const subjectText =
           currentLang === "de" ? "Neue Anfrage über venezia-sales.com" : "New request via venezia-sales.com";
         const subject = encodeURIComponent(subjectText);
-        const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
         status.textContent = translations[currentLang].form_status;
         window.location.href = "mailto:info@venezia-sales.com?subject=" + subject + "&body=" + body;
         form.reset();
@@ -891,7 +896,14 @@
         awardsTrack.scrollBy({ left: 280, behavior: "smooth" });
       });
 
-      applyLanguage("de");
+      try {
+        const savedLang = localStorage.getItem("venezia-lang");
+        if (savedLang === "de" || savedLang === "en") {
+          currentLang = savedLang;
+        }
+      } catch (_error) {}
+
+      applyLanguage(currentLang);
     </script>
   </body>
 </html>
