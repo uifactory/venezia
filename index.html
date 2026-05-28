@@ -96,12 +96,19 @@
         border-radius: 10px;
         width: 42px;
         height: 34px;
-        font-size: 1rem;
-        line-height: 1;
+        padding: 0;
+        line-height: 0;
         background: #161c25;
-        color: var(--ink);
+        overflow: hidden;
         cursor: pointer;
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lang-flag img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       main {
@@ -340,10 +347,10 @@
       }
 
       .cta-photo img {
-        width: min(100%, 420px);
-        height: 320px;
+        width: min(100%, 340px);
+        height: 420px;
         object-fit: cover;
-        object-position: center;
+        object-position: center top;
         border-radius: 12px;
         border: 2px solid rgba(18, 21, 27, 0.34);
       }
@@ -468,9 +475,12 @@
           grid-template-columns: 1fr;
         }
 
-        .hero-side img,
-        .cta-photo img {
+        .hero-side img {
           height: 280px;
+        }
+
+        .cta-photo img {
+          height: 340px;
         }
       }
     </style>
@@ -488,7 +498,9 @@
         </nav>
         <div class="right-controls">
           <div class="lang-switcher" aria-label="Language switch">
-            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">🇬🇧</button>
+            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">
+              <img id="lang-flag-icon" src="./images/flags/gb.svg" alt="English" />
+            </button>
           </div>
         </div>
       </div>
@@ -643,7 +655,7 @@
             <a class="btn btn-dark" href="#contact" data-i18n="cta_btn">Say Hi!</a>
           </div>
           <div class="cta-photo">
-            <img src="./images/allianz-arena2.png" alt="Allianz Arena" />
+            <img src="./images/foto-mario-venezia.jpeg" alt="Mario Venezia" />
           </div>
         </div>
       </section>
@@ -876,18 +888,25 @@
       };
 
       const langToggleButton = document.getElementById("lang-toggle");
+      const langFlagIcon = document.getElementById("lang-flag-icon");
       const status = document.getElementById("form-status");
       let currentLang = "de";
 
       function updateLanguageToggle(lang) {
         if (!langToggleButton) return;
         if (lang === "de") {
-          langToggleButton.textContent = "🇬🇧";
+          if (langFlagIcon) {
+            langFlagIcon.src = "./images/flags/gb.svg";
+            langFlagIcon.alt = "English";
+          }
           langToggleButton.dataset.nextLang = "en";
           langToggleButton.setAttribute("aria-label", "Switch to English");
           return;
         }
-        langToggleButton.textContent = "🇩🇪";
+        if (langFlagIcon) {
+          langFlagIcon.src = "./images/flags/de.svg";
+          langFlagIcon.alt = "Deutsch";
+        }
         langToggleButton.dataset.nextLang = "de";
         langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
       }
