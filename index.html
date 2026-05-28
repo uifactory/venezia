@@ -422,6 +422,10 @@
         color: var(--muted);
       }
 
+      [data-i18n-format="html"] {
+        white-space: pre-line;
+      }
+
       .whatsapp-float {
         position: fixed;
         right: 1rem;
@@ -504,7 +508,7 @@
             <h1 data-i18n="hero_title">Football. Sales. International Connections.</h1>
             <p data-i18n="hero_text">
               Venezia verbindet Sport, Vertrieb, Networking und hochwertige Business-Erlebnisse für professionelle
-              Clubs, Unternehmer und Investoren.
+              Klubs, Unternehmer und Investoren.
             </p>
             <div class="cta-row">
               <a class="btn btn-dark" href="#contact" data-i18n="hero_cta">Jetzt Erstgespräch sichern</a>
@@ -547,11 +551,11 @@
             </article>
             <article class="service-card">
               <h3 data-i18n="service_3_title">International Business Networks</h3>
-              <p data-i18n="service_3_text">Aufbau internationaler B2B-Netzwerke zwischen Clubs und Unternehmen.</p>
+              <p data-i18n="service_3_text">Aufbau internationaler B2B-Netzwerke zwischen Klubs und Unternehmen.</p>
             </article>
             <article class="service-card">
               <h3 data-i18n="service_4_title">Market Development Germany</h3>
-              <p data-i18n="service_4_text">Markteintritt und Geschäftsausbau internationaler Clubs in Deutschland.</p>
+              <p data-i18n="service_4_text">Markteintritt und Geschäftsausbau internationaler Klubs in Deutschland.</p>
             </article>
             <article class="service-card">
               <h3 data-i18n="service_5_title">Glasfaser Vertrieb</h3>
@@ -730,7 +734,7 @@
           hero_eyebrow: "International Sports Sales & Business Development",
           hero_title: "Football. Sales. International Connections.",
           hero_text:
-            "Venezia verbindet Sport, Vertrieb, Networking und hochwertige Business-Erlebnisse für professionelle Clubs, Unternehmer und Investoren.",
+            "Venezia verbindet Sport, Vertrieb, Networking und hochwertige Business-Erlebnisse für professionelle Klubs, Unternehmer und Investoren.",
           hero_cta: "Jetzt Erstgespräch sichern",
           hero_whatsapp: "Direkt per WhatsApp",
           about_eyebrow: "Agentur Venezia",
@@ -742,9 +746,9 @@
           service_2_title: "Hospitality & VIP Sales",
           service_2_text: "Entwicklung und Vertrieb exklusiver VIP- und Premium-Angebote.",
           service_3_title: "International Business Networks",
-          service_3_text: "Aufbau internationaler B2B-Netzwerke zwischen Clubs und Unternehmen.",
+          service_3_text: "Aufbau internationaler B2B-Netzwerke zwischen Klubs und Unternehmen.",
           service_4_title: "Market Development Germany",
-          service_4_text: "Markteintritt und Geschäftsausbau internationaler Clubs in Deutschland.",
+          service_4_text: "Markteintritt und Geschäftsausbau internationaler Klubs in Deutschland.",
           service_5_title: "Glasfaser Vertrieb",
           service_5_text: "Vorvermarktung, Quotenaufbau und strukturierte D2D-Vertriebsprozesse.",
           service_6_title: "Luxusimmobilien & Premium Vermittlung",
@@ -885,7 +889,7 @@
           const savedLang = localStorage.getItem("venezia-lang");
           return savedLang === "en" ? "en" : "de";
         } catch (error) {
-          console.warn("Language preference is unavailable.", error);
+          console.warn("Could not load language preference from localStorage.", error);
           return "de";
         }
       }
@@ -901,11 +905,7 @@
           const key = node.getAttribute("data-i18n");
           if (activeTranslations[key] !== undefined) {
             const value = activeTranslations[key];
-            if (node.getAttribute("data-i18n-format") === "html") {
-              node.innerHTML = value.replace(/\n/g, "<br />");
-            } else {
-              node.textContent = value;
-            }
+            node.textContent = value;
           }
         });
 
@@ -925,7 +925,7 @@
         try {
           localStorage.setItem("venezia-lang", lang);
         } catch (error) {
-          console.warn("Language preference could not be saved.", error);
+          console.warn("Could not save language preference to localStorage.", error);
         }
       }
 
