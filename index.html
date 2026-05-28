@@ -62,7 +62,7 @@
       }
 
       .logo img {
-        width: 225px;
+        width: 176px;
         max-width: 100%;
         display: block;
       }
@@ -88,8 +88,7 @@
       }
 
       .lang-switcher {
-        display: flex;
-        gap: 0.45rem;
+        display: inline-flex;
       }
 
       .lang-flag {
@@ -103,12 +102,6 @@
         color: var(--ink);
         cursor: pointer;
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .lang-flag.active {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 1px rgba(214, 177, 95, 0.55);
-        transform: translateY(-1px);
       }
 
       main {
@@ -168,6 +161,7 @@
         width: 100%;
         height: 440px;
         object-fit: cover;
+        object-position: center;
         border-radius: 10px;
         border: 1px solid rgba(214, 177, 95, 0.42);
       }
@@ -349,7 +343,8 @@
         width: min(100%, 420px);
         height: 320px;
         object-fit: cover;
-        border-radius: 999px;
+        object-position: center;
+        border-radius: 12px;
         border: 2px solid rgba(18, 21, 27, 0.34);
       }
 
@@ -493,8 +488,7 @@
         </nav>
         <div class="right-controls">
           <div class="lang-switcher" aria-label="Language switch">
-            <button class="lang-flag" type="button" data-lang="de" aria-label="Deutsch">🇩🇪</button>
-            <button class="lang-flag" type="button" data-lang="en" aria-label="English">🇬🇧</button>
+            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">🇬🇧</button>
           </div>
         </div>
       </div>
@@ -518,15 +512,15 @@
             </div>
           </div>
           <div class="hero-side">
-            <img src="./images/telekom-lounge.jpeg" alt="Hospitality in football" />
+            <img src="./images/allianz-arena2.png" alt="Allianz Arena" />
           </div>
         </div>
       </section>
 
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span>
-          <span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span><span>VENEZIA CONNECTS.</span>
+          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
+          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
         </div>
       </div>
 
@@ -649,7 +643,7 @@
             <a class="btn btn-dark" href="#contact" data-i18n="cta_btn">Say Hi!</a>
           </div>
           <div class="cta-photo">
-            <img src="./images/foto-mario-venezia2.jpeg" alt="Mario Venezia" />
+            <img src="./images/allianz-arena2.png" alt="Allianz Arena" />
           </div>
         </div>
       </section>
@@ -881,20 +875,22 @@
         }
       };
 
-      const langButtons = Array.from(document.querySelectorAll(".lang-flag"));
+      const langToggleButton = document.getElementById("lang-toggle");
       const status = document.getElementById("form-status");
+      let currentLang = "de";
 
-      function getInitialLang() {
-        try {
-          const savedLang = localStorage.getItem("venezia-lang");
-          return savedLang === "en" ? "en" : "de";
-        } catch (error) {
-          console.warn("Could not load language preference from localStorage.", error);
-          return "de";
+      function updateLanguageToggle(lang) {
+        if (!langToggleButton) return;
+        if (lang === "de") {
+          langToggleButton.textContent = "🇬🇧";
+          langToggleButton.dataset.nextLang = "en";
+          langToggleButton.setAttribute("aria-label", "Switch to English");
+          return;
         }
+        langToggleButton.textContent = "🇩🇪";
+        langToggleButton.dataset.nextLang = "de";
+        langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
       }
-
-      let currentLang = getInitialLang();
 
       function applyLanguage(lang) {
         currentLang = lang;
@@ -916,23 +912,12 @@
           }
         });
 
-        langButtons.forEach((button) => {
-          const isActive = button.dataset.lang === lang;
-          button.classList.toggle("active", isActive);
-          button.setAttribute("aria-pressed", String(isActive));
-        });
+        updateLanguageToggle(lang);
         status.textContent = "";
-        try {
-          localStorage.setItem("venezia-lang", lang);
-        } catch (error) {
-          console.warn("Could not save language preference to localStorage.", error);
-        }
       }
 
-      langButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          applyLanguage(button.dataset.lang);
-        });
+      langToggleButton?.addEventListener("click", () => {
+        applyLanguage(langToggleButton.dataset.nextLang || "en");
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();
