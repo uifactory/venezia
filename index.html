@@ -517,14 +517,14 @@
           </article>
 
           <article class="panel">
-            <form action="#" method="post">
+            <form id="contact-form">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" placeholder="Ihr Name" required />
               <label for="email">E-Mail</label>
               <input id="email" name="email" type="email" placeholder="ihre@email.de" required />
               <label for="msg">Nachricht</label>
               <textarea id="msg" name="message" placeholder="Wobei können wir Sie unterstützen?" required></textarea>
-              <button class="btn primary" type="submit">Unverbindliche Anfrage senden</button>
+              <button class="btn primary" type="submit">Anfrage per E-Mail senden</button>
             </form>
           </article>
         </div>
@@ -539,6 +539,17 @@
 
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
+      document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("msg").value.trim();
+        const subject = encodeURIComponent("Neue Anfrage über venezia-sales.com");
+        const body = encodeURIComponent(
+          "Name: " + name + "\nE-Mail: " + email + "\n\nNachricht:\n" + message
+        );
+        window.location.href = "mailto:info@venezia-sales.com?subject=" + subject + "&body=" + body;
+      });
     </script>
   </body>
 </html>

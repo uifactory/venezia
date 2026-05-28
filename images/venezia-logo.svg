@@ -2,6 +2,6 @@
   <rect x="1" y="1" width="94" height="94" rx="20" fill="#0B1320" stroke="#C8A96A" stroke-width="2"/>
   <path d="M24 24L48 72L72 24" stroke="#C8A96A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="48" cy="48" r="34" stroke="#22324A" stroke-width="1.5"/>
-  <text x="112" y="45" fill="#0B1320" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="1.2">VENEZIA</text>
-  <text x="112" y="70" fill="#3D4A5F" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="1.6">SALES SOLUTION</text>
+  <text x="112" y="45" fill="#EDF2FF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="1.2">VENEZIA</text>
+  <text x="112" y="70" fill="#C8A96A" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="1.6">SALES SOLUTION</text>
 </svg>
