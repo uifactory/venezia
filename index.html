@@ -10,11 +10,12 @@
     />
     <style>
       :root {
-        --accent: #d4ff00;
-        --ink: #0e1116;
-        --white: #ffffff;
-        --gray: #f3f4f4;
-        --muted: #6b7280;
+        --accent: #d6b15f;
+        --ink: #f3ebda;
+        --white: #fdf8ed;
+        --gray: #181d26;
+        --muted: #b8ad97;
+        --border: #313846;
         --max: 1200px;
       }
 
@@ -29,7 +30,7 @@
       body {
         margin: 0;
         font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-        background: var(--white);
+        background: radial-gradient(circle at top right, #2a2e36 0%, #090b10 55%, #020306 100%);
         color: var(--ink);
       }
 
@@ -47,20 +48,21 @@
         position: fixed;
         inset: 0 0 auto;
         z-index: 20;
-        background: var(--white);
-        border-bottom: 1px solid #e5e7eb;
+        background: rgba(6, 8, 12, 0.9);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
       }
 
       .nav-row {
         min-height: 78px;
         display: grid;
-        grid-template-columns: 220px 1fr auto;
+        grid-template-columns: 260px 1fr auto;
         align-items: center;
         gap: 1rem;
       }
 
       .logo img {
-        width: 180px;
+        width: 225px;
         max-width: 100%;
         display: block;
       }
@@ -76,6 +78,7 @@
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
+        color: var(--ink);
       }
 
       .right-controls {
@@ -84,23 +87,28 @@
         gap: 0.7rem;
       }
 
-      .social {
+      .lang-switcher {
         display: flex;
         gap: 0.45rem;
       }
 
-      .social a,
-      .lang-btn {
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        padding: 0.42rem 0.56rem;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: var(--white);
+      .lang-flag {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        width: 42px;
+        height: 34px;
+        font-size: 1rem;
+        line-height: 1;
+        background: #161c25;
         color: var(--ink);
         cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lang-flag.active {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(214, 177, 95, 0.55);
+        transform: translateY(-1px);
       }
 
       main {
@@ -139,8 +147,8 @@
 
       .hero {
         color: var(--white);
-        background: linear-gradient(rgba(14, 17, 22, 0.62), rgba(14, 17, 22, 0.7)),
-          url("./images/allianz-arena.jpeg") center/cover no-repeat;
+        background: linear-gradient(rgba(4, 5, 8, 0.74), rgba(7, 10, 14, 0.82)),
+          url("./images/allianz-arena2.png") center/cover no-repeat;
       }
 
       .hero-grid {
@@ -161,7 +169,7 @@
         height: 440px;
         object-fit: cover;
         border-radius: 10px;
-        border: 2px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(214, 177, 95, 0.42);
       }
 
       .btn {
@@ -177,14 +185,15 @@
       }
 
       .btn-dark {
-        background: var(--ink);
-        color: var(--white);
+        background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
+        color: #15181f;
+        border-color: #c6a155;
       }
 
       .btn-light {
-        background: transparent;
-        color: var(--white);
-        border-color: rgba(255, 255, 255, 0.6);
+        background: rgba(8, 11, 16, 0.58);
+        color: var(--ink);
+        border-color: rgba(214, 177, 95, 0.65);
       }
 
       .cta-row {
@@ -195,9 +204,9 @@
       }
 
       .marquee {
-        background: var(--accent);
+        background: #11151d;
         overflow: hidden;
-        border-block: 1px solid #c4ea00;
+        border-block: 1px solid rgba(214, 177, 95, 0.35);
       }
 
       .marquee-track {
@@ -211,7 +220,7 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--ink);
+        color: var(--accent);
       }
 
       @keyframes scroll {
@@ -237,7 +246,7 @@
       .story-card {
         background: var(--gray);
         border-radius: 10px;
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--border);
         padding: 1rem;
       }
 
@@ -247,7 +256,7 @@
         justify-content: center;
         min-height: 94px;
         text-align: center;
-        color: #374151;
+        color: var(--ink);
         font-weight: 700;
       }
 
@@ -293,9 +302,10 @@
       .awards-controls button {
         width: 40px;
         height: 40px;
-        border: 1px solid #d1d5db;
+        border: 1px solid var(--border);
         border-radius: 8px;
-        background: var(--white);
+        background: #10151d;
+        color: var(--ink);
         font-size: 1.15rem;
         cursor: pointer;
       }
@@ -312,16 +322,16 @@
       }
 
       .award-tile {
-        background: var(--white);
+        background: #11161f;
         border-radius: 10px;
         padding: 1rem;
-        border: 1px solid #d1d5db;
+        border: 1px solid var(--border);
         min-height: 132px;
       }
 
       .cta {
-        background: var(--accent);
-        color: var(--ink);
+        background: linear-gradient(130deg, #8f6429 0%, #ccab63 50%, #9e6f2f 100%);
+        color: #12151b;
       }
 
       .cta-grid {
@@ -340,7 +350,7 @@
         height: 320px;
         object-fit: cover;
         border-radius: 999px;
-        border: 2px solid rgba(14, 17, 22, 0.18);
+        border: 2px solid rgba(18, 21, 27, 0.34);
       }
 
       .contact-grid {
@@ -352,7 +362,7 @@
 
       .panel {
         background: var(--gray);
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--border);
         border-radius: 10px;
         padding: 1rem;
       }
@@ -366,7 +376,9 @@
       textarea {
         width: 100%;
         border-radius: 8px;
-        border: 1px solid #d1d5db;
+        border: 1px solid var(--border);
+        background: #0f141d;
+        color: var(--ink);
         padding: 0.72rem 0.75rem;
         font: inherit;
       }
@@ -384,7 +396,7 @@
 
       footer {
         background: var(--gray);
-        border-top: 1px solid #e5e7eb;
+        border-top: 1px solid var(--border);
       }
 
       .footer-grid {
@@ -403,10 +415,32 @@
 
       .footer-links a {
         text-decoration: underline;
+        color: var(--accent);
       }
 
       .muted {
         color: var(--muted);
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #25d366 0%, #159e4d 100%);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        z-index: 30;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+        fill: #ffffff;
       }
 
       @media (max-width: 980px) {
@@ -417,8 +451,7 @@
         }
 
         .nav-links,
-        .right-controls,
-        .social {
+        .right-controls {
           justify-content: center;
         }
 
@@ -455,12 +488,10 @@
           <a href="#contact" data-i18n="nav_contact">Kontakt</a>
         </nav>
         <div class="right-controls">
-          <div class="social" aria-label="Social Links">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="LinkedIn">IN</a>
-            <a href="#" aria-label="TikTok">TT</a>
+          <div class="lang-switcher" aria-label="Language switch">
+            <button class="lang-flag" type="button" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+            <button class="lang-flag" type="button" data-lang="en" aria-label="English">🇬🇧</button>
           </div>
-          <button class="lang-btn" id="lang-switch" type="button">EN</button>
         </div>
       </div>
     </header>
@@ -676,6 +707,19 @@
         </div>
       </div>
     </footer>
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/4915153860607"
+      target="_blank"
+      rel="noopener"
+      aria-label="Direkt per WhatsApp kontaktieren"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 3.2c-7 0-12.8 5.6-12.8 12.6 0 2.3.6 4.5 1.8 6.4L3 29l6.9-1.9a12.9 12.9 0 0 0 6.1 1.6c7 0 12.8-5.6 12.8-12.6S23 3.2 16 3.2Zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.3 10.3 0 0 1-1.6-5.5c0-5.8 4.8-10.5 10.7-10.5 6 0 10.8 4.7 10.8 10.5S21.9 26.4 16 26.4Zm5.9-7.8c-.3-.2-1.7-.8-2-1-.2-.1-.4-.2-.6.2-.2.3-.7 1-.8 1.2-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5l.3-.4c.1-.2.1-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1 3 1.2 3.2c.1.2 2.1 3.3 5.3 4.5.7.3 1.3.5 1.8.6.8.3 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"
+        />
+      </svg>
+    </a>
 
     <script>
       const translations = {
@@ -833,7 +877,7 @@
         }
       };
 
-      const langButton = document.getElementById("lang-switch");
+      const langButtons = Array.from(document.querySelectorAll(".lang-flag"));
       const status = document.getElementById("form-status");
 
       function getInitialLang() {
@@ -872,7 +916,11 @@
           }
         });
 
-        langButton.textContent = lang === "de" ? "EN" : "DE";
+        langButtons.forEach((button) => {
+          const isActive = button.dataset.lang === lang;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
         status.textContent = "";
         try {
           localStorage.setItem("venezia-lang", lang);
@@ -881,8 +929,10 @@
         }
       }
 
-      langButton.addEventListener("click", () => {
-        applyLanguage(currentLang === "de" ? "en" : "de");
+      langButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          applyLanguage(button.dataset.lang);
+        });
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();
