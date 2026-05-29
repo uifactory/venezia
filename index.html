@@ -3,7 +3,967 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Venezia</title>
+    <title>Venezia Sales Solution | International Sports Sales & Business Development</title>
+    <meta
+      name="description"
+      content="Venezia Sales Solution verbindet professionellen Sport, Vertrieb, Networking und Hospitality für nachhaltiges Wachstum in internationalen Märkten."
+    />
+    <style>
+      :root {
+        --accent: #d6b15f;
+        --ink: #f3ebda;
+        --white: #fdf8ed;
+        --gray: #181d26;
+        --muted: #b8ad97;
+        --border: #313846;
+        --max: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+        background: radial-gradient(circle at top right, #2a2e36 0%, #090b10 55%, #020306 100%);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(94%, var(--max));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        background: rgba(6, 8, 12, 0.9);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+      }
+
+      .nav-row {
+        min-height: 78px;
+        display: grid;
+        grid-template-columns: 260px 1fr auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo img {
+        width: 176px;
+        max-width: 100%;
+        display: block;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .right-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .lang-switcher {
+        display: inline-flex;
+      }
+
+      .lang-flag {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        width: 42px;
+        height: 34px;
+        padding: 0;
+        line-height: 0;
+        background: #161c25;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lang-flag img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      main {
+        padding-top: 78px;
+      }
+
+      section {
+        padding: 86px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 1rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5.2vw, 4.25rem);
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2.65rem);
+        font-weight: 800;
+      }
+
+      .eyebrow {
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        color: var(--white);
+        background: linear-gradient(rgba(4, 5, 8, 0.74), rgba(7, 10, 14, 0.82)),
+          url("./images/allianz-arena2.png") center/cover no-repeat;
+      }
+
+      .hero-grid {
+        min-height: min(75vh, 760px);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.4rem;
+        align-items: end;
+      }
+
+      .hero p {
+        max-width: 58ch;
+        font-size: 1.05rem;
+      }
+
+      .hero-side img {
+        width: 100%;
+        height: 440px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 1px solid rgba(214, 177, 95, 0.42);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        border: 1px solid transparent;
+      }
+
+      .btn-dark {
+        background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
+        color: #15181f;
+        border-color: #c6a155;
+      }
+
+      .btn-light {
+        background: rgba(8, 11, 16, 0.58);
+        color: var(--ink);
+        border-color: rgba(214, 177, 95, 0.65);
+      }
+
+      .cta-row {
+        margin-top: 1.3rem;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .marquee {
+        background: #11151d;
+        overflow: hidden;
+        border-block: 1px solid rgba(214, 177, 95, 0.35);
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 24s linear infinite;
+      }
+
+      .marquee-track span {
+        padding: 0.9rem 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .clients-grid,
+      .stories-grid,
+      .services-grid {
+        margin-top: 1.3rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .client-tile,
+      .service-card,
+      .story-card {
+        background: var(--gray);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        padding: 1rem;
+      }
+
+      .client-tile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 94px;
+        text-align: center;
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .service-card h3,
+      .story-card h3 {
+        font-size: 1rem;
+      }
+
+      .service-card p,
+      .story-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .story-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 0.8rem;
+      }
+
+      .story-card p {
+        font-style: italic;
+      }
+
+      .awards {
+        background: var(--gray);
+      }
+
+      .awards-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .awards-controls {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .awards-controls button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: #10151d;
+        color: var(--ink);
+        font-size: 1.15rem;
+        cursor: pointer;
+      }
+
+      .awards-track {
+        margin-top: 1rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(210px, 1fr);
+        gap: 0.8rem;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        padding-bottom: 0.3rem;
+      }
+
+      .award-tile {
+        background: #11161f;
+        border-radius: 10px;
+        padding: 1rem;
+        border: 1px solid var(--border);
+        min-height: 132px;
+      }
+
+      .cta {
+        background: linear-gradient(130deg, #8f6429 0%, #ccab63 50%, #9e6f2f 100%);
+        color: #12151b;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .cta-photo {
+        text-align: right;
+      }
+
+      .cta-photo img {
+        width: min(100%, 340px);
+        height: 420px;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 12px;
+        border: 2px solid rgba(18, 21, 27, 0.34);
+      }
+
+      .contact-grid {
+        margin-top: 1.2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .panel {
+        background: var(--gray);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      form {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #0f141d;
+        color: var(--ink);
+        padding: 0.72rem 0.75rem;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      #form-status {
+        color: var(--muted);
+        margin: 0;
+        font-size: 0.88rem;
+      }
+
+      footer {
+        background: var(--gray);
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-grid {
+        padding: 54px 0;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .footer-title {
+        margin: 0 0 0.5rem;
+        font-size: 0.92rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .footer-links a {
+        text-decoration: underline;
+        color: var(--accent);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      [data-i18n-format="html"] {
+        white-space: pre-line;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #25d366 0%, #159e4d 100%);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        z-index: 30;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+        fill: #ffffff;
+      }
+
+      @media (max-width: 980px) {
+        .nav-row {
+          grid-template-columns: 1fr;
+          padding: 0.8rem 0;
+          text-align: center;
+        }
+
+        .nav-links,
+        .right-controls {
+          justify-content: center;
+        }
+
+        main {
+          padding-top: 150px;
+        }
+
+        .hero-grid,
+        .cta-grid,
+        .contact-grid,
+        .footer-grid,
+        .stories-grid,
+        .services-grid,
+        .clients-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-side img {
+          height: 280px;
+        }
+
+        .cta-photo img {
+          height: 340px;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="logo" href="#top" aria-label="Venezia Home">
+          <img src="./images/venezia-logo.svg" alt="Venezia Sales Solution" />
+        </a>
+        <nav class="nav-links">
+          <a href="#about" data-i18n="nav_about">Über uns</a>
+          <a href="#stories" data-i18n="nav_stories">Best Stories</a>
+          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+        </nav>
+        <div class="right-controls">
+          <div class="lang-switcher" aria-label="Language switch">
+            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">
+              <img id="lang-flag-icon" src="./images/flags/gb.svg" alt="English" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow" data-i18n="hero_eyebrow">International Sports Sales & Business Development</p>
+            <h1 data-i18n="hero_title">Football. Sales. International Connections.</h1>
+            <p data-i18n="hero_text">
+              Venezia verbindet Sport, Vertrieb, Networking und hochwertige Business-Erlebnisse für professionelle
+              Klubs, Unternehmer und Investoren.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-dark" href="#contact" data-i18n="hero_cta">Jetzt Erstgespräch sichern</a>
+              <a class="btn btn-light" href="https://wa.me/4915153860607" target="_blank" rel="noopener" data-i18n="hero_whatsapp"
+                >Direkt per WhatsApp</a
+              >
+            </div>
+          </div>
+          <div class="hero-side">
+            <img src="./images/allianz-arena2.png" alt="Allianz Arena" />
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
+          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
+        </div>
+      </div>
+
+      <section id="about">
+        <div class="container">
+          <p class="eyebrow" data-i18n="about_eyebrow">Agentur Venezia</p>
+          <h2 data-i18n="about_title">Sales-driven. International. Connected.</h2>
+          <p class="muted" data-i18n="about_text">
+            Mario Venezia ist Vertriebsingenieur mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und Business
+            Development. Mit seinem Team entwickelt er Strategien für nachhaltiges Umsatzwachstum im Sport-,
+            Hospitality-, Glasfaser- und Premium-Immobilienumfeld.
+          </p>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <h3 data-i18n="service_1_title">Sponsoring & Partnership Development</h3>
+              <p data-i18n="service_1_text">Vermittlung neuer Sponsoren, Marken und strategischer Partnerschaften.</p>
+            </article>
+            <article class="service-card">
+              <h3 data-i18n="service_2_title">Hospitality & VIP Sales</h3>
+              <p data-i18n="service_2_text">Entwicklung und Vertrieb exklusiver VIP- und Premium-Angebote.</p>
+            </article>
+            <article class="service-card">
+              <h3 data-i18n="service_3_title">International Business Networks</h3>
+              <p data-i18n="service_3_text">Aufbau internationaler B2B-Netzwerke zwischen Klubs und Unternehmen.</p>
+            </article>
+            <article class="service-card">
+              <h3 data-i18n="service_4_title">Market Development Germany</h3>
+              <p data-i18n="service_4_text">Markteintritt und Geschäftsausbau internationaler Klubs in Deutschland.</p>
+            </article>
+            <article class="service-card">
+              <h3 data-i18n="service_5_title">Glasfaser Vertrieb</h3>
+              <p data-i18n="service_5_text">Vorvermarktung, Quotenaufbau und strukturierte D2D-Vertriebsprozesse.</p>
+            </article>
+            <article class="service-card">
+              <h3 data-i18n="service_6_title">Luxusimmobilien & Premium Vermittlung</h3>
+              <p data-i18n="service_6_text">Diskrete Vermittlung von Luxusobjekten und Off-Market-Investments.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <p class="eyebrow" data-i18n="clients_eyebrow">Unsere Märkte & Partnerfelder</p>
+          <h2 data-i18n="clients_title">Internationale Business-Plattformen für Wachstum</h2>
+          <div class="clients-grid">
+            <div class="client-tile" data-i18n="client_1">Professionelle Fußballclubs</div>
+            <div class="client-tile" data-i18n="client_2">Unternehmer- & Investorennetzwerke</div>
+            <div class="client-tile" data-i18n="client_3">Hospitality & VIP Kunden</div>
+            <div class="client-tile" data-i18n="client_4">Glasfaser- und Infrastrukturprojekte</div>
+            <div class="client-tile" data-i18n="client_5">Luxusimmobilien im Sportumfeld</div>
+            <div class="client-tile" data-i18n="client_6">Internationale Kooperationen DACH / Italien</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories">
+        <div class="container">
+          <p class="eyebrow" data-i18n="stories_eyebrow">Best Stories</p>
+          <h2 data-i18n="stories_title">Referenzen & Projekte</h2>
+          <div class="stories-grid">
+            <article class="story-card">
+              <img src="./images/trikots.jpeg" alt="Sport Partnerships" />
+              <h3 data-i18n="story_1_title">Sport Business & Sponsoring</h3>
+              <p data-i18n="story_1_text">"Neue Umsatzpotenziale durch Partnerschaften und Premium-Kunden."</p>
+            </article>
+            <article class="story-card">
+              <img src="./images/glasfaser.jpeg" alt="Fiber sales" />
+              <h3 data-i18n="story_2_title">Glasfaser Vorvermarktung</h3>
+              <p data-i18n="story_2_text">"Strukturierte Vertriebsführung für starke Quoten und sicheren Ausbau."</p>
+            </article>
+            <article class="story-card">
+              <img src="./images/villa.jpeg" alt="Luxury real estate" />
+              <h3 data-i18n="story_3_title">Luxury Real Estate Connections</h3>
+              <p data-i18n="story_3_text">"Diskrete Vermittlung exklusiver Immobilien und Investments."</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="awards">
+        <div class="container">
+          <div class="awards-head">
+            <div>
+              <p class="eyebrow" data-i18n="awards_eyebrow">Core Values</p>
+              <h2 data-i18n="awards_title">Vertrauen. Internationalität. Wachstum. Exklusivität.</h2>
+            </div>
+            <div class="awards-controls">
+              <button type="button" id="awards-prev" aria-label="Scroll left">‹</button>
+              <button type="button" id="awards-next" aria-label="Scroll right">›</button>
+            </div>
+          </div>
+          <div class="awards-track" id="awards-track">
+            <article class="award-tile">
+              <h3 data-i18n="value_1_title">Vertrauen</h3>
+              <p class="muted" data-i18n="value_1_text">Diskretion, Zuverlässigkeit und langfristige Beziehungen.</p>
+            </article>
+            <article class="award-tile">
+              <h3 data-i18n="value_2_title">Internationalität</h3>
+              <p class="muted" data-i18n="value_2_text">Deutschland, Italien, Schweiz, Österreich und internationale Netzwerke.</p>
+            </article>
+            <article class="award-tile">
+              <h3 data-i18n="value_3_title">Wachstum</h3>
+              <p class="muted" data-i18n="value_3_text">Messbare Ergebnisse für Umsatz, Quoten und Partnerschaften.</p>
+            </article>
+            <article class="award-tile">
+              <h3 data-i18n="value_4_title">Exklusivität</h3>
+              <p class="muted" data-i18n="value_4_text">Premium-Zugänge in Sport, Hospitality und Immobilien.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container cta-grid">
+          <div>
+            <p class="eyebrow" data-i18n="cta_eyebrow">Lust mit uns zu arbeiten?</p>
+            <h2 data-i18n="cta_title">Wir bauen Vertrieb, Netzwerk und Geschäftschancen auf internationalem Niveau.</h2>
+            <a class="btn btn-dark" href="#contact" data-i18n="cta_btn">Say Hi!</a>
+          </div>
+          <div class="cta-photo">
+            <img src="./images/foto-mario-venezia.jpeg" alt="Mario Venezia" />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <p class="eyebrow" data-i18n="contact_eyebrow">Kontakt</p>
+          <h2 data-i18n="contact_title">Bereit für den nächsten Schritt?</h2>
+          <div class="contact-grid">
+            <article class="panel">
+              <h3 data-i18n="contact_left_title">Direktkontakt</h3>
+              <p class="muted" data-i18n="contact_left_text">Wir melden uns zeitnah mit einem strukturierten Vorschlag.</p>
+              <p>
+                <strong>E-Mail:</strong> info@venezia-sales.com<br />
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/4915153860607" target="_blank" rel="noopener">+49 1515 3860607</a>
+              </p>
+            </article>
+            <article class="panel">
+              <form id="contact-form">
+                <label for="name" data-i18n="form_name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Ihr Name" data-i18n-placeholder="form_name_ph" required />
+                <label for="email" data-i18n="form_email">E-Mail</label>
+                <input id="email" name="email" type="email" placeholder="ihre@email.de" data-i18n-placeholder="form_email_ph" required />
+                <label for="msg" data-i18n="form_message">Nachricht</label>
+                <textarea
+                  id="msg"
+                  name="message"
+                  placeholder="Wobei können wir Sie unterstützen?"
+                  data-i18n-placeholder="form_message_ph"
+                  required
+                ></textarea>
+                <button class="btn btn-dark" type="submit" data-i18n="form_submit">Anfrage per E-Mail senden</button>
+                <p id="form-status" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <img src="./images/venezia-logo.svg" alt="Venezia" style="width: 170px" />
+          <p class="muted">© <span id="year"></span> Venezia Sales Solution</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
+          <a href="#" data-i18n="footer_imprint">Impressum</a><br />
+          <a href="#" data-i18n="footer_privacy">Datenschutz</a><br />
+          <a href="#" data-i18n="footer_terms">AGB</a>
+        </div>
+        <div>
+          <p class="footer-title" data-i18n="footer_contact">Kontakt</p>
+          <p class="muted" data-i18n="footer_address" data-i18n-format="html">
+            Venezia Sales Solution<br />International Sports Sales & Business Development<br />Deutschland / Italien
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/4915153860607"
+      target="_blank"
+      rel="noopener"
+      aria-label="Direkt per WhatsApp kontaktieren"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 3.2c-7 0-12.8 5.6-12.8 12.6 0 2.3.6 4.5 1.8 6.4L3 29l6.9-1.9a12.9 12.9 0 0 0 6.1 1.6c7 0 12.8-5.6 12.8-12.6S23 3.2 16 3.2Zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.3 10.3 0 0 1-1.6-5.5c0-5.8 4.8-10.5 10.7-10.5 6 0 10.8 4.7 10.8 10.5S21.9 26.4 16 26.4Zm5.9-7.8c-.3-.2-1.7-.8-2-1-.2-.1-.4-.2-.6.2-.2.3-.7 1-.8 1.2-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5l.3-.4c.1-.2.1-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1 3 1.2 3.2c.1.2 2.1 3.3 5.3 4.5.7.3 1.3.5 1.8.6.8.3 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const translations = {
+        de: {
+          nav_about: "Über uns",
+          nav_stories: "Best Stories",
+          nav_contact: "Kontakt",
+          hero_eyebrow: "International Sports Sales & Business Development",
+          hero_title: "Football. Sales. International Connections.",
+          hero_text:
+            "Venezia verbindet Sport, Vertrieb, Networking und hochwertige Business-Erlebnisse für professionelle Klubs, Unternehmer und Investoren.",
+          hero_cta: "Jetzt Erstgespräch sichern",
+          hero_whatsapp: "Direkt per WhatsApp",
+          about_eyebrow: "Agentur Venezia",
+          about_title: "Sales-driven. International. Connected.",
+          about_text:
+            "Mario Venezia ist Vertriebsingenieur mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und Business Development. Mit seinem Team entwickelt er Strategien für nachhaltiges Umsatzwachstum im Sport-, Hospitality-, Glasfaser- und Premium-Immobilienumfeld.",
+          service_1_title: "Sponsoring & Partnership Development",
+          service_1_text: "Vermittlung neuer Sponsoren, Marken und strategischer Partnerschaften.",
+          service_2_title: "Hospitality & VIP Sales",
+          service_2_text: "Entwicklung und Vertrieb exklusiver VIP- und Premium-Angebote.",
+          service_3_title: "International Business Networks",
+          service_3_text: "Aufbau internationaler B2B-Netzwerke zwischen Klubs und Unternehmen.",
+          service_4_title: "Market Development Germany",
+          service_4_text: "Markteintritt und Geschäftsausbau internationaler Klubs in Deutschland.",
+          service_5_title: "Glasfaser Vertrieb",
+          service_5_text: "Vorvermarktung, Quotenaufbau und strukturierte D2D-Vertriebsprozesse.",
+          service_6_title: "Luxusimmobilien & Premium Vermittlung",
+          service_6_text: "Diskrete Vermittlung von Luxusobjekten und Off-Market-Investments.",
+          clients_eyebrow: "Unsere Märkte & Partnerfelder",
+          clients_title: "Internationale Business-Plattformen für Wachstum",
+          client_1: "Professionelle Fußballclubs",
+          client_2: "Unternehmer- & Investorennetzwerke",
+          client_3: "Hospitality & VIP Kunden",
+          client_4: "Glasfaser- und Infrastrukturprojekte",
+          client_5: "Luxusimmobilien im Sportumfeld",
+          client_6: "Internationale Kooperationen DACH / Italien",
+          stories_eyebrow: "Best Stories",
+          stories_title: "Referenzen & Projekte",
+          story_1_title: "Sport Business & Sponsoring",
+          story_1_text: "Neue Umsatzpotenziale durch Partnerschaften und Premium-Kunden.",
+          story_2_title: "Glasfaser Vorvermarktung",
+          story_2_text: "Strukturierte Vertriebsführung für starke Quoten und sicheren Ausbau.",
+          story_3_title: "Luxury Real Estate Connections",
+          story_3_text: "Diskrete Vermittlung exklusiver Immobilien und Investments.",
+          awards_eyebrow: "Core Values",
+          awards_title: "Vertrauen. Internationalität. Wachstum. Exklusivität.",
+          value_1_title: "Vertrauen",
+          value_1_text: "Diskretion, Zuverlässigkeit und langfristige Beziehungen.",
+          value_2_title: "Internationalität",
+          value_2_text: "Deutschland, Italien, Schweiz, Österreich und internationale Netzwerke.",
+          value_3_title: "Wachstum",
+          value_3_text: "Messbare Ergebnisse für Umsatz, Quoten und Partnerschaften.",
+          value_4_title: "Exklusivität",
+          value_4_text: "Premium-Zugänge in Sport, Hospitality und Immobilien.",
+          cta_eyebrow: "Lust mit uns zu arbeiten?",
+          cta_title: "Wir bauen Vertrieb, Netzwerk und Geschäftschancen auf internationalem Niveau.",
+          cta_btn: "Say Hi!",
+          contact_eyebrow: "Kontakt",
+          contact_title: "Bereit für den nächsten Schritt?",
+          contact_left_title: "Direktkontakt",
+          contact_left_text: "Wir melden uns zeitnah mit einem strukturierten Vorschlag.",
+          form_name: "Name",
+          form_email: "E-Mail",
+          form_message: "Nachricht",
+          form_name_ph: "Ihr Name",
+          form_email_ph: "ihre@email.de",
+          form_message_ph: "Wobei können wir Sie unterstützen?",
+          form_submit: "Anfrage per E-Mail senden",
+          footer_guidelines: "Richtlinien",
+          footer_imprint: "Impressum",
+          footer_privacy: "Datenschutz",
+          footer_terms: "AGB",
+          footer_contact: "Kontakt",
+          footer_address:
+            "Venezia Sales Solution\nInternational Sports Sales & Business Development\nDeutschland / Italien",
+          form_status:
+            "Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, senden Sie bitte direkt an info@venezia-sales.com."
+        },
+        en: {
+          nav_about: "About",
+          nav_stories: "Best Stories",
+          nav_contact: "Contact",
+          hero_eyebrow: "International Sports Sales & Business Development",
+          hero_title: "Football. Sales. International Connections.",
+          hero_text:
+            "Venezia connects sport, sales, networking and premium business experiences for professional clubs, entrepreneurs and investors.",
+          hero_cta: "Book an intro call",
+          hero_whatsapp: "Direct WhatsApp",
+          about_eyebrow: "Agency Venezia",
+          about_title: "Sales-driven. International. Connected.",
+          about_text:
+            "Mario Venezia is a sales engineer with 20+ years of experience in direct sales, D2D and business development. Together with his team, he builds strategies for sustainable growth across sport, hospitality, fiber sales and premium real estate.",
+          service_1_title: "Sponsoring & Partnership Development",
+          service_1_text: "Identification and placement of new sponsors, brands and strategic partners.",
+          service_2_title: "Hospitality & VIP Sales",
+          service_2_text: "Development and sales of exclusive VIP and premium offerings.",
+          service_3_title: "International Business Networks",
+          service_3_text: "Building international B2B networks between clubs and companies.",
+          service_4_title: "Market Development Germany",
+          service_4_text: "Market entry and commercial expansion for international clubs in Germany.",
+          service_5_title: "Fiber Sales",
+          service_5_text: "Pre-marketing, quota growth and structured D2D sales operations.",
+          service_6_title: "Luxury Real Estate & Premium Brokerage",
+          service_6_text: "Discreet brokerage of luxury properties and off-market investments.",
+          clients_eyebrow: "Markets & Partner Segments",
+          clients_title: "International business platforms for growth",
+          client_1: "Professional football clubs",
+          client_2: "Entrepreneur & investor networks",
+          client_3: "Hospitality & VIP clients",
+          client_4: "Fiber and infrastructure projects",
+          client_5: "Luxury real estate in sports environment",
+          client_6: "International cooperations in DACH / Italy",
+          stories_eyebrow: "Best Stories",
+          stories_title: "References & Projects",
+          story_1_title: "Sport Business & Sponsoring",
+          story_1_text: "New revenue potential through partnerships and premium clients.",
+          story_2_title: "Fiber Pre-Marketing",
+          story_2_text: "Structured sales leadership for high quotas and reliable rollout.",
+          story_3_title: "Luxury Real Estate Connections",
+          story_3_text: "Discreet brokerage of exclusive properties and investments.",
+          awards_eyebrow: "Core Values",
+          awards_title: "Trust. International Reach. Growth. Exclusivity.",
+          value_1_title: "Trust",
+          value_1_text: "Discretion, reliability and long-term business relationships.",
+          value_2_title: "International",
+          value_2_text: "Germany, Italy, Switzerland, Austria and global networks.",
+          value_3_title: "Growth",
+          value_3_text: "Measurable results for revenue, quotas and partnerships.",
+          value_4_title: "Exclusivity",
+          value_4_text: "Premium access across sport, hospitality and real estate.",
+          cta_eyebrow: "Ready to work with us?",
+          cta_title: "We build sales structures, networks and business opportunities at international level.",
+          cta_btn: "Say Hi!",
+          contact_eyebrow: "Contact",
+          contact_title: "Ready for the next step?",
+          contact_left_title: "Direct contact",
+          contact_left_text: "We get back quickly with a structured proposal.",
+          form_name: "Name",
+          form_email: "Email",
+          form_message: "Message",
+          form_name_ph: "Your name",
+          form_email_ph: "your@email.com",
+          form_message_ph: "How can we support you?",
+          form_submit: "Send request by email",
+          footer_guidelines: "Legal",
+          footer_imprint: "Imprint",
+          footer_privacy: "Privacy",
+          footer_terms: "Terms",
+          footer_contact: "Contact",
+          footer_address:
+            "Venezia Sales Solution\nInternational Sports Sales & Business Development\nGermany / Italy",
+          form_status:
+            "Your email app should open now. If not, please send directly to info@venezia-sales.com."
+        }
+      };
+
+      const langToggleButton = document.getElementById("lang-toggle");
+      const langFlagIcon = document.getElementById("lang-flag-icon");
+      const status = document.getElementById("form-status");
+      let currentLang = "de";
+
+      function updateLanguageToggle(lang) {
+        if (!langToggleButton) return;
+        if (lang === "de") {
+          if (langFlagIcon) {
+            langFlagIcon.src = "./images/flags/gb.svg";
+            langFlagIcon.alt = "English";
+          }
+          langToggleButton.dataset.nextLang = "en";
+          langToggleButton.setAttribute("aria-label", "Switch to English");
+          return;
+        }
+        if (langFlagIcon) {
+          langFlagIcon.src = "./images/flags/de.svg";
+          langFlagIcon.alt = "Deutsch";
+        }
+        langToggleButton.dataset.nextLang = "de";
+        langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
+      }
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        const activeTranslations = translations[lang];
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (activeTranslations[key] !== undefined) {
+            const value = activeTranslations[key];
+            node.textContent = value;
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+          const key = node.getAttribute("data-i18n-placeholder");
+          if (activeTranslations[key] !== undefined) {
+            node.placeholder = activeTranslations[key];
+          }
+        });
+
+        updateLanguageToggle(lang);
+        status.textContent = "";
+      }
+
+      langToggleButton?.addEventListener("click", () => {
+        applyLanguage(langToggleButton.dataset.nextLang || "en");
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("msg").value.trim();
+        const subjectText =
+          currentLang === "de" ? "Neue Anfrage über venezia-sales.com" : "New request via venezia-sales.com";
+        const subject = encodeURIComponent(subjectText);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        status.textContent = translations[currentLang].form_status;
+        window.location.href = "mailto:info@venezia-sales.com?subject=" + subject + "&body=" + body;
+        form.reset();
+      });
+
+      const awardsTrack = document.getElementById("awards-track");
+      document.getElementById("awards-prev").addEventListener("click", () => {
+        awardsTrack.scrollBy({ left: -280, behavior: "smooth" });
+      });
+      document.getElementById("awards-next").addEventListener("click", () => {
+        awardsTrack.scrollBy({ left: 280, behavior: "smooth" });
+      });
+
+      applyLanguage(currentLang);
+    </script>
+  </body>
 </html>
