@@ -75,22 +75,34 @@
       .lang-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
       main { padding-top: 78px; }
-      section { padding: 86px 0; }
+      section { padding: 64px 0; }
+      section.hero { padding: 0; }
 
       h1, h2, h3 {
-        margin: 0 0 1rem;
-        line-height: 1.1;
+        margin: 0 0 0.75rem;
+        line-height: 1.15;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.02em;
       }
-      h1 { font-size: clamp(2rem, 5.2vw, 4.25rem); font-weight: 800; }
-      h2 { font-size: clamp(1.5rem, 3vw, 2.65rem); font-weight: 800; }
+      h2 {
+        font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+      }
+      h3 { font-size: 0.88rem; font-weight: 700; letter-spacing: 0.01em; }
 
       .eyebrow {
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.4rem;
       }
 
       /* Hero */
@@ -219,6 +231,8 @@
 
       /* CTA */
       .cta { background: linear-gradient(130deg, #8f6429 0%, #ccab63 50%, #9e6f2f 100%); color: #12151b; }
+      .cta .eyebrow { color: rgba(18, 21, 27, 0.6); }
+      .cta .btn-dark { background: #12151b; color: var(--accent); border-color: rgba(18, 21, 27, 0.5); }
       .cta-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; align-items: center; }
       .cta-photo { text-align: right; }
       .cta-photo img {
@@ -246,6 +260,7 @@
         flex-shrink: 0;
       }
       .ci-icon.email { background: rgba(214, 177, 95, 0.12); color: var(--accent); }
+      .ci-icon.phone { background: rgba(100, 160, 255, 0.1); color: #7aacff; }
       .ci-icon.wa { background: rgba(37, 211, 102, 0.1); color: #25d366; }
       .ci-icon svg { width: 18px; height: 18px; }
       .ci-text { font-size: 0.93rem; }
@@ -275,8 +290,9 @@
         gap: 1rem;
       }
       .footer-title { margin: 0 0 0.65rem; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; }
-      .footer-links a { color: var(--accent); text-decoration: none; }
-      .footer-links a:hover { text-decoration: none; opacity: 0.8; }
+      .footer-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+      .footer-links a { color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+      .footer-links a:hover { opacity: 0.75; }
 
       .footer-bottom {
         border-top: 1px solid var(--border);
@@ -300,17 +316,20 @@
         width: 52px;
         height: 52px;
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: linear-gradient(135deg, #25d366 0%, #159e4d 100%);
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
         z-index: 30;
-        border: none;
-        cursor: default;
         pointer-events: none;
+        display: grid;
+        place-items: center;
       }
-      .whatsapp-float svg { width: 28px; height: 28px; fill: #ffffff; display: block; }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+        fill: #ffffff;
+        display: block;
+        flex-shrink: 0;
+      }
 
       @media (max-width: 980px) {
         .nav-row { grid-template-columns: 1fr; padding: 0.8rem 0; text-align: center; }
@@ -362,14 +381,7 @@
         </div>
       </section>
 
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
-          <span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span><span>FOOTBALL SALES. HOSPITALITY. INTERNATIONAL GROWTH.</span>
-        </div>
-      </div>
-
-      <section id="about">
+<section id="about">
         <div class="container">
           <p class="eyebrow" data-i18n="about_eyebrow">Agentur Venezia</p>
           <h2 data-i18n="about_title">Sales-driven. International. Connected.</h2>
@@ -580,14 +592,21 @@
                   </div>
                 </li>
                 <li class="contact-info-item">
-                  <div class="ci-icon wa">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/>
-                    </svg>
+                  <div style="display:flex;gap:0.35rem;flex-shrink:0;">
+                    <div class="ci-icon phone">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                      </svg>
+                    </div>
+                    <div class="ci-icon wa">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="ci-text">
-                    <small data-i18n="contact_wa_label">WhatsApp</small>
-                    <span>+49 1515 3860607</span>
+                    <small data-i18n="contact_phone_wa_label">Telefon &amp; WhatsApp</small>
+                    <a href="tel:+4915153860607">+49 1515 3860607</a>
                   </div>
                 </li>
               </ul>
@@ -620,9 +639,11 @@
         </div>
         <div class="footer-links">
           <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
-          <a href="#" data-i18n="footer_imprint">Impressum</a><br />
-          <a href="#" data-i18n="footer_privacy">Datenschutz</a><br />
-          <a href="#" data-i18n="footer_terms">AGB</a>
+          <ul>
+            <li><a href="#" data-i18n="footer_imprint">Impressum</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
+            <li><a href="#" data-i18n="footer_terms">AGB</a></li>
+          </ul>
         </div>
         <div>
           <p class="footer-title" data-i18n="footer_contact">Kontakt</p>
@@ -703,7 +724,7 @@
           contact_left_title: "Direktkontakt",
           contact_left_text: "Wir melden uns zeitnah mit einem strukturierten Vorschlag.",
           contact_email_label: "E-Mail",
-          contact_wa_label: "WhatsApp",
+          contact_phone_wa_label: "Telefon & WhatsApp",
           form_name: "Name",
           form_email: "E-Mail",
           form_message: "Nachricht",
@@ -777,7 +798,7 @@
           contact_left_title: "Direct contact",
           contact_left_text: "We get back quickly with a structured proposal.",
           contact_email_label: "Email",
-          contact_wa_label: "WhatsApp",
+          contact_phone_wa_label: "Phone & WhatsApp",
           form_name: "Name",
           form_email: "Email",
           form_message: "Message",
