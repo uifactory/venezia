@@ -333,6 +333,68 @@
       .cta-subline { margin: 0.5rem 0 1.3rem; font-size: 0.93rem; font-weight: 600; }
       .cta h2 { color: #12151b; }
 
+      /* Für wen */
+      .whom-grid {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .whom-card {
+        background: var(--gray);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.5rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .whom-badge {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(214,177,95,0.08);
+        border: 1px solid rgba(214,177,95,0.2);
+        border-radius: 4px;
+        padding: 0.2rem 0.6rem;
+        align-self: flex-start;
+      }
+      .whom-card h3 { font-size: 0.95rem; margin: 0; }
+      .whom-card p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin: 0; }
+
+      /* Process */
+      .process-grid {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .process-step {
+        background: var(--gray);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.5rem 1.25rem;
+      }
+      .step-num {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: rgba(214,177,95,0.2);
+        line-height: 1;
+        margin-bottom: 0.6rem;
+      }
+      .step-num.gold-2 { color: rgba(214,177,95,0.55); }
+      .step-num.gold-3 {
+        background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .process-step h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+      .process-step p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin: 0; }
+      .cta-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.6rem; }
+
       /* Contact */
       .contact-grid { margin-top: 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
       .panel { background: var(--gray); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
@@ -517,6 +579,7 @@
         .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .f1-gallery { grid-template-columns: repeat(2, 1fr); }
         .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .process-grid { grid-template-columns: 1fr; }
 
         .cta-grid { grid-template-columns: 1fr; }
         .cta-photo img { height: 360px; width: min(100%, 340px); }
@@ -548,6 +611,7 @@
         .f1-gallery { grid-template-columns: 1fr; }
         .contact-grid { grid-template-columns: 1fr; }
         .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
+        .whom-grid { grid-template-columns: 1fr; }
         .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
 
         .cta-photo img { height: 260px; }
@@ -634,10 +698,37 @@
               <a class="btn btn-dark" href="#contact" data-i18n="hero_cta">Jetzt Erstgespräch sichern</a>
               <a class="btn btn-light" href="#contact" data-i18n="hero_whatsapp">Direkt per WhatsApp</a>
             </div>
+            <p class="cta-note" data-i18n="cta_note">Kostenlos · Unverbindlich</p>
           </div>
         </div>
       </section>
 
+
+      <!-- FÜR WEN -->
+      <section id="for-whom">
+        <div class="container">
+          <p class="eyebrow" data-i18n="whom_eyebrow">Für wen wir arbeiten</p>
+          <h2 data-i18n="whom_title">Unser gemeinsamer Nenner: Komplexer Vertrieb auf höchstem Niveau.</h2>
+          <p class="muted" data-i18n="whom_text">Ob Sport-Sponsoring, Glasfaser oder Luxusimmobilien, in jedem dieser Märkte entscheidet die Vertriebsstärke. Wir bringen 20 Jahre echte Vertriebserfahrung mit, nicht aus dem Lehrbuch.</p>
+          <div class="whom-grid">
+            <article class="whom-card">
+              <span class="whom-badge" data-i18n="whom_1_badge">Sports Business</span>
+              <h3 data-i18n="whom_1_title">Clubs, Verbände &amp; Veranstalter</h3>
+              <p data-i18n="whom_1_text">Ihr sucht Sponsoren, VIP-Partner oder neue Umsatzquellen? Wir bauen die Vertriebsstruktur und öffnen die richtigen Türen.</p>
+            </article>
+            <article class="whom-card">
+              <span class="whom-badge" data-i18n="whom_2_badge">Infrastructure</span>
+              <h3 data-i18n="whom_2_title">Netzbetreiber &amp; Projektentwickler</h3>
+              <p data-i18n="whom_2_text">Ihr braucht messbaren D2D-Vertrieb, strukturierte Vorvermarktung oder diskrete Immobilienvermittlung? Wir liefern Ergebnisse, keine Versprechen.</p>
+            </article>
+            <article class="whom-card">
+              <span class="whom-badge" data-i18n="whom_3_badge">Business Development</span>
+              <h3 data-i18n="whom_3_title">Unternehmen &amp; Investoren</h3>
+              <p data-i18n="whom_3_text">Ihr wollt den deutschen Markt erschließen oder Premium-Netzwerke aktivieren? Wir verbinden Entscheider mit Entscheidern.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <!-- ABOUT + SERVICES -->
       <section id="about">
@@ -645,7 +736,7 @@
           <p class="eyebrow" data-i18n="about_eyebrow">Agentur Venezia</p>
           <h2 data-i18n="about_title">Sales-driven. International. Connected.</h2>
           <p class="muted" data-i18n="about_text">
-            Ich bin Vertriebsprofi mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und internationalem Business Development. Mit meinem Team kombiniere ich harte Vertriebserfahrung mit Premium Sport Business. Die meisten im Sport können netzwerken — wir können verkaufen. Das ist unsere Stärke.
+            Ich bin Vertriebsprofi mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und internationalem Business Development. Mit meinem Team kombiniere ich harte Vertriebserfahrung mit Premium Sport Business. Die meisten im Sport können netzwerken, wir können verkaufen. Das ist unsere Stärke.
           </p>
 
           <!-- Sports Business -->
@@ -803,6 +894,31 @@
         </div>
       </section>
 
+      <!-- PROCESS -->
+      <section id="process">
+        <div class="container">
+          <p class="eyebrow" data-i18n="process_eyebrow">So arbeiten wir zusammen</p>
+          <h2 data-i18n="process_title">Drei Schritte zum messbaren Ergebnis.</h2>
+          <div class="process-grid">
+            <article class="process-step">
+              <div class="step-num">01</div>
+              <h3 data-i18n="process_1_title">Potenzialanalyse</h3>
+              <p data-i18n="process_1_text">In einem 30-minütigen Erstgespräch klären wir gemeinsam: Wo liegen eure Chancen? Welche Vertriebshebel gibt es?</p>
+            </article>
+            <article class="process-step">
+              <div class="step-num gold-2">02</div>
+              <h3 data-i18n="process_2_title">Maßgeschneiderte Strategie</h3>
+              <p data-i18n="process_2_text">Auf Basis der Analyse entwickeln wir eine konkrete Vertriebsstrategie, mit klaren Zielen, Zeitplan und messbaren Meilensteinen.</p>
+            </article>
+            <article class="process-step">
+              <div class="step-num gold-3">03</div>
+              <h3 data-i18n="process_3_title">Aktive Umsetzung</h3>
+              <p data-i18n="process_3_text">Wir setzen die Strategie aktiv um, messen Ergebnisse und optimieren kontinuierlich. Kein Beraterdeutsch, echte Umsätze.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="cta">
         <div class="container cta-grid">
@@ -950,7 +1066,7 @@
           hero_whatsapp: "Direkt per WhatsApp",
           about_eyebrow: "Agentur Venezia",
           about_title: "Vertriebsorientiert. International. Vernetzt.",
-          about_text: "Ich bin Vertriebsprofi mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und internationalem Business Development. Mit meinem Team kombiniere ich harte Vertriebserfahrung mit Premium Sport Business. Die meisten im Sport können netzwerken — wir können verkaufen. Das ist unsere Stärke.",
+          about_text: "Ich bin Vertriebsprofi mit über 20 Jahren Erfahrung in Direktvertrieb, D2D und internationalem Business Development. Mit meinem Team kombiniere ich harte Vertriebserfahrung mit Premium Sport Business. Die meisten im Sport können netzwerken, wir können verkaufen. Das ist unsere Stärke.",
           marquee_d2d: "D2D Vertrieb",
           div_sports: "Venezia Sports Business",
           div_infra: "Venezia Infrastructure Sales",
@@ -991,6 +1107,27 @@
           cta_title: "Wir entwickeln Vertriebsstrukturen, die messbares Wachstum schaffen.",
           cta_subline: "Vertriebspartner. Umsatzpartner. Business Development Agentur.",
           cta_btn: "Jetzt Anfragen",
+          cta_note: "Kostenlos · Unverbindlich",
+          whom_eyebrow: "Für wen wir arbeiten",
+          whom_title: "Unser gemeinsamer Nenner: Komplexer Vertrieb auf höchstem Niveau.",
+          whom_text: "Ob Sport-Sponsoring, Glasfaser oder Luxusimmobilien, in jedem dieser Märkte entscheidet die Vertriebsstärke. Wir bringen 20 Jahre echte Vertriebserfahrung mit, nicht aus dem Lehrbuch.",
+          whom_1_badge: "Sports Business",
+          whom_1_title: "Clubs, Verbände & Veranstalter",
+          whom_1_text: "Ihr sucht Sponsoren, VIP-Partner oder neue Umsatzquellen? Wir bauen die Vertriebsstruktur und öffnen die richtigen Türen.",
+          whom_2_badge: "Infrastructure",
+          whom_2_title: "Netzbetreiber & Projektentwickler",
+          whom_2_text: "Ihr braucht messbaren D2D-Vertrieb, strukturierte Vorvermarktung oder diskrete Immobilienvermittlung? Wir liefern Ergebnisse, keine Versprechen.",
+          whom_3_badge: "Business Development",
+          whom_3_title: "Unternehmen & Investoren",
+          whom_3_text: "Ihr wollt den deutschen Markt erschließen oder Premium-Netzwerke aktivieren? Wir verbinden Entscheider mit Entscheidern.",
+          process_eyebrow: "So arbeiten wir zusammen",
+          process_title: "Drei Schritte zum messbaren Ergebnis.",
+          process_1_title: "Potenzialanalyse",
+          process_1_text: "In einem 30-minütigen Erstgespräch klären wir gemeinsam: Wo liegen eure Chancen? Welche Vertriebshebel gibt es?",
+          process_2_title: "Maßgeschneiderte Strategie",
+          process_2_text: "Auf Basis der Analyse entwickeln wir eine konkrete Vertriebsstrategie, mit klaren Zielen, Zeitplan und messbaren Meilensteinen.",
+          process_3_title: "Aktive Umsetzung",
+          process_3_text: "Wir setzen die Strategie aktiv um, messen Ergebnisse und optimieren kontinuierlich. Kein Beraterdeutsch, echte Umsätze.",
           contact_eyebrow: "Kontakt",
           contact_title: "Bereit für den nächsten Schritt?",
           contact_left_title: "Direktkontakt",
@@ -1030,7 +1167,7 @@
           hero_whatsapp: "Direct WhatsApp",
           about_eyebrow: "Agency Venezia",
           about_title: "Sales-driven. International. Connected.",
-          about_text: "I am a sales professional with 20+ years of experience in direct sales, D2D and international business development. Together with my team, I combine hard sales experience with premium sport business. Most in sport can network — we can sell. That is our edge.",
+          about_text: "I am a sales professional with 20+ years of experience in direct sales, D2D and international business development. Together with my team, I combine hard sales experience with premium sport business. Most in sport can network, we can sell. That is our edge.",
           marquee_d2d: "D2D Sales",
           div_sports: "Venezia Sports Business",
           div_infra: "Venezia Infrastructure Sales",
@@ -1071,6 +1208,27 @@
           cta_title: "We build sales structures that create measurable growth.",
           cta_subline: "Sales Partner. Revenue Partner. Business Development Agency.",
           cta_btn: "Get in Touch",
+          cta_note: "Free · Non-binding",
+          whom_eyebrow: "Who we work with",
+          whom_title: "Our common denominator: complex, high-value sales.",
+          whom_text: "Whether sports sponsoring, infrastructure or luxury real estate, in each of these markets, sales strength is what counts. We bring 20 years of real sales experience, not from a textbook.",
+          whom_1_badge: "Sports Business",
+          whom_1_title: "Clubs, Associations & Organizers",
+          whom_1_text: "Looking for sponsors, VIP partners or new revenue streams? We build the sales structure and open the right doors.",
+          whom_2_badge: "Infrastructure",
+          whom_2_title: "Network Operators & Developers",
+          whom_2_text: "Need measurable D2D sales, structured pre-marketing or discreet property brokerage? We deliver results, not promises.",
+          whom_3_badge: "Business Development",
+          whom_3_title: "Companies & Investors",
+          whom_3_text: "Want to enter the German market or activate premium networks? We connect decision-makers with decision-makers.",
+          process_eyebrow: "How we work together",
+          process_title: "Three steps to measurable results.",
+          process_1_title: "Potential Analysis",
+          process_1_text: "In a 30-minute intro call, we explore together: Where are your opportunities? Which sales levers exist?",
+          process_2_title: "Tailored Strategy",
+          process_2_text: "Based on the analysis, we develop a concrete sales strategy, with clear goals, timeline and measurable milestones.",
+          process_3_title: "Active Implementation",
+          process_3_text: "We actively implement the strategy, measure results and continuously optimize. No consultant jargon, real revenue.",
           contact_eyebrow: "Contact",
           contact_title: "Ready for the next step?",
           contact_left_title: "Direct contact",
