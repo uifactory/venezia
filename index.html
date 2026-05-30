@@ -20,7 +20,8 @@
       }
 
       * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+      img { max-width: 100%; display: block; }
 
       body {
         margin: 0;
@@ -89,7 +90,7 @@
         letter-spacing: 0.02em;
       }
       h2 {
-        font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
         font-weight: 600;
         letter-spacing: 0.01em;
         color: var(--ink);
@@ -443,13 +444,13 @@
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         background: rgba(255,255,255,0.06);
         border: 1px solid var(--border);
         border-radius: 8px;
         cursor: pointer;
-        padding: 0 9px;
+        padding: 0 10px;
         flex-shrink: 0;
       }
       .burger span {
@@ -469,7 +470,8 @@
       .mobile-nav {
         position: fixed;
         top: 70px;
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
         z-index: 18;
         background: rgba(6, 8, 12, 0.97);
         backdrop-filter: blur(16px);
@@ -504,30 +506,31 @@
 
       /* ── Tablet (≤ 900 px) ───────────────────────────────── */
       @media (max-width: 900px) {
+        /* Nav: wechsel zu 2-spaltigem Grid (logo | controls) */
         .nav-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          grid-template-columns: 1fr auto;
           min-height: 64px;
+          gap: 0;
         }
         .nav-links { display: none; }
+        .right-controls { justify-self: end; }
         .burger { display: flex; }
         main { padding-top: 64px; }
         .mobile-nav { top: 64px; }
 
         section { padding: 52px 0; }
 
-        .services-grid { grid-template-columns: repeat(2, 1fr); }
-        .services-grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .f1-gallery { grid-template-columns: repeat(2, 1fr); }
-        .stories-grid { grid-template-columns: repeat(2, 1fr); }
+        .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
         .cta-grid { grid-template-columns: 1fr; }
         .cta-photo { text-align: center; }
-        .cta-photo img { height: 360px; }
+        .cta-photo img { height: 360px; width: min(100%, 340px); }
         .cta-signature { margin: 0.6rem auto 0; }
 
-        .logo-tile { max-width: none; }
+        .logo-tile { max-width: none; min-width: 0; }
+        .logo-grid { gap: 0.75rem; }
       }
 
       /* ── Mobil (≤ 600 px) ────────────────────────────────── */
@@ -537,28 +540,37 @@
         .mobile-nav { top: 60px; }
 
         section { padding: 40px 0; }
-        .logo img { width: 148px; }
+        .logo img { width: 144px; }
 
-        h2 { font-size: clamp(1.05rem, 4.5vw, 1.2rem); }
+        h1 { font-size: clamp(2rem, 8vw, 3rem); letter-spacing: 0.01em; }
+        h2 { font-size: 1.1rem; }
 
+        .hero-content { min-height: min(65vh, 500px); padding: 1.5rem 0; }
+        .hero p { font-size: 0.95rem; max-width: 100%; }
+        .hero .eyebrow { letter-spacing: 0.06em; }
+
+        .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .services-grid-2 { grid-template-columns: 1fr; }
         .stories-grid { grid-template-columns: 1fr; }
         .f1-gallery { grid-template-columns: 1fr; }
         .contact-grid { grid-template-columns: 1fr; }
-        .footer-grid { grid-template-columns: 1fr; padding: 40px 0 24px; }
-        .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-
-        .hero-content { min-height: min(68vh, 520px); padding: 2rem 0; }
-        .hero p { font-size: 0.97rem; }
+        .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
+        .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
 
         .cta-photo img { height: 260px; }
         .cta-signature { font-size: 1.9rem; }
         .cta-row { flex-direction: column; }
         .cta-row .btn { width: 100%; justify-content: center; }
+        .cta .eyebrow { font-size: clamp(1.3rem, 6vw, 1.9rem); }
 
         .story-card img { height: 200px; }
         .f1-gallery img { height: 190px; }
         .award-tile { min-height: auto; }
+
+        .division-sep span { white-space: normal; text-align: center; letter-spacing: 0.08em; }
+
+        .panel { padding: 1rem; }
+        textarea { min-height: 110px; }
       }
     </style>
   </head>
