@@ -309,7 +309,11 @@
       }
       .cta .btn-dark { background: #12151b; color: var(--accent); border-color: rgba(18, 21, 27, 0.5); }
       .cta-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; align-items: center; }
-      .cta-photo { text-align: right; }
+      .cta-photo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .cta-photo img {
         width: min(100%, 340px);
         height: 420px;
@@ -325,8 +329,6 @@
         margin-top: 0.6rem;
         text-align: center;
         display: block;
-        width: min(100%, 340px);
-        margin-left: auto;
       }
       .cta-subline { margin: 0.5rem 0 1.3rem; font-size: 0.93rem; font-weight: 600; }
 
@@ -516,7 +518,6 @@
         .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
         .cta-grid { grid-template-columns: 1fr; }
-        .cta-photo { text-align: center; }
         .cta-photo img { height: 360px; width: min(100%, 340px); }
         .cta-signature { margin: 0.6rem auto 0; }
 
