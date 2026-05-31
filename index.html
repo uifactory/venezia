@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venezia Sales Solution | International Sports Sales & Business Development</title>
-    <meta name="description" content="Venezia ist eine internationale Vertriebsagentur für Sport, Infrastruktur und Business Development – 20 Jahre echte Vertriebserfahrung." />
+    <meta name="description" content="Venezia ist eine internationale Vertriebsagentur für Sport und Infrastruktur – wir entwickeln Vertriebsstrukturen, die messbaren Umsatz erzeugen." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
@@ -31,8 +31,9 @@
       }
 
       a { color: inherit; text-decoration: none; }
-      .container { width: min(94%, var(--max)); margin: 0 auto; }
+      .container { width: min(88%, var(--max)); margin: 0 auto; }
 
+      /* ── Header ─────────────────────────────────────────────── */
       .site-header {
         position: fixed;
         inset: 0 0 auto;
@@ -41,7 +42,6 @@
         border-bottom: 1px solid var(--border);
         backdrop-filter: blur(8px);
       }
-
       .nav-row {
         min-height: 70px;
         display: grid;
@@ -49,9 +49,7 @@
         align-items: center;
         gap: 1rem;
       }
-
       .logo img { width: 168px; max-width: 100%; display: block; }
-
       .nav-links { display: flex; justify-content: center; gap: 1rem; }
       .nav-links a {
         font-size: 0.78rem;
@@ -62,17 +60,13 @@
         transition: color 0.15s;
       }
       .nav-links a:hover { color: var(--accent); }
-
       .right-controls { display: flex; align-items: center; gap: 0.7rem; justify-self: end; }
       .lang-switcher { display: inline-flex; }
-
       .lang-flag {
         border: 1px solid var(--border);
         border-radius: 5px;
-        width: 26px;
-        height: 18px;
-        padding: 0;
-        line-height: 0;
+        width: 26px; height: 18px;
+        padding: 0; line-height: 0;
         background: #161c25;
         overflow: hidden;
         cursor: pointer;
@@ -81,23 +75,18 @@
       .lang-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
       main { padding-top: 70px; }
-      section { padding: 64px 0; }
+      section { padding: 96px 0; }
       section.hero { padding: 0; }
 
-      h1, h2, h3 { margin: 0 0 0.75rem; line-height: 1.15; }
+      h1, h2, h3 { margin: 0 0 1rem; line-height: 1.15; }
       h1 {
         font-size: clamp(2.2rem, 5.5vw, 4.5rem);
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.02em;
       }
-      h2 {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        font-weight: 600;
-        letter-spacing: 0.01em;
-        color: var(--ink);
-      }
-      h3 { font-size: 0.88rem; font-weight: 700; letter-spacing: 0.01em; }
+      h2 { font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight: 700; letter-spacing: 0.01em; }
+      h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
 
       .eyebrow {
         font-size: 0.68rem;
@@ -105,24 +94,9 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.65rem;
       }
-
-      /* ── Hero ───────────────────────────────────────────────── */
-      .hero {
-        color: var(--white);
-        background: linear-gradient(rgba(4, 5, 8, 0.74), rgba(7, 10, 14, 0.82)),
-          url("./images/allianz-arena2.jpg") center/cover no-repeat;
-      }
-      .hero-content {
-        min-height: min(75vh, 720px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 760px;
-        padding: 3rem 0;
-      }
-      .hero p { max-width: 58ch; font-size: 1.05rem; }
+      .muted { color: var(--muted); }
 
       /* ── Buttons ────────────────────────────────────────────── */
       .btn {
@@ -149,68 +123,102 @@
       .cta-row { margin-top: 1.3rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
       .cta-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.6rem; }
 
-      /* ── USP Strip ──────────────────────────────────────────── */
-      .usp-strip {
-        background: linear-gradient(180deg, #0c1018 0%, #101520 100%);
+      /* ── Hero ───────────────────────────────────────────────── */
+      .hero {
+        color: var(--white);
+        background: linear-gradient(rgba(4, 5, 8, 0.74), rgba(7, 10, 14, 0.82)),
+          url("./images/allianz-arena2.jpg") center/cover no-repeat;
+      }
+      .hero-content {
+        min-height: min(75vh, 720px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 780px;
+        padding: 3rem 0;
+      }
+      .hero p { max-width: 60ch; font-size: 1.05rem; line-height: 1.65; }
+
+      /* ── Differentiator: Warum Venezia? ─────────────────────── */
+      .differentiator {
+        background: linear-gradient(180deg, #0c1018 0%, #111520 100%);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-        padding: 64px 0;
-        text-align: center;
       }
-      .usp-quote {
-        font-size: clamp(1.25rem, 2.8vw, 1.85rem);
-        font-weight: 700;
-        color: var(--ink);
-        max-width: 820px;
-        margin: 0 auto;
-        line-height: 1.35;
-      }
-      .usp-quote .gold { color: var(--accent); }
-      .usp-sub {
-        color: var(--muted);
-        font-size: clamp(0.88rem, 1.5vw, 0.98rem);
-        max-width: 640px;
-        margin: 1rem auto 2.5rem;
-        line-height: 1.65;
-      }
-      .usp-stats {
+      .diff-intro { max-width: 700px; margin-bottom: 3.5rem; }
+      .diff-intro h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 700; margin-bottom: 0.75rem; }
+      .diff-sub { color: var(--muted); font-size: 0.84rem; line-height: 1.7; margin: 0; }
+
+      .diff-steps {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 3rem;
       }
-      .usp-stat {
+      .diff-steps::before {
+        content: '';
+        position: absolute;
+        top: 7px; /* exact center of 14px dot */
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(214,177,95,0.65) 0%, rgba(214,177,95,0.2) 100%);
+        pointer-events: none;
+      }
+      .diff-step {
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.25rem;
-        padding: 0 2.5rem;
+        text-align: center;
+        gap: 1rem;
+        position: relative;
       }
-      .usp-stat-num {
-        font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      .diff-step-node {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        z-index: 1;
+      }
+      .diff-step:last-child .diff-step-node {
+        width: 14px;
+        height: 14px;
+        box-shadow: 0 0 0 4px rgba(214,177,95,0.2);
+      }
+      .diff-step-text { font-size: 0.72rem; font-weight: 500; color: var(--muted); line-height: 1.45; max-width: 7rem; letter-spacing: 0.01em; }
+
+      .diff-footer {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 2rem;
+      }
+      .diff-claim {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.55;
+        margin: 0;
+        border-left: 3px solid var(--accent);
+        padding-left: 1.1rem;
+      }
+      .diff-stats { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
+      .diff-stat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; padding: 0 1.8rem; }
+      .diff-stat:first-child { padding-left: 0; }
+      .diff-stat-num {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
         font-weight: 800;
         background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         line-height: 1.1;
-        letter-spacing: -0.01em;
-      }
-      .usp-stat-label {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--muted);
         white-space: nowrap;
       }
-      .usp-divider {
-        width: 1px;
-        height: 44px;
-        background: var(--border);
-        flex-shrink: 0;
-      }
+      .diff-stat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+      .diff-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
 
       /* ── Section alternate background ───────────────────────── */
       .section-alt { background: var(--gray); }
@@ -248,31 +256,63 @@
 
       /* ── Services ───────────────────────────────────────────── */
       .services-grid {
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1rem;
+        gap: 1.25rem;
       }
       .services-grid-2 {
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        gap: 1.25rem;
       }
-
       .service-card {
         background: var(--gray);
         border-radius: 10px;
         border: 1px solid var(--border);
-        padding: 1.25rem;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.5rem;
       }
       .service-icon { width: 34px; height: 34px; color: var(--accent); margin-bottom: 0.3rem; }
       .service-icon svg { width: 100%; height: 100%; }
       .service-card h3 { font-size: 0.88rem; margin: 0; }
       .service-card p { margin: 0; color: var(--muted); font-size: 0.83rem; line-height: 1.5; }
+
+      /* ── Für wen ────────────────────────────────────────────── */
+      .whom-list {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+      }
+      .whom-item {
+        display: grid;
+        grid-template-columns: 13rem 1fr;
+        gap: 3rem;
+        align-items: start;
+        padding: 2.25rem 0;
+        border-top: 1px solid var(--border);
+      }
+      .whom-item:last-child { border-bottom: 1px solid var(--border); }
+      .whom-badge {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-top: 0.15rem;
+        display: block;
+      }
+      .whom-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+      .whom-content h3 { font-size: 1.05rem; margin: 0; line-height: 1.3; font-weight: 600; }
+      .whom-desc { color: var(--muted); font-size: 0.83rem; line-height: 1.65; margin: 0; }
 
       /* ── Logo grid ──────────────────────────────────────────── */
       .logo-grid {
@@ -293,21 +333,10 @@
         min-width: 160px;
         max-width: 240px;
       }
-      .logo-tile img {
-        max-height: 46px;
-        width: auto;
-        max-width: 150px;
-        object-fit: contain;
-        display: block;
-      }
+      .logo-tile img { max-height: 46px; width: auto; max-width: 150px; object-fit: contain; }
 
       /* ── Sport reference tags ───────────────────────────────── */
-      .sport-refs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.55rem;
-        margin-top: 1rem;
-      }
+      .sport-refs { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; }
       .sport-ref-tag {
         border: 1px solid var(--border);
         border-radius: 6px;
@@ -334,77 +363,9 @@
         border: 1px solid var(--border);
       }
 
-      /* ── Stories / Competency ───────────────────────────────── */
-      .stories-grid {
-        margin-top: 1.3rem;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-      }
-      .story-card {
-        background: var(--gray);
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        padding: 1rem;
-      }
-      .story-card img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; }
-      .story-card h3 { font-size: 1rem; }
-      .story-card p { margin: 0; color: var(--muted); }
-
-      /* ── Core Values ────────────────────────────────────────── */
-      .awards { background: var(--gray); }
-      .awards-head { margin-bottom: 1rem; }
-      .awards-track {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(210px, 1fr);
-        gap: 0.8rem;
-        overflow-x: auto;
-        scrollbar-width: thin;
-        padding-bottom: 0.3rem;
-      }
-      .award-tile {
-        background: #11161f;
-        border-radius: 10px;
-        padding: 1rem;
-        border: 1px solid var(--border);
-        min-height: 132px;
-      }
-
-      /* ── Für wen ────────────────────────────────────────────── */
-      .whom-grid {
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .whom-card {
-        background: var(--gray);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 1.5rem 1.25rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .whom-badge {
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: rgba(214, 177, 95, 0.08);
-        border: 1px solid rgba(214, 177, 95, 0.2);
-        border-radius: 4px;
-        padding: 0.2rem 0.6rem;
-        align-self: flex-start;
-      }
-      .whom-card h3 { font-size: 0.95rem; margin: 0; }
-      .whom-card p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin: 0; }
-
       /* ── Process ────────────────────────────────────────────── */
       .process-grid {
-        margin-top: 2rem;
+        margin-top: 3rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
@@ -413,7 +374,7 @@
         background: var(--gray);
         border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 1.5rem 1.25rem;
+        padding: 1.75rem 1.5rem;
       }
       .step-num {
         font-size: 2.8rem;
@@ -468,15 +429,11 @@
       /* ── Contact ────────────────────────────────────────────── */
       .contact-grid { margin-top: 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
       .panel { background: var(--gray); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
-
       .contact-info-list { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-direction: column; gap: 1rem; }
       .contact-info-item { display: flex; align-items: center; gap: 0.85rem; }
       .contact-info-item.align-top { align-items: flex-start; }
       .contact-info-item.align-top .ci-icon { margin-top: 0.15rem; }
-      .ci-icon {
-        width: 40px; height: 40px; border-radius: 10px;
-        display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      }
+      .ci-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
       .ci-icon.email { background: rgba(214, 177, 95, 0.12); color: var(--accent); }
       .ci-icon.phone { background: rgba(100, 160, 255, 0.1); color: #7aacff; }
       .ci-icon.addr { background: rgba(214, 177, 95, 0.08); color: var(--muted); }
@@ -485,229 +442,109 @@
       .ci-text small { display: block; font-size: 0.72rem; color: var(--muted); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
       .ci-text a { color: var(--ink); }
       .ci-text a:hover { color: var(--accent); }
-
       form { display: grid; gap: 0.7rem; }
-      input, textarea {
-        width: 100%; border-radius: 8px; border: 1px solid var(--border);
-        background: #0f141d; color: var(--ink); padding: 0.72rem 0.75rem; font: inherit;
-      }
+      input, textarea { width: 100%; border-radius: 8px; border: 1px solid var(--border); background: #0f141d; color: var(--ink); padding: 0.72rem 0.75rem; font: inherit; }
       textarea { min-height: 130px; resize: vertical; }
       #form-status { color: var(--muted); margin: 0; font-size: 0.88rem; }
 
       /* ── Footer ─────────────────────────────────────────────── */
       footer { background: var(--gray); border-top: 1px solid var(--border); }
-      .footer-grid {
-        padding: 54px 0 36px;
-        display: grid;
-        grid-template-columns: 1.2fr 1fr 1fr;
-        gap: 1rem;
-      }
+      .footer-grid { padding: 54px 0 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
       .footer-title { margin: 0 0 0.65rem; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; }
       .footer-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-      .footer-links a { color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+      .footer-links a { color: var(--accent); font-size: 0.88rem; }
       .footer-links a:hover { opacity: 0.75; }
-
-      .footer-bottom {
-        border-top: 1px solid var(--border);
-        padding: 0.8rem 0;
-        display: flex; align-items: center; justify-content: center; gap: 1.5rem;
-      }
+      .footer-bottom { border-top: 1px solid var(--border); padding: 0.8rem 0; display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
       .footer-bottom span { color: var(--muted); font-size: 0.74rem; }
       .footer-bottom a { color: var(--muted); font-size: 0.74rem; opacity: 0.55; transition: opacity 0.2s; }
       .footer-bottom a:hover { opacity: 1; }
 
-      .muted { color: var(--muted); }
-
       /* ── WhatsApp Float ─────────────────────────────────────── */
-      .whatsapp-float {
-        position: fixed; right: 1rem; bottom: 1rem;
-        width: 52px; height: 52px; border-radius: 50%;
-        background: linear-gradient(135deg, #25d366 0%, #159e4d 100%);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-        z-index: 30; pointer-events: none;
-        display: flex; align-items: center; justify-content: center;
-      }
+      .whatsapp-float { position: fixed; right: 1rem; bottom: 1rem; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #25d366 0%, #159e4d 100%); box-shadow: 0 10px 24px rgba(0,0,0,0.35); z-index: 30; pointer-events: none; display: flex; align-items: center; justify-content: center; }
       .whatsapp-float svg { width: 26px; height: 26px; fill: #fff; display: block; }
 
       /* ── Thank Modal ────────────────────────────────────────── */
-      #thank-modal {
-        position: fixed; inset: 0; z-index: 100;
-        display: none; align-items: center; justify-content: center;
-      }
-      .modal-overlay {
-        position: absolute; inset: 0;
-        background: rgba(0, 0, 0, 0.65);
-        backdrop-filter: blur(4px);
-        cursor: pointer;
-      }
-      .modal-box {
-        position: relative; z-index: 1;
-        background: #181d26;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 2.5rem 2rem;
-        max-width: 400px;
-        width: 90%;
-        text-align: center;
-      }
-      .modal-check {
-        width: 58px; height: 58px;
-        background: rgba(37, 211, 102, 0.12);
-        color: #25d366;
-        border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        margin: 0 auto 1.2rem;
-      }
+      #thank-modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; }
+      .modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); cursor: pointer; }
+      .modal-box { position: relative; z-index: 1; background: #181d26; border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem; max-width: 400px; width: 90%; text-align: center; }
+      .modal-check { width: 58px; height: 58px; background: rgba(37,211,102,0.12); color: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
       .modal-check svg { width: 28px; height: 28px; }
       .modal-box h3 { margin: 0 0 0.6rem; font-size: 1.3rem; color: var(--ink); }
       .modal-box p { color: var(--muted); font-size: 0.93rem; line-height: 1.6; margin: 0 0 1.5rem; }
 
       /* ── Burger ─────────────────────────────────────────────── */
-      .burger {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        cursor: pointer;
-        padding: 0 10px;
-        flex-shrink: 0;
-      }
-      .burger span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: var(--ink);
-        border-radius: 2px;
-        transition: transform 0.25s ease, opacity 0.2s ease;
-        transform-origin: center;
-      }
+      .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; padding: 0 10px; flex-shrink: 0; }
+      .burger span { display: block; width: 100%; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
       .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
       .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
       .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-      /* ── Mobile Nav Drawer ──────────────────────────────────── */
-      .mobile-nav {
-        position: fixed;
-        top: 70px; left: 0; right: 0;
-        z-index: 18;
-        background: rgba(6, 8, 12, 0.97);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--border);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-6px);
-        transition: opacity 0.22s ease, visibility 0.22s, transform 0.22s ease;
-        pointer-events: none;
-      }
-      .mobile-nav.open {
-        opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
-      }
+      /* ── Mobile Nav ─────────────────────────────────────────── */
+      .mobile-nav { position: fixed; top: 70px; left: 0; right: 0; z-index: 18; background: rgba(6,8,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.22s ease, visibility 0.22s, transform 0.22s ease; pointer-events: none; }
+      .mobile-nav.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
       .mobile-nav-inner { display: flex; flex-direction: column; }
-      .mobile-nav a {
-        display: flex;
-        align-items: center;
-        padding: 1rem 1.25rem;
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink);
-        border-bottom: 1px solid rgba(49, 56, 70, 0.5);
-        transition: color 0.15s, background 0.15s;
-      }
+      .mobile-nav a { display: flex; align-items: center; padding: 1rem 1.25rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid rgba(49,56,70,0.5); transition: color 0.15s, background 0.15s; }
       .mobile-nav a:last-child { border-bottom: none; }
-      .mobile-nav a:hover, .mobile-nav a:focus { color: var(--accent); background: rgba(214, 177, 95, 0.05); }
+      .mobile-nav a:hover { color: var(--accent); background: rgba(214,177,95,0.05); }
 
-      /* ── Tablet (≤ 900 px) ──────────────────────────────────── */
+      /* ── Tablet (≤ 900px) ───────────────────────────────────── */
       @media (max-width: 900px) {
         .nav-row { grid-template-columns: 1fr auto; min-height: 64px; gap: 0; }
         .nav-links { display: none; }
-        .right-controls { justify-self: end; }
         .burger { display: flex; }
         main { padding-top: 64px; }
         .mobile-nav { top: 64px; }
-
-        section { padding: 52px 0; }
-        .usp-strip { padding: 52px 0; }
-
+        section { padding: 72px 0; }
         .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .f1-gallery { grid-template-columns: repeat(2, 1fr); }
-        .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .process-grid { grid-template-columns: 1fr; }
-        .whom-grid { grid-template-columns: repeat(2, 1fr); }
-
+        .whom-item { grid-template-columns: 11rem 1fr; gap: 2rem; }
         .cta-grid { grid-template-columns: 1fr; }
-        .cta-photo img { height: 360px; width: min(100%, 340px); }
-        .cta-signature { margin: 0.6rem auto 0; }
-
+        .cta-photo img { height: 360px; }
         .logo-tile { max-width: none; min-width: 0; }
-        .logo-grid { gap: 0.75rem; }
+        .diff-footer { grid-template-columns: 1fr; }
+        .diff-stats { justify-content: flex-start; margin-top: 1rem; }
+        .diff-stat { padding: 0 1.5rem 0 0; }
+        .diff-stat:first-child { padding-left: 0; }
       }
 
-      /* ── Mobile (≤ 600 px) ──────────────────────────────────── */
+      /* ── Mobile (≤ 600px) ───────────────────────────────────── */
       @media (max-width: 600px) {
         .nav-row { min-height: 60px; }
         main { padding-top: 60px; }
         .mobile-nav { top: 60px; }
-
-        section { padding: 40px 0; }
-        .usp-strip { padding: 40px 0; }
+        section { padding: 56px 0; }
         .logo img { width: 144px; }
-
-        h1 { font-size: clamp(2rem, 8vw, 3rem); letter-spacing: 0.01em; }
+        h1 { font-size: clamp(2rem, 8vw, 3rem); }
         h2 { font-size: 1.1rem; }
-
         .hero-content { min-height: min(65vh, 500px); padding: 1.5rem 0; }
-        .hero p { font-size: 0.95rem; max-width: 100%; }
-        .hero .eyebrow { letter-spacing: 0.06em; }
-
-        .usp-stats { flex-direction: column; gap: 1.5rem; }
-        .usp-divider { width: 44px; height: 1px; }
-        .usp-stat { padding: 0; }
-        .usp-quote { font-size: 1.2rem; }
-
+        .hero p { font-size: 0.95rem; }
         .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .services-grid-2 { grid-template-columns: 1fr; }
-        .stories-grid { grid-template-columns: 1fr; }
         .f1-gallery { grid-template-columns: 1fr; }
+        .f1-gallery img { height: 190px; }
         .contact-grid { grid-template-columns: 1fr; }
         .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
-        .whom-grid { grid-template-columns: 1fr; }
+        .whom-item { grid-template-columns: 1fr; gap: 0.35rem; }
         .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
-
         .cta-photo img { height: 260px; }
         .cta-signature { font-size: 1.9rem; }
         .cta-row { flex-direction: column; }
         .cta-row .btn { width: 100%; justify-content: center; }
         .cta .eyebrow { font-size: clamp(1.3rem, 6vw, 1.9rem); }
-
         .cta-btn-desktop { display: none; }
         .cta-btn-mobile { display: inline-flex; width: 100%; justify-content: center; }
-
-        .story-card img { height: 200px; }
-        .f1-gallery img { height: 190px; }
-        .award-tile { min-height: auto; }
-
         .panel { padding: 1rem; }
-        textarea { min-height: 110px; }
-
         .service-card h3 { overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
         .logo-tile { overflow: hidden; }
         .logo-tile img { max-height: 34px; }
-
-        .awards-track {
-          grid-auto-flow: row;
-          grid-auto-columns: auto;
-          grid-template-columns: 1fr;
-          overflow-x: hidden;
-          scrollbar-width: none;
-          padding-bottom: 0;
-        }
+        .diff-steps { flex-wrap: wrap; gap: 1.5rem 0; }
+        .diff-steps::before { display: none; }
+        .diff-step { flex: 0 0 33.333%; }
+        .diff-footer { grid-template-columns: 1fr; }
+        .diff-stats { flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+        .diff-stat { padding: 0; }
+        .diff-divider { display: none; }
       }
     </style>
   </head>
@@ -718,8 +555,8 @@
           <img src="./images/venezia-logo.svg" alt="Venezia Sales Solution" />
         </a>
         <nav class="nav-links">
-          <a href="#sports" data-i18n="nav_sports">Sports Business</a>
-          <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastructure</a>
+          <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
+          <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
           <a href="#references" data-i18n="nav_references">Referenzen</a>
           <a href="#contact" data-i18n="nav_contact">Kontakt</a>
         </nav>
@@ -738,8 +575,8 @@
 
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <div class="mobile-nav-inner">
-        <a href="#sports" data-i18n="nav_sports">Sports Business</a>
-        <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastructure</a>
+        <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
+        <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
         <a href="#references" data-i18n="nav_references">Referenzen</a>
         <a href="#contact" data-i18n="nav_contact">Kontakt</a>
       </div>
@@ -747,83 +584,114 @@
 
     <main id="top">
 
-      <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+      <!-- ═══ HERO ════════════════════════════════════════════════ -->
       <section class="hero">
         <div class="container">
           <div class="hero-content">
             <p class="eyebrow" data-i18n="hero_eyebrow">Internationale Vertriebsagentur · Sport · Infrastruktur · Business Development</p>
             <h1 data-i18n="hero_title">We Sell Growth.</h1>
-            <p data-i18n="hero_text">
-              Venezia entwickelt Vertriebsstrukturen, Sponsoring-Partnerschaften und Hospitality-Konzepte, die messbare Umsätze erzeugen. International. Professionell. Nachweisbar.
-            </p>
+            <p data-i18n="hero_text">Venezia ist nicht die Agentur, die Kontakte vermittelt. Wir entwickeln Vertriebsstrukturen, die aus Kontakten Kunden machen — und aus Kunden Umsatz. International. Messbar. Nachweisbar.</p>
             <div class="cta-row">
               <a class="btn btn-dark" href="#contact" data-i18n="hero_cta">Jetzt Erstgespräch sichern</a>
-              <a class="btn btn-light" href="#contact" data-i18n="hero_whatsapp">Direkt per WhatsApp</a>
+              <a class="btn btn-light" href="#sports" data-i18n="hero_services">Unsere Leistungen</a>
             </div>
             <p class="cta-note" data-i18n="cta_note">Kostenlos · Unverbindlich</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ USP STRIP ══════════════════════════════════════════ -->
-      <section class="usp-strip">
+      <!-- ═══ WARUM VENEZIA? ══════════════════════════════════════ -->
+      <section class="differentiator">
         <div class="container">
-          <p class="usp-quote">
-            <span data-i18n="usp_quote_main">Die meisten im Sport können netzwerken.</span> <br>
-            <strong class="gold" data-i18n="usp_quote_strong"> Wir können verkaufen.</strong>
-          </p>
-          <p class="usp-sub" data-i18n="usp_sub">Wir identifizieren Entscheider, initiieren Gespräche und begleiten Vertragsabschlüsse – von der ersten Kontaktaufnahme bis zur Unterzeichnung.</p>
-          <div class="usp-stats">
-            <div class="usp-stat">
-              <span class="usp-stat-num" data-i18n="usp_stat_1_num">20+</span>
-              <span class="usp-stat-label" data-i18n="usp_stat_1_label">Jahre Vertriebserfahrung</span>
+          <div class="diff-intro">
+            <p class="eyebrow" data-i18n="diff_eyebrow">Warum Venezia?</p>
+            <h2 data-i18n="diff_title">Wir sind Vertriebsprofis. Keine Berater.</h2>
+            <p class="diff-sub" data-i18n="diff_sub">Andere Agenturen vermitteln Kontakte und nennen das Business Development. Wir entwickeln Vertriebsprozesse, führen Verhandlungen und begleiten Vertragsabschlüsse — bis das Geld fließt.</p>
+          </div>
+
+          <div class="diff-steps">
+            <div class="diff-step">
+              <span class="diff-step-node"></span>
+              <span class="diff-step-text" data-i18n="diff_step_1">Entscheider identifizieren</span>
             </div>
-            <div class="usp-divider"></div>
-            <div class="usp-stat">
-              <span class="usp-stat-num" data-i18n="usp_stat_2_num">DACH · IT</span>
-              <span class="usp-stat-label" data-i18n="usp_stat_2_label">Märkte</span>
+            <div class="diff-step">
+              <span class="diff-step-node"></span>
+              <span class="diff-step-text" data-i18n="diff_step_2">Gespräche initiieren</span>
             </div>
-            <div class="usp-divider"></div>
-            <div class="usp-stat">
-              <span class="usp-stat-num" data-i18n="usp_stat_3_num">B2B</span>
-              <span class="usp-stat-label" data-i18n="usp_stat_3_label">Auf Entscheiderebene</span>
+            <div class="diff-step">
+              <span class="diff-step-node"></span>
+              <span class="diff-step-text" data-i18n="diff_step_3">Verhandlungen führen</span>
+            </div>
+            <div class="diff-step">
+              <span class="diff-step-node"></span>
+              <span class="diff-step-text" data-i18n="diff_step_4">Abschlüsse begleiten</span>
+            </div>
+            <div class="diff-step">
+              <span class="diff-step-node"></span>
+              <span class="diff-step-text" data-i18n="diff_step_5">Kontakte in Umsatz verwandeln</span>
+            </div>
+          </div>
+
+          <div class="diff-footer">
+            <p class="diff-claim" data-i18n="diff_claim">Über 20 Jahre internationale Vertriebserfahrung fließen in Vertriebsstrukturen, Sponsoring-Partnerschaften und Markteintritte mit messbaren Geschäftsergebnissen ein.</p>
+            <div class="diff-stats">
+              <div class="diff-stat">
+                <span class="diff-stat-num" data-i18n="stat_1_num">20+</span>
+                <span class="diff-stat-label" data-i18n="stat_1_label">Jahre Erfahrung</span>
+              </div>
+              <div class="diff-divider"></div>
+              <div class="diff-stat">
+                <span class="diff-stat-num" data-i18n="stat_2_num">DACH · IT</span>
+                <span class="diff-stat-label" data-i18n="stat_2_label">Märkte</span>
+              </div>
+              <div class="diff-divider"></div>
+              <div class="diff-stat">
+                <span class="diff-stat-num" data-i18n="stat_3_num">B2B</span>
+                <span class="diff-stat-label" data-i18n="stat_3_label">Entscheiderebene</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ═══ FÜR WEN ════════════════════════════════════════════ -->
+      <!-- ═══ FÜR WEN ═════════════════════════════════════════════ -->
       <section id="for-whom">
         <div class="container">
           <p class="eyebrow" data-i18n="whom_eyebrow">Für wen wir arbeiten</p>
-          <h2 data-i18n="whom_title">Unser gemeinsamer Nenner: Komplexer Vertrieb auf höchstem Niveau.</h2>
-          <p class="muted" data-i18n="whom_text">Ob Sport-Sponsoring, Glasfaser oder Luxusimmobilien – in jedem dieser Märkte entscheidet Vertriebsstärke. Wir bringen 20 Jahre echte Vertriebserfahrung mit.</p>
-          <div class="whom-grid">
-            <article class="whom-card">
-              <span class="whom-badge" data-i18n="whom_1_badge">Sports Business</span>
-              <h3 data-i18n="whom_1_title">Clubs, Verbände &amp; Veranstalter</h3>
-              <p data-i18n="whom_1_text">Ihr sucht Sponsoren, VIP-Partner oder neue Umsatzquellen? Wir bauen die Vertriebsstruktur, identifizieren Entscheider und begleiten jeden Deal bis zum Abschluss.</p>
-            </article>
-            <article class="whom-card">
-              <span class="whom-badge" data-i18n="whom_2_badge">Infrastructure</span>
-              <h3 data-i18n="whom_2_title">Netzbetreiber &amp; Projektentwickler</h3>
-              <p data-i18n="whom_2_text">Ihr braucht messbaren D2D-Vertrieb, strukturierte Vorvermarktung oder diskrete Immobilienvermittlung? Wir liefern Quoten, keine Versprechen.</p>
-            </article>
-            <article class="whom-card">
-              <span class="whom-badge" data-i18n="whom_3_badge">Business Development</span>
-              <h3 data-i18n="whom_3_title">Unternehmen &amp; Investoren</h3>
-              <p data-i18n="whom_3_text">Ihr wollt den deutschen Markt erschließen oder internationale Premium-Netzwerke aktivieren? Wir verbinden Entscheider mit Entscheidern – und begleiten bis zum Vertragsabschluss.</p>
-            </article>
+          <h2 data-i18n="whom_title">Drei Zielgruppen. Ein gemeinsamer Nenner: Echter Vertrieb.</h2>
+          <p class="muted" data-i18n="whom_text">Ob Sportclub, Netzbetreiber oder internationales Unternehmen — überall wo komplexe B2B-Deals entschieden werden, ist Venezia der richtige Partner.</p>
+          <div class="whom-list">
+            <div class="whom-item">
+              <span class="whom-badge" data-i18n="whom_1_badge">Sportbusiness</span>
+              <div class="whom-content">
+                <h3 data-i18n="whom_1_title">Clubs, Verbände &amp; Veranstalter</h3>
+                <p class="whom-desc" data-i18n="whom_1_text">Sponsoren, Hospitality oder neue Umsatzquellen — wir identifizieren die richtigen Entscheider und begleiten jeden Abschluss.</p>
+              </div>
+            </div>
+            <div class="whom-item">
+              <span class="whom-badge" data-i18n="whom_2_badge">Infrastruktur</span>
+              <div class="whom-content">
+                <h3 data-i18n="whom_2_title">Netzbetreiber &amp; Projektentwickler</h3>
+                <p class="whom-desc" data-i18n="whom_2_text">D2D-Vertrieb, Vorvermarktung oder Immobilienvermittlung — wir liefern Quoten, keine Präsentationen.</p>
+              </div>
+            </div>
+            <div class="whom-item">
+              <span class="whom-badge" data-i18n="whom_3_badge">Geschäftsentwicklung</span>
+              <div class="whom-content">
+                <h3 data-i18n="whom_3_title">Unternehmen &amp; Investoren</h3>
+                <p class="whom-desc" data-i18n="whom_3_text">Deutschen Markt erschließen oder Premium-Netzwerke aktivieren? Wir verbinden Entscheider — bis zum Vertragsabschluss.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ═══ DIVISION 01: SPORTS BUSINESS ══════════════════════ -->
+      <!-- ═══ DIVISION 01: SPORTBUSINESS ══════════════════════════ -->
       <section id="sports" class="section-alt">
         <div class="container">
-          <div class="division-badge" data-i18n="sports_badge">Division 01 — Venezia Sports Business</div>
-          <h2 data-i18n="sports_title">Internationale Sportpartnerschaften, die Umsatz generieren.</h2>
-          <p class="muted" data-i18n="sports_text">Während viele Sportbusiness-Berater Netzwerke vermitteln, entwickeln wir Vertriebsprozesse, die aus Kontakten Kunden machen. Fokus: Deutsche Mittelständler als Sponsoren für internationale Clubs – insbesondere im Raum Bayern und Baden-Württemberg.</p>
+          <div class="division-badge" data-i18n="sports_badge">Division 01 — Venezia Sportbusiness</div>
+          <h2 data-i18n="sports_title">Sponsoring und Sportpartnerschaften, die Umsatz erzeugen.</h2>
+          <p class="muted" data-i18n="sports_text">Wir identifizieren die richtigen Unternehmen, führen Verhandlungen auf Entscheiderebene und begleiten Vertragsabschlüsse. Schwerpunkt: Deutsche Mittelständler als Sponsoren und Partner für internationale Clubs — insbesondere Juventus FC und VfB Stuttgart im Raum Bayern und Baden-Württemberg.</p>
 
           <div class="services-grid">
             <article class="service-card">
@@ -832,8 +700,8 @@
                   <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_1_title">Sponsoring &amp; Partnership Development</h3>
-              <p data-i18n="service_1_text">Wir identifizieren passende Unternehmen, initiieren Gespräche auf Entscheiderebene und begleiten Vertragsabschlüsse. Keine Kontaktvermittler – echte Vertriebsprofis.</p>
+              <h3 data-i18n="service_1_title">Sponsoring &amp; Partnerschaftsentwicklung</h3>
+              <p data-i18n="service_1_text">Gezielte Identifikation passender Unternehmen. Erstansprache, Verhandlung und Vertragsbegleitung auf Entscheiderebene.</p>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -841,8 +709,8 @@
                   <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_2_title">Hospitality &amp; VIP Sales</h3>
-              <p data-i18n="service_2_text">Exklusive VIP-Programme als Vertriebsinstrument – von der Konzeption bis zur Vermarktung an Entscheider.</p>
+              <h3 data-i18n="service_2_title">Hospitality &amp; VIP-Vertrieb</h3>
+              <p data-i18n="service_2_text">Exklusive VIP-Programme strukturiert vermarkten — von der Konzeption bis zur Vertragsunterzeichnung mit Unternehmenskunden.</p>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -850,8 +718,8 @@
                   <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_3_title">International Business Networks</h3>
-              <p data-i18n="service_3_text">Direkte B2B-Verbindungen zwischen europäischen Clubs, deutschen Marken und internationalen Investoren.</p>
+              <h3 data-i18n="service_3_title">Internationale Geschäftsnetzwerke</h3>
+              <p data-i18n="service_3_text">Direkte B2B-Verbindungen zwischen europäischen Clubs, deutschen Marken und internationalen Investoren — mit klarem Vertriebsziel.</p>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -859,19 +727,21 @@
                   <path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_4_title">Market Development Germany</h3>
-              <p data-i18n="service_4_text">Markteintritt für internationale Clubs im deutschen Markt. Fokus: Süddeutschland – Bayern, Baden-Württemberg.</p>
+              <h3 data-i18n="service_4_title">Marktentwicklung Deutschland</h3>
+              <p data-i18n="service_4_text">Strukturierter Markteintritt für internationale Clubs im deutschsprachigen Raum. Schwerpunkt: Bayern und Baden-Württemberg.</p>
             </article>
           </div>
+
+
         </div>
       </section>
 
-      <!-- ═══ DIVISION 02: INFRASTRUCTURE ═══════════════════════ -->
+      <!-- ═══ DIVISION 02: INFRASTRUKTUR ══════════════════════════ -->
       <section id="infrastructure">
         <div class="container">
-          <div class="division-badge" data-i18n="infra_badge">Division 02 — Venezia Infrastructure Sales</div>
-          <h2 data-i18n="infra_title">Messbare Ergebnisse in Glasfaser und Premium-Immobilien.</h2>
-          <p class="muted" data-i18n="infra_text">Bewährte D2D-Prozesse mit nachweisbaren Quoten. Diskrete Vermittlung exklusiver Objekte. Kein Versprechen – Ergebnisse.</p>
+          <div class="division-badge" data-i18n="infra_badge">Division 02 — Venezia Infrastruktur-Vertrieb</div>
+          <h2 data-i18n="infra_title">D2D-Vertrieb und Immobilienvermittlung mit nachweisbaren Ergebnissen.</h2>
+          <p class="muted" data-i18n="infra_text">Strukturierte Vorvermarktung für Glasfaserprojekte. Diskrete Vermittlung exklusiver Immobilien. Wir liefern messbare Quoten — keine Hochglanzfolien.</p>
 
           <div class="services-grid-2">
             <article class="service-card">
@@ -880,8 +750,8 @@
                   <path d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_5_title">Glasfaser Vertrieb</h3>
-              <p data-i18n="service_5_text">Vorvermarktung. Quotenaufbau. Strukturierte D2D-Prozesse. Wir liefern messbare Ergebnisse, keine Hochglanzfolien.</p>
+              <h3 data-i18n="service_5_title">Glasfaser-Vertrieb</h3>
+              <p data-i18n="service_5_text">Vorvermarktung. Quotenaufbau. Strukturierte D2D-Prozesse. Messbare Ergebnisse — von der ersten Haustür bis zur abgeschlossenen Quote.</p>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -889,18 +759,18 @@
                   <path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
                 </svg>
               </div>
-              <h3 data-i18n="service_6_title">Luxusimmobilien &amp; Premium Vermittlung</h3>
-              <p data-i18n="service_6_text">Diskrete Vermittlung exklusiver Objekte. Off-Market. International.</p>
+              <h3 data-i18n="service_6_title">Luxusimmobilien &amp; Premium-Vermittlung</h3>
+              <p data-i18n="service_6_text">Diskrete Off-Market-Vermittlung exklusiver Objekte für internationale Käufer und Verkäufer.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ═══ REFERENZEN ═════════════════════════════════════════ -->
+      <!-- ═══ REFERENZEN ═══════════════════════════════════════════ -->
       <section id="references" class="section-alt">
         <div class="container">
           <p class="eyebrow" data-i18n="refs_eyebrow">Referenzen &amp; Erfahrung</p>
-          <h2 data-i18n="refs_title">Experience within international sports &amp; premium business environments.</h2>
+          <h2 data-i18n="refs_title">Erfahrung in internationalen Sport- und Premium-Business-Umgebungen.</h2>
 
           <div class="logo-grid">
             <div class="logo-tile">
@@ -915,7 +785,7 @@
           </div>
 
           <div style="margin-top: 2rem;">
-            <p class="eyebrow" data-i18n="sport_envs_eyebrow">Sport &amp; Premium Environments</p>
+            <p class="eyebrow" data-i18n="sport_envs_eyebrow">Sport &amp; Premium-Bereiche</p>
             <div class="sport-refs">
               <span class="sport-ref-tag" data-i18n="sport_ref_1">Audi Motorsport · DTM</span>
               <span class="sport-ref-tag" data-i18n="sport_ref_2">Le Mans 24h</span>
@@ -932,91 +802,38 @@
         </div>
       </section>
 
-      <!-- ═══ KOMPETENZ ══════════════════════════════════════════ -->
-      <section id="competency">
-        <div class="container">
-          <p class="eyebrow" data-i18n="competency_eyebrow">Unsere Kompetenz</p>
-          <h2 data-i18n="competency_title">Zwei Divisionen. Eine Stärke: Echter Vertrieb.</h2>
-          <div class="stories-grid">
-            <article class="story-card">
-              <img src="./images/trikots.jpeg" alt="Sport Business" />
-              <h3 data-i18n="story_1_title">Sport Business &amp; Sponsoring</h3>
-              <p data-i18n="story_1_text">Sponsoring-Partnerschaften zwischen deutschen Mittelständlern und internationalen Clubs – entwickelt, verhandelt, abgeschlossen.</p>
-            </article>
-            <article class="story-card">
-              <img src="./images/glasfaser.jpeg" alt="Infrastructure Sales" />
-              <h3 data-i18n="story_2_title">Infrastructure Sales</h3>
-              <p data-i18n="story_2_text">D2D-Vertrieb mit strukturierten Prozessen: messbare Quoten, planbare Ergebnisse.</p>
-            </article>
-            <article class="story-card">
-              <img src="./images/villa.jpeg" alt="Luxury Real Estate" />
-              <h3 data-i18n="story_3_title">Luxury Real Estate</h3>
-              <p data-i18n="story_3_text">Diskrete Off-Market-Vermittlung exklusiver Objekte für internationale Käufer und Verkäufer.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══ PROZESS ════════════════════════════════════════════ -->
-      <section id="process" class="section-alt">
+      <!-- ═══ PROZESS ══════════════════════════════════════════════ -->
+      <section id="process">
         <div class="container">
           <p class="eyebrow" data-i18n="process_eyebrow">So arbeiten wir zusammen</p>
-          <h2 data-i18n="process_title">Drei Schritte zum messbaren Ergebnis.</h2>
+          <h2 data-i18n="process_title">Drei Schritte. Messbare Ergebnisse.</h2>
           <div class="process-grid">
             <article class="process-step">
               <div class="step-num">01</div>
               <h3 data-i18n="process_1_title">Potenzialanalyse</h3>
-              <p data-i18n="process_1_text">In einem 30-minütigen Erstgespräch klären wir: Wo liegen eure Chancen? Welche Vertriebshebel gibt es?</p>
+              <p data-i18n="process_1_text">30 Minuten Erstgespräch: Wir klären, welche Vertriebshebel für euch existieren — konkret, ohne Umwege.</p>
             </article>
             <article class="process-step">
               <div class="step-num gold-2">02</div>
-              <h3 data-i18n="process_2_title">Maßgeschneiderte Strategie</h3>
-              <p data-i18n="process_2_text">Auf Basis der Analyse entwickeln wir eine konkrete Vertriebsstrategie – mit klaren Zielen, Zeitplan und messbaren Meilensteinen.</p>
+              <h3 data-i18n="process_2_title">Vertriebsstrategie</h3>
+              <p data-i18n="process_2_text">Wir entwickeln eine klare Vertriebsstrategie mit konkreten Zielen, Zeitplan und definierten Meilensteinen — nicht mehr und nicht weniger.</p>
             </article>
             <article class="process-step">
               <div class="step-num gold-3">03</div>
-              <h3 data-i18n="process_3_title">Aktive Umsetzung</h3>
-              <p data-i18n="process_3_text">Wir setzen die Strategie aktiv um, messen Ergebnisse und optimieren kontinuierlich. Kein Beraterdeutsch – echte Umsätze.</p>
+              <h3 data-i18n="process_3_title">Umsetzung &amp; Abschluss</h3>
+              <p data-i18n="process_3_text">Wir setzen aktiv um, führen Verhandlungen und messen kontinuierlich. Kein Beraterdeutsch — echte Umsätze.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ═══ CORE VALUES ════════════════════════════════════════ -->
-      <section class="awards">
-        <div class="container">
-          <div class="awards-head">
-            <p class="eyebrow" data-i18n="awards_eyebrow">Core Values</p>
-            <h2 data-i18n="awards_title">Vertrauen. Internationalität. Wachstum. Exklusivität.</h2>
-          </div>
-          <div class="awards-track" id="awards-track">
-            <article class="award-tile">
-              <h3 data-i18n="value_1_title">Vertrauen</h3>
-              <p class="muted" data-i18n="value_1_text">Diskretion, Zuverlässigkeit und langfristige Beziehungen.</p>
-            </article>
-            <article class="award-tile">
-              <h3 data-i18n="value_2_title">Internationalität</h3>
-              <p class="muted" data-i18n="value_2_text">Deutschland, Italien, Schweiz, Österreich und internationale Netzwerke.</p>
-            </article>
-            <article class="award-tile">
-              <h3 data-i18n="value_3_title">Wachstum</h3>
-              <p class="muted" data-i18n="value_3_text">Messbare Ergebnisse für Umsatz, Quoten und Partnerschaften.</p>
-            </article>
-            <article class="award-tile">
-              <h3 data-i18n="value_4_title">Exklusivität</h3>
-              <p class="muted" data-i18n="value_4_text">Premium-Zugänge in Sport, Hospitality und Immobilien.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══ CTA ════════════════════════════════════════════════ -->
+      <!-- ═══ CTA ══════════════════════════════════════════════════ -->
       <section class="cta">
         <div class="container cta-grid">
           <div>
             <p class="eyebrow" data-i18n="cta_eyebrow">Bereit für messbares Wachstum?</p>
-            <h2 data-i18n="cta_title">Wir entwickeln Vertriebsstrukturen, die messbare Umsätze erzeugen.</h2>
-            <p class="cta-subline" data-i18n="cta_subline">Über 20 Jahre internationale Vertriebserfahrung – kombiniert mit direktem Zugang zu Premium Sport Business.</p>
+            <h2 data-i18n="cta_title">Sprechen Sie mit uns — bevor Ihre Mitbewerber es tun.</h2>
+            <p class="cta-subline" data-i18n="cta_subline">Über 20 Jahre Vertriebserfahrung. Direkter Zugang zu Premium Sport Business und internationalen Märkten.</p>
             <a class="btn btn-dark cta-btn-desktop" href="#contact" data-i18n="cta_btn">Jetzt Anfragen</a>
           </div>
           <div class="cta-photo">
@@ -1027,7 +844,7 @@
         </div>
       </section>
 
-      <!-- ═══ KONTAKT ════════════════════════════════════════════ -->
+      <!-- ═══ KONTAKT ══════════════════════════════════════════════ -->
       <section id="contact">
         <div class="container">
           <p class="eyebrow" data-i18n="contact_eyebrow">Kontakt</p>
@@ -1035,7 +852,7 @@
           <div class="contact-grid">
             <article class="panel">
               <h3 data-i18n="contact_left_title">Direktkontakt</h3>
-              <p class="muted" data-i18n="contact_left_text">Wir melden uns schnell mit einem strukturierten Vorschlag.</p>
+              <p class="muted" data-i18n="contact_left_text">Wir melden uns schnell mit einem konkreten Vorschlag.</p>
               <ul class="contact-info-list">
                 <li class="contact-info-item">
                   <div class="ci-icon email">
@@ -1095,17 +912,15 @@
     <footer>
       <div class="container footer-grid">
         <div>
-          <img src="./images/venezia-logo.svg" alt="Venezia" style="width: 170px" />
-          <p class="muted" style="margin: 0.75rem 0 0.15rem; font-size: 0.84rem; font-weight: 600;">Venezia Sales Solution</p>
-          <p class="muted" style="margin: 0; font-size: 0.82rem; line-height: 1.6;">
-            Marktstrasse 4<br />75365 Calw
-          </p>
+          <img src="./images/venezia-logo.svg" alt="Venezia" style="width:170px" />
+          <p class="muted" style="margin:0.75rem 0 0.15rem;font-size:0.84rem;font-weight:600;">Venezia Sales Solution</p>
+          <p class="muted" style="margin:0;font-size:0.82rem;line-height:1.6;">Marktstrasse 4<br />75365 Calw</p>
         </div>
         <div class="footer-links">
           <p class="footer-title" data-i18n="footer_nav">Navigation</p>
           <ul>
-            <li><a href="#sports" data-i18n="nav_sports">Sports Business</a></li>
-            <li><a href="#infrastructure" data-i18n="nav_infrastructure">Infrastructure</a></li>
+            <li><a href="#sports" data-i18n="nav_sports">Sportbusiness</a></li>
+            <li><a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a></li>
             <li><a href="#references" data-i18n="nav_references">Referenzen</a></li>
             <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
           </ul>
@@ -1129,9 +944,7 @@
       <div class="modal-overlay" onclick="closeThankModal()"></div>
       <div class="modal-box">
         <div class="modal-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 13l4 4L19 7"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
         </div>
         <h3 id="thank-title" data-i18n="modal_title">Vielen Dank!</h3>
         <p data-i18n="modal_text">Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.</p>
@@ -1140,9 +953,7 @@
     </div>
 
     <div class="whatsapp-float" aria-hidden="true">
-      <svg viewBox="0 0 448 512" aria-hidden="true">
-        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-      </svg>
+      <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </div>
 
     <script>
@@ -1154,51 +965,56 @@
           nav_contact: "Kontakt",
           hero_eyebrow: "Internationale Vertriebsagentur · Sport · Infrastruktur · Business Development",
           hero_title: "We Sell Growth.",
-          hero_text: "Venezia entwickelt Vertriebsstrukturen, Sponsoring-Partnerschaften und Hospitality-Konzepte, die messbare Umsätze erzeugen. International. Professionell. Nachweisbar.",
+          hero_text: "Wir entwickeln Vertriebsstrukturen, die aus Kontakten Kunden machen — und aus Kunden Umsatz. International. Messbar.",
           hero_cta: "Jetzt Erstgespräch sichern",
-          hero_whatsapp: "Direkt per WhatsApp",
+          hero_services: "Unsere Leistungen",
           cta_note: "Kostenlos · Unverbindlich",
-          usp_quote_main: "Die meisten im Sport können netzwerken.",
-          usp_quote_strong: " Wir können verkaufen.",
-          usp_sub: "Wir identifizieren Entscheider, initiieren Gespräche und begleiten Vertragsabschlüsse – von der ersten Kontaktaufnahme bis zur Unterzeichnung.",
-          usp_stat_1_num: "20+",
-          usp_stat_1_label: "Jahre Vertriebserfahrung",
-          usp_stat_2_num: "DACH · IT",
-          usp_stat_2_label: "Märkte",
-          usp_stat_3_num: "B2B",
-          usp_stat_3_label: "Auf Entscheiderebene",
+          diff_eyebrow: "Warum Venezia?",
+          diff_title: "Wir sind Vertriebsprofis. Keine Berater.",
+          diff_sub: "Andere Agenturen vermitteln Kontakte. Wir entwickeln Vertriebsprozesse, führen Verhandlungen und begleiten Abschlüsse — bis das Geld fließt.",
+          diff_step_1: "Entscheider identifizieren",
+          diff_step_2: "Gespräche initiieren",
+          diff_step_3: "Verhandlungen führen",
+          diff_step_4: "Abschlüsse begleiten",
+          diff_step_5: "Kontakte in Umsatz verwandeln",
+          diff_claim: "20+ Jahre internationale Vertriebserfahrung in Sponsoring, Marktentwicklung und Premium-B2B.",
+          stat_1_num: "20+",
+          stat_1_label: "Jahre Erfahrung",
+          stat_2_num: "DACH · IT",
+          stat_2_label: "Märkte",
+          stat_3_num: "B2B",
+          stat_3_label: "Entscheiderebene",
           whom_eyebrow: "Für wen wir arbeiten",
-          whom_title: "Unser gemeinsamer Nenner: Komplexer Vertrieb auf höchstem Niveau.",
-          whom_text: "Ob Sport-Sponsoring, Glasfaser oder Luxusimmobilien – in jedem dieser Märkte entscheidet Vertriebsstärke. Wir bringen 20 Jahre echte Vertriebserfahrung mit.",
+          whom_title: "Drei Zielgruppen. Ein gemeinsamer Nenner: Echter Vertrieb.",
+          whom_text: "Sportclub, Netzbetreiber oder Unternehmen — überall wo B2B-Deals zählen, ist Venezia der richtige Partner.",
           whom_1_badge: "Sportbusiness",
           whom_1_title: "Clubs, Verbände & Veranstalter",
-          whom_1_text: "Ihr sucht Sponsoren, VIP-Partner oder neue Umsatzquellen? Wir bauen die Vertriebsstruktur, identifizieren Entscheider und begleiten jeden Deal bis zum Abschluss.",
+          whom_1_text: "Sponsoren, Hospitality oder neue Umsatzquellen — wir identifizieren die richtigen Entscheider und begleiten jeden Abschluss.",
           whom_2_badge: "Infrastruktur",
           whom_2_title: "Netzbetreiber & Projektentwickler",
-          whom_2_text: "Ihr braucht messbaren D2D-Vertrieb, strukturierte Vorvermarktung oder diskrete Immobilienvermittlung? Wir liefern Quoten, keine Versprechen.",
+          whom_2_text: "D2D-Vertrieb, Vorvermarktung oder Immobilienvermittlung — wir liefern Quoten, keine Präsentationen.",
           whom_3_badge: "Geschäftsentwicklung",
           whom_3_title: "Unternehmen & Investoren",
-          whom_3_text: "Ihr wollt den deutschen Markt erschließen oder internationale Premium-Netzwerke aktivieren? Wir verbinden Entscheider mit Entscheidern – und begleiten bis zum Vertragsabschluss.",
+          whom_3_text: "Deutschen Markt erschließen oder Premium-Netzwerke aktivieren? Wir verbinden Entscheider — bis zum Vertragsabschluss.",
           sports_badge: "Division 01 — Venezia Sportbusiness",
-          sports_title: "Internationale Sportpartnerschaften, die Umsatz generieren.",
-          sports_text: "Während viele Sportbusiness-Berater Netzwerke vermitteln, entwickeln wir Vertriebsprozesse, die aus Kontakten Kunden machen. Fokus: Deutsche Mittelständler als Sponsoren für internationale Clubs – insbesondere im Raum Bayern und Baden-Württemberg.",
-          sports_focus_label: "Fokusregion:",
-          sports_focus_text: " Bayern · Baden-Württemberg · Verbindungen zu Juventus FC, VfB Stuttgart und führenden Industrieunternehmen",
+          sports_title: "Sponsoring und Sportpartnerschaften, die Umsatz erzeugen.",
+          sports_text: "Identifikation, Verhandlung, Abschluss. Schwerpunkt: Deutsche Mittelständler als Sponsoren für Juventus FC und VfB Stuttgart.",
+
           service_1_title: "Sponsoring & Partnerschaftsentwicklung",
-          service_1_text: "Wir identifizieren passende Unternehmen, initiieren Gespräche auf Entscheiderebene und begleiten Vertragsabschlüsse. Keine Kontaktvermittler – echte Vertriebsprofis.",
+          service_1_text: "Identifikation, Erstansprache, Verhandlung — auf Entscheiderebene.",
           service_2_title: "Hospitality & VIP-Vertrieb",
-          service_2_text: "Exklusive VIP-Programme als Vertriebsinstrument – von der Konzeption bis zur Vermarktung an Entscheider.",
+          service_2_text: "VIP-Programme strukturiert vermarkten — von der Konzeption bis zum Vertragsabschluss.",
           service_3_title: "Internationale Geschäftsnetzwerke",
-          service_3_text: "Direkte B2B-Verbindungen zwischen europäischen Clubs, deutschen Marken und internationalen Investoren.",
+          service_3_text: "B2B-Verbindungen zwischen Clubs, Marken und Investoren — mit klarem Vertriebsziel.",
           service_4_title: "Marktentwicklung Deutschland",
-          service_4_text: "Markteintritt für internationale Clubs im deutschen Markt. Fokus: Süddeutschland – Bayern, Baden-Württemberg.",
+          service_4_text: "Markteintritt für internationale Clubs. Fokus: Bayern & Baden-Württemberg.",
           infra_badge: "Division 02 — Venezia Infrastruktur-Vertrieb",
-          infra_title: "Messbare Ergebnisse in Glasfaser und Premium-Immobilien.",
-          infra_text: "Bewährte D2D-Prozesse mit nachweisbaren Quoten. Diskrete Vermittlung exklusiver Objekte. Kein Versprechen – Ergebnisse.",
-          service_5_title: "Glasfaser Vertrieb",
-          service_5_text: "Vorvermarktung. Quotenaufbau. Strukturierte D2D-Prozesse. Wir liefern messbare Ergebnisse, keine Hochglanzfolien.",
-          service_6_title: "Luxusimmobilien & Premium Vermittlung",
-          service_6_text: "Diskrete Vermittlung exklusiver Objekte. Off-Market. International.",
+          infra_title: "D2D-Vertrieb und Immobilienvermittlung mit nachweisbaren Ergebnissen.",
+          infra_text: "Strukturierte Vorvermarktung für Glasfaserprojekte. Diskrete Vermittlung exklusiver Immobilien. Wir liefern messbare Quoten — keine Hochglanzfolien.",
+          service_5_title: "Glasfaser-Vertrieb",
+          service_5_text: "Vorvermarktung, Quotenaufbau, strukturierte D2D-Prozesse — messbare Ergebnisse.",
+          service_6_title: "Luxusimmobilien & Premium-Vermittlung",
+          service_6_text: "Diskrete Off-Market-Vermittlung exklusiver Objekte für internationale Käufer und Verkäufer.",
           refs_eyebrow: "Referenzen & Erfahrung",
           refs_title: "Erfahrung in internationalen Sport- und Premium-Business-Umgebungen.",
           sport_envs_eyebrow: "Sport & Premium-Bereiche",
@@ -1206,40 +1022,22 @@
           sport_ref_2: "Le Mans 24h",
           sport_ref_3: "Formel 1",
           sport_ref_4: "UEFA Champions League",
-          competency_eyebrow: "Unsere Kompetenz",
-          competency_title: "Zwei Divisionen. Eine Stärke: Echter Vertrieb.",
-          story_1_title: "Sportbusiness & Sponsoring",
-          story_1_text: "Sponsoring-Partnerschaften zwischen deutschen Mittelständlern und internationalen Clubs – entwickelt, verhandelt, abgeschlossen.",
-          story_2_title: "Infrastruktur-Vertrieb",
-          story_2_text: "D2D-Vertrieb mit strukturierten Prozessen: messbare Quoten, planbare Ergebnisse.",
-          story_3_title: "Luxusimmobilien",
-          story_3_text: "Diskrete Off-Market-Vermittlung exklusiver Objekte für internationale Käufer und Verkäufer.",
           process_eyebrow: "So arbeiten wir zusammen",
-          process_title: "Drei Schritte zum messbaren Ergebnis.",
+          process_title: "Drei Schritte. Messbare Ergebnisse.",
           process_1_title: "Potenzialanalyse",
-          process_1_text: "In einem 30-minütigen Erstgespräch klären wir: Wo liegen eure Chancen? Welche Vertriebshebel gibt es?",
-          process_2_title: "Maßgeschneiderte Strategie",
-          process_2_text: "Auf Basis der Analyse entwickeln wir eine konkrete Vertriebsstrategie – mit klaren Zielen, Zeitplan und messbaren Meilensteinen.",
-          process_3_title: "Aktive Umsetzung",
-          process_3_text: "Wir setzen die Strategie aktiv um, messen Ergebnisse und optimieren kontinuierlich. Kein Beraterdeutsch – echte Umsätze.",
-          awards_eyebrow: "Kernwerte",
-          awards_title: "Vertrauen. Internationalität. Wachstum. Exklusivität.",
-          value_1_title: "Vertrauen",
-          value_1_text: "Diskretion, Zuverlässigkeit und langfristige Beziehungen.",
-          value_2_title: "Internationalität",
-          value_2_text: "Deutschland, Italien, Schweiz, Österreich und internationale Netzwerke.",
-          value_3_title: "Wachstum",
-          value_3_text: "Messbare Ergebnisse für Umsatz, Quoten und Partnerschaften.",
-          value_4_title: "Exklusivität",
-          value_4_text: "Premium-Zugänge in Sport, Hospitality und Immobilien.",
+          process_1_text: "30 Minuten Erstgespräch: Wir klären, welche Vertriebshebel für euch existieren — konkret, ohne Umwege.",
+          process_2_title: "Vertriebsstrategie",
+          process_2_text: "Klare Vertriebsstrategie mit konkreten Zielen, Zeitplan und definierten Meilensteinen.",
+          process_3_title: "Umsetzung & Abschluss",
+          process_3_text: "Wir setzen aktiv um, führen Verhandlungen und messen kontinuierlich. Kein Beraterdeutsch — echte Umsätze.",
           cta_eyebrow: "Bereit für messbares Wachstum?",
-          cta_title: "Wir entwickeln Vertriebsstrukturen, die messbare Umsätze erzeugen.",
-          cta_subline: "Über 20 Jahre internationale Vertriebserfahrung – kombiniert mit direktem Zugang zu Premium Sport Business.",
+          cta_title: "Sprechen Sie mit uns — bevor Ihre Mitbewerber es tun.",
+          cta_subline: "Über 20 Jahre Vertriebserfahrung. Direkter Zugang zu Premium Sport Business und internationalen Märkten.",
           cta_btn: "Jetzt Anfragen",
           contact_eyebrow: "Kontakt",
           contact_title: "Bereit für den nächsten Schritt?",
           contact_left_title: "Direktkontakt",
-          contact_left_text: "Wir melden uns schnell mit einem strukturierten Vorschlag.",
+          contact_left_text: "Wir melden uns schnell mit einem konkreten Vorschlag.",
           contact_email_label: "E-Mail",
           contact_phone_wa_label: "Telefon & WhatsApp",
           contact_addr_label: "Adresse",
@@ -1261,8 +1059,7 @@
           footer_privacy: "Datenschutz",
           footer_terms: "AGB",
           footer_webdesign: "Webdesign von uifactory.de",
-          page_title: "Venezia Sales Solution | Internationale Vertriebsagentur",
-          form_status: "Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, senden Sie bitte direkt an info@agentur-venezia.com."
+          page_title: "Venezia Sales Solution | Internationale Vertriebsagentur"
         },
         en: {
           nav_sports: "Sports Business",
@@ -1271,51 +1068,56 @@
           nav_contact: "Contact",
           hero_eyebrow: "International Sales Agency · Sport · Infrastructure · Business Development",
           hero_title: "We Sell Growth.",
-          hero_text: "Venezia builds sales structures, sponsoring partnerships and hospitality concepts that generate measurable revenue. International. Professional. Proven.",
+          hero_text: "We build sales structures that turn contacts into clients — and clients into revenue. International. Measurable.",
           hero_cta: "Book an intro call",
-          hero_whatsapp: "Direct WhatsApp",
+          hero_services: "Our Services",
           cta_note: "Free · Non-binding",
-          usp_quote_main: "Most in sport can network.",
-          usp_quote_strong: " We can sell.",
-          usp_sub: "We identify decision-makers, initiate conversations and close deals – from the first contact to signing.",
-          usp_stat_1_num: "20+",
-          usp_stat_1_label: "Years Sales Experience",
-          usp_stat_2_num: "DACH · IT",
-          usp_stat_2_label: "Core Markets",
-          usp_stat_3_num: "B2B",
-          usp_stat_3_label: "Decision-Maker Level",
+          diff_eyebrow: "Why Venezia?",
+          diff_title: "We are sales professionals. Not consultants.",
+          diff_sub: "Other agencies broker contacts. We develop sales processes, lead negotiations and close deals — until the money flows.",
+          diff_step_1: "Identify decision-makers",
+          diff_step_2: "Initiate conversations",
+          diff_step_3: "Lead negotiations",
+          diff_step_4: "Close deals",
+          diff_step_5: "Turn contacts into revenue",
+          diff_claim: "20+ years of international sales experience in sponsoring, market development and premium B2B.",
+          stat_1_num: "20+",
+          stat_1_label: "Years Experience",
+          stat_2_num: "DACH · IT",
+          stat_2_label: "Core Markets",
+          stat_3_num: "B2B",
+          stat_3_label: "Decision-Maker Level",
           whom_eyebrow: "Who we work with",
-          whom_title: "Our common denominator: complex, high-value sales.",
-          whom_text: "Whether sports sponsoring, infrastructure or luxury real estate – in each market, sales strength is what counts. We bring 20 years of real sales experience.",
+          whom_title: "Three target groups. One common denominator: real sales.",
+          whom_text: "Sports club, network operator or company — wherever B2B deals matter, Venezia is the right partner.",
           whom_1_badge: "Sports Business",
           whom_1_title: "Clubs, Associations & Organizers",
-          whom_1_text: "Looking for sponsors, VIP partners or new revenue streams? We build the sales structure, identify decision-makers and close every deal.",
+          whom_1_text: "Sponsors, hospitality or new revenue streams — we identify the right decision-makers and close every deal.",
           whom_2_badge: "Infrastructure",
           whom_2_title: "Network Operators & Developers",
-          whom_2_text: "Need measurable D2D sales, structured pre-marketing or discreet property brokerage? We deliver results, not promises.",
+          whom_2_text: "D2D sales, pre-marketing or property brokerage — we deliver quotas, not presentations.",
           whom_3_badge: "Business Development",
           whom_3_title: "Companies & Investors",
-          whom_3_text: "Want to enter the German market or activate premium networks? We connect decision-makers with decision-makers – and see every deal through to the close.",
+          whom_3_text: "Enter the German market or activate premium networks? We connect decision-makers — until the contract is signed.",
           sports_badge: "Division 01 — Venezia Sports Business",
-          sports_title: "International sports partnerships that generate revenue.",
-          sports_text: "While many sports business advisors broker networks, we develop sales processes that turn contacts into clients. Focus: German mid-sized companies as sponsors for international clubs – particularly in Bavaria and Baden-Württemberg.",
-          sports_focus_label: "Focus region:",
-          sports_focus_text: " Bavaria · Baden-Württemberg · Connections to Juventus FC, VfB Stuttgart and leading industrial companies",
+          sports_title: "Sponsoring and sports partnerships that generate revenue.",
+          sports_text: "Identification, negotiation, close. Focus: German mid-sized companies as sponsors for Juventus FC and VfB Stuttgart.",
+
           service_1_title: "Sponsoring & Partnership Development",
-          service_1_text: "We identify the right companies, initiate conversations at decision-maker level and close deals. Not brokers – real sales professionals.",
+          service_1_text: "Identification, outreach, negotiation — at decision-maker level.",
           service_2_title: "Hospitality & VIP Sales",
-          service_2_text: "Exclusive VIP programmes as a sales tool – from concept to marketing to decision-makers.",
+          service_2_text: "VIP programmes structured and marketed — from concept to contract.",
           service_3_title: "International Business Networks",
-          service_3_text: "Direct B2B connections between European clubs, German brands and international investors.",
+          service_3_text: "B2B connections between clubs, brands and investors — with a clear sales objective.",
           service_4_title: "Market Development Germany",
-          service_4_text: "Market entry for international clubs in Germany. Focus: Southern Germany – Bavaria, Baden-Württemberg.",
+          service_4_text: "Market entry for international clubs. Focus: Bavaria & Baden-Württemberg.",
           infra_badge: "Division 02 — Venezia Infrastructure Sales",
-          infra_title: "Measurable results in fiber and premium real estate.",
-          infra_text: "Proven D2D processes with verifiable quotas. Discreet brokerage of exclusive properties. No promises – results.",
-          service_5_title: "Fiber Sales",
-          service_5_text: "Pre-marketing. Quota growth. Structured D2D processes. We deliver measurable results, not slide decks.",
+          infra_title: "D2D sales and property brokerage with verifiable results.",
+          infra_text: "Structured pre-marketing for fibre projects. Discreet brokerage of exclusive properties. We deliver measurable quotas — not slide decks.",
+          service_5_title: "Fibre Sales",
+          service_5_text: "Pre-marketing, quota growth, structured D2D processes — measurable results.",
           service_6_title: "Luxury Real Estate & Premium Brokerage",
-          service_6_text: "Discreet brokerage of exclusive properties. Off-market. International.",
+          service_6_text: "Discreet off-market brokerage of exclusive properties for international buyers and sellers.",
           refs_eyebrow: "References & Experience",
           refs_title: "Experience within international sports & premium business environments.",
           sport_envs_eyebrow: "Sport & Premium Environments",
@@ -1323,40 +1125,22 @@
           sport_ref_2: "Le Mans 24h",
           sport_ref_3: "Formula 1",
           sport_ref_4: "UEFA Champions League",
-          competency_eyebrow: "Our Expertise",
-          competency_title: "Two Divisions. One Strength: Real Sales.",
-          story_1_title: "Sport Business & Sponsoring",
-          story_1_text: "Sponsoring partnerships between German mid-sized companies and international clubs – developed, negotiated, closed.",
-          story_2_title: "Infrastructure Sales",
-          story_2_text: "D2D sales with structured processes: measurable quotas, reliable results.",
-          story_3_title: "Luxury Real Estate",
-          story_3_text: "Discreet off-market brokerage of exclusive properties for international buyers and sellers.",
           process_eyebrow: "How we work together",
-          process_title: "Three steps to measurable results.",
+          process_title: "Three steps. Measurable results.",
           process_1_title: "Potential Analysis",
-          process_1_text: "In a 30-minute intro call, we explore: Where are your opportunities? Which sales levers exist?",
-          process_2_title: "Tailored Strategy",
-          process_2_text: "Based on the analysis, we develop a concrete sales strategy – with clear goals, timeline and measurable milestones.",
-          process_3_title: "Active Implementation",
-          process_3_text: "We actively implement the strategy, measure results and continuously optimise. No consultant jargon – real revenue.",
-          awards_eyebrow: "Core Values",
-          awards_title: "Trust. International Reach. Growth. Exclusivity.",
-          value_1_title: "Trust",
-          value_1_text: "Discretion, reliability and long-term business relationships.",
-          value_2_title: "International",
-          value_2_text: "Germany, Italy, Switzerland, Austria and global networks.",
-          value_3_title: "Growth",
-          value_3_text: "Measurable results for revenue, quotas and partnerships.",
-          value_4_title: "Exclusivity",
-          value_4_text: "Premium access across sport, hospitality and real estate.",
+          process_1_text: "30-minute intro call: we clarify which sales levers exist for you — concrete, no detours.",
+          process_2_title: "Sales Strategy",
+          process_2_text: "Clear sales strategy with concrete goals, timeline and defined milestones.",
+          process_3_title: "Implementation & Close",
+          process_3_text: "We actively implement, lead negotiations and measure continuously. No consultant jargon — real revenue.",
           cta_eyebrow: "Ready for measurable growth?",
-          cta_title: "We build sales structures that generate measurable revenue.",
-          cta_subline: "20+ years of international sales experience – combined with direct access to premium sport business.",
+          cta_title: "Talk to us — before your competitors do.",
+          cta_subline: "20+ years of sales experience. Direct access to premium sport business and international markets.",
           cta_btn: "Get in Touch",
           contact_eyebrow: "Contact",
           contact_title: "Ready for the next step?",
           contact_left_title: "Direct contact",
-          contact_left_text: "We get back quickly with a structured proposal.",
+          contact_left_text: "We get back quickly with a concrete proposal.",
           contact_email_label: "Email",
           contact_phone_wa_label: "Phone & WhatsApp",
           contact_addr_label: "Address",
@@ -1378,8 +1162,7 @@
           footer_privacy: "Privacy",
           footer_terms: "Terms",
           footer_webdesign: "Web design by uifactory.de",
-          page_title: "Venezia Sales Solution | International Sales Agency",
-          form_status: "Your email app should open now. If not, please send directly to info@agentur-venezia.com."
+          page_title: "Venezia Sales Solution | International Sales Agency"
         }
       };
 
@@ -1394,11 +1177,11 @@
           if (langFlagIcon) { langFlagIcon.src = "./images/flags/gb.svg"; langFlagIcon.alt = "English"; }
           langToggleButton.dataset.nextLang = "en";
           langToggleButton.setAttribute("aria-label", "Switch to English");
-          return;
+        } else {
+          if (langFlagIcon) { langFlagIcon.src = "./images/flags/de.svg"; langFlagIcon.alt = "Deutsch"; }
+          langToggleButton.dataset.nextLang = "de";
+          langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
         }
-        if (langFlagIcon) { langFlagIcon.src = "./images/flags/de.svg"; langFlagIcon.alt = "Deutsch"; }
-        langToggleButton.dataset.nextLang = "de";
-        langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
       }
 
       function applyLanguage(lang) {
@@ -1409,18 +1192,14 @@
         document.querySelectorAll("[data-i18n]").forEach((node) => {
           const key = node.getAttribute("data-i18n");
           if (t[key] === undefined) return;
-          if (node.getAttribute("data-i18n-format") === "html") {
-            node.innerHTML = t[key];
-          } else {
-            node.textContent = t[key];
-          }
+          node.textContent = t[key];
         });
         document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
           const key = node.getAttribute("data-i18n-placeholder");
           if (t[key] !== undefined) node.placeholder = t[key];
         });
         updateLanguageToggle(lang);
-        status.textContent = "";
+        if (status) status.textContent = "";
       }
 
       langToggleButton?.addEventListener("click", () => {
@@ -1444,9 +1223,7 @@
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify({
-              name,
-              email,
-              message,
+              name, email, message,
               telefon: phone || "—",
               _subject: currentLang === "de" ? "Neue Anfrage über venezia-sales.com" : "New request via venezia-sales.com",
               _captcha: "false"
@@ -1468,11 +1245,10 @@
         document.getElementById("thank-modal").style.display = "none";
       }
 
-      document.addEventListener("keydown", function (e) {
+      document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") { closeThankModal(); closeBurger(); }
       });
 
-      /* ── Burger Menu ─────────────────────────────────────── */
       const burgerBtn = document.getElementById("burger-btn");
       const mobileNav = document.getElementById("mobile-nav");
 
@@ -1494,13 +1270,10 @@
       burgerBtn?.addEventListener("click", () => {
         burgerBtn.classList.contains("open") ? closeBurger() : openBurger();
       });
-
       mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeBurger));
-
       document.addEventListener("click", (e) => {
         if (!e.target.closest(".site-header") && !e.target.closest(".mobile-nav")) closeBurger();
       });
-
       window.addEventListener("resize", () => { if (window.innerWidth > 900) closeBurger(); });
 
       applyLanguage(currentLang);
