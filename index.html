@@ -52,10 +52,9 @@
       .logo img { width: 168px; max-width: 100%; display: block; }
       .nav-links { display: flex; justify-content: center; gap: 1rem; }
       .nav-links a {
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
         color: var(--ink);
         transition: color 0.15s;
       }
@@ -397,11 +396,18 @@
       .cta { background: linear-gradient(130deg, #8f6429 0%, #ccab63 50%, #9e6f2f 100%); color: #12151b; }
       .cta .eyebrow {
         color: #12151b;
-        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+        font-size: clamp(1.9rem, 3.5vw, 2.8rem);
         text-transform: none;
         letter-spacing: 0.01em;
         font-weight: 800;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.6rem;
+      }
+      .cta h2 {
+        font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+        font-weight: 500;
+        color: rgba(18, 21, 27, 0.7);
+        letter-spacing: 0.01em;
+        margin-bottom: 1.25rem;
       }
       .cta .btn-dark { background: #12151b; color: var(--accent); border-color: rgba(18, 21, 27, 0.5); }
       .cta-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; align-items: center; }
@@ -604,7 +610,6 @@
       <section class="differentiator">
         <div class="container">
           <div class="diff-intro">
-            <p class="eyebrow" data-i18n="diff_eyebrow">Warum Venezia?</p>
             <h2 data-i18n="diff_title">Wir sind Vertriebsprofis. Keine Berater.</h2>
             <p class="diff-sub" data-i18n="diff_sub">Andere Agenturen vermitteln Kontakte und nennen das Business Development. Wir entwickeln Vertriebsprozesse, führen Verhandlungen und begleiten Vertragsabschlüsse — bis das Geld fließt.</p>
           </div>
@@ -657,7 +662,6 @@
       <!-- ═══ FÜR WEN ═════════════════════════════════════════════ -->
       <section id="for-whom">
         <div class="container">
-          <p class="eyebrow" data-i18n="whom_eyebrow">Für wen wir arbeiten</p>
           <h2 data-i18n="whom_title">Drei Zielgruppen. Ein gemeinsamer Nenner: Echter Vertrieb.</h2>
           <p class="muted" data-i18n="whom_text">Ob Sportclub, Netzbetreiber oder internationales Unternehmen — überall wo komplexe B2B-Deals entschieden werden, ist Venezia der richtige Partner.</p>
           <div class="whom-list">
@@ -769,7 +773,6 @@
       <!-- ═══ REFERENZEN ═══════════════════════════════════════════ -->
       <section id="references" class="section-alt">
         <div class="container">
-          <p class="eyebrow" data-i18n="refs_eyebrow">Referenzen &amp; Erfahrung</p>
           <h2 data-i18n="refs_title">Erfahrung in internationalen Sport- und Premium-Business-Umgebungen.</h2>
 
           <div class="logo-grid">
@@ -785,7 +788,6 @@
           </div>
 
           <div style="margin-top: 2rem;">
-            <p class="eyebrow" data-i18n="sport_envs_eyebrow">Sport &amp; Premium-Bereiche</p>
             <div class="sport-refs">
               <span class="sport-ref-tag" data-i18n="sport_ref_1">Audi Motorsport · DTM</span>
               <span class="sport-ref-tag" data-i18n="sport_ref_2">Le Mans 24h</span>
@@ -805,7 +807,6 @@
       <!-- ═══ PROZESS ══════════════════════════════════════════════ -->
       <section id="process">
         <div class="container">
-          <p class="eyebrow" data-i18n="process_eyebrow">So arbeiten wir zusammen</p>
           <h2 data-i18n="process_title">Drei Schritte. Messbare Ergebnisse.</h2>
           <div class="process-grid">
             <article class="process-step">
@@ -847,7 +848,6 @@
       <!-- ═══ KONTAKT ══════════════════════════════════════════════ -->
       <section id="contact">
         <div class="container">
-          <p class="eyebrow" data-i18n="contact_eyebrow">Kontakt</p>
           <h2 data-i18n="contact_title">Bereit für den nächsten Schritt?</h2>
           <div class="contact-grid">
             <article class="panel">
