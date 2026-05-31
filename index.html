@@ -501,17 +501,25 @@
         main { padding-top: 64px; }
         .mobile-nav { top: 64px; }
         section { padding: 72px 0; }
+        h2 { font-size: clamp(1.2rem, 2.4vw, 1.6rem); }
+        .diff-intro h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); }
         .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .services-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .f1-gallery { grid-template-columns: repeat(2, 1fr); }
-        .process-grid { grid-template-columns: 1fr; }
-        .whom-item { grid-template-columns: 11rem 1fr; gap: 2rem; }
+        .process-grid { grid-template-columns: repeat(2, 1fr); }
+        .whom-list { padding-left: 1rem; }
+        .whom-item { grid-template-columns: 12rem 1fr; gap: 2rem; }
         .cta-grid { grid-template-columns: 1fr; }
-        .cta-photo img { height: 360px; }
-        .logo-tile { max-width: none; min-width: 0; }
+        .cta-photo { flex-direction: row; align-items: center; gap: 1.5rem; justify-content: flex-start; }
+        .cta-photo img { height: 200px; width: min(50%, 220px); }
+        .cta-signature { font-size: 1.8rem; }
+        .logo-tile { max-width: none; min-width: 120px; }
         .diff-footer { grid-template-columns: 1fr; }
-        .diff-stats { justify-content: flex-start; margin-top: 1rem; }
+        .diff-stats { justify-content: flex-start; margin-top: 1.5rem; }
         .diff-stat { padding: 0 1.5rem 0 0; }
         .diff-stat:first-child { padding-left: 0; }
+        .diff-steps { gap: 0.5rem; }
+        .diff-step-text { font-size: 0.7rem; max-width: 6rem; }
       }
 
       /* ── Mobile (≤ 600px) ───────────────────────────────────── */
@@ -519,38 +527,88 @@
         .nav-row { min-height: 60px; }
         main { padding-top: 60px; }
         .mobile-nav { top: 60px; }
-        section { padding: 56px 0; }
-        .logo img { width: 144px; }
-        h1 { font-size: clamp(2rem, 8vw, 3rem); }
-        h2 { font-size: 1.1rem; }
-        .hero-content { min-height: min(65vh, 500px); padding: 1.5rem 0; }
-        .hero p { font-size: 0.95rem; }
-        .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .services-grid-2 { grid-template-columns: 1fr; }
-        .f1-gallery { grid-template-columns: 1fr; }
-        .f1-gallery img { height: 190px; }
-        .contact-grid { grid-template-columns: 1fr; }
-        .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
-        .whom-item { grid-template-columns: 1fr; gap: 0.35rem; }
-        .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
-        .cta-photo img { height: 260px; }
-        .cta-signature { font-size: 1.9rem; }
+        section { padding: 52px 0; }
+        .logo img { width: 140px; }
+
+        /* Typography */
+        h1 { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
+        h2 { font-size: 1.15rem; }
+        .diff-intro h2 { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
+        .cta .eyebrow { font-size: clamp(1.3rem, 7vw, 1.75rem); }
+        .cta h2 { font-size: 0.88rem; }
+
+        /* Hero */
+        .hero-content { min-height: min(70vh, 520px); padding: 2rem 0; }
+        .hero p { font-size: 0.9rem; line-height: 1.6; }
         .cta-row { flex-direction: column; }
         .cta-row .btn { width: 100%; justify-content: center; }
-        .cta .eyebrow { font-size: clamp(1.3rem, 6vw, 1.9rem); }
-        .cta-btn-desktop { display: none; }
-        .cta-btn-mobile { display: inline-flex; width: 100%; justify-content: center; }
-        .panel { padding: 1rem; }
+
+        /* Services: single column on mobile */
+        .services-grid { grid-template-columns: 1fr; }
+        .services-grid-2 { grid-template-columns: 1fr; }
+        .service-card { padding: 1.25rem; }
         .service-card h3 { overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
-        .logo-tile { overflow: hidden; }
-        .logo-tile img { max-height: 34px; }
-        .diff-steps { flex-wrap: wrap; gap: 1.5rem 0; }
-        .diff-steps::before { display: none; }
-        .diff-step { flex: 0 0 33.333%; }
+
+        /* Warum Venezia — vertical timeline */
+        .diff-steps {
+          flex-direction: column;
+          gap: 0;
+          margin-bottom: 2rem;
+        }
+        .diff-steps::before {
+          top: 7px;
+          left: 6px;
+          right: auto;
+          bottom: 7px;
+          width: 2px;
+          height: auto;
+          background: linear-gradient(to bottom, rgba(214,177,95,0.65), rgba(214,177,95,0.2));
+        }
+        .diff-step {
+          flex-direction: row;
+          text-align: left;
+          align-items: center;
+          padding: 0.7rem 0;
+          gap: 1rem;
+        }
+        .diff-step-text { max-width: none; font-size: 0.8rem; font-weight: 600; }
         .diff-footer { grid-template-columns: 1fr; }
-        .diff-stats { flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+        .diff-stats { flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 1.5rem; }
         .diff-stat { padding: 0; }
         .diff-divider { display: none; }
+
+        /* Für wen */
+        .whom-list { padding-left: 0; margin-top: 2rem; }
+        .whom-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 0; }
+
+        /* Gallery */
+        .f1-gallery { grid-template-columns: 1fr; }
+        .f1-gallery img { height: 200px; }
+
+        /* Process */
+        .process-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
+
+        /* CTA */
+        .cta-grid { gap: 2rem; }
+        .cta-photo { flex-direction: column; align-items: center; }
+        .cta-photo img { width: 100%; max-width: 280px; height: 300px; }
+        .cta-signature { font-size: 1.8rem; }
+        .cta-btn-desktop { display: none; }
+        .cta-btn-mobile { display: inline-flex; width: 100%; justify-content: center; }
+        .cta-subline { font-size: 0.82rem; }
+
+        /* Logos */
+        .logo-grid { gap: 0.65rem; }
+        .logo-tile { min-width: 110px; padding: 0.9rem 1.25rem; overflow: hidden; }
+        .logo-tile img { max-height: 34px; }
+
+        /* Contact */
+        .contact-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
+        .panel { padding: 1.1rem; }
+
+        /* Footer */
+        .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
+        .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
       }
     </style>
   </head>
