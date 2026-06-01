@@ -7,118 +7,11 @@
     <meta name="description" content="Venezia ist eine internationale Vertriebsagentur für Sport und Infrastruktur – wir entwickeln Vertriebsstrukturen, die messbaren Umsatz erzeugen." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./shared.css" />
     <style>
-      :root {
-        --accent: #d6b15f;
-        --ink: #f3ebda;
-        --white: #fdf8ed;
-        --gray: #181d26;
-        --muted: #b8ad97;
-        --border: #313846;
-        --max: 1200px;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; overflow-x: hidden; }
-      img { max-width: 100%; display: block; }
-
-      body {
-        margin: 0;
-        font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-        background: radial-gradient(circle at top right, #2a2e36 0%, #090b10 55%, #020306 100%);
-        color: var(--ink);
-      }
-
-      a { color: inherit; text-decoration: none; }
-      .container { width: min(88%, var(--max)); margin: 0 auto; }
-
-      /* ── Header ─────────────────────────────────────────────── */
-      .site-header {
-        position: fixed;
-        inset: 0 0 auto;
-        z-index: 20;
-        background: rgba(6, 8, 12, 0.9);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(8px);
-      }
-      .nav-row {
-        min-height: 70px;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
-        gap: 1rem;
-      }
-      .logo img { width: 168px; max-width: 100%; display: block; }
-      .nav-links { display: flex; justify-content: center; gap: 1rem; }
-      .nav-links a {
-        font-size: 0.85rem;
-        font-weight: 500;
-        letter-spacing: 0.01em;
-        color: var(--ink);
-        transition: color 0.15s;
-      }
-      .nav-links a:hover { color: var(--accent); }
-      .right-controls { display: flex; align-items: center; gap: 0.7rem; justify-self: end; }
-      .lang-switcher { display: inline-flex; }
-      .lang-flag {
-        border: 1px solid var(--border);
-        border-radius: 5px;
-        width: 26px; height: 18px;
-        padding: 0; line-height: 0;
-        background: #161c25;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.2s ease, border-color 0.2s ease;
-      }
-      .lang-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-      main { padding-top: 70px; }
       section { padding: 96px 0; }
       section.hero { padding: 0; }
 
-      h1, h2, h3 { margin: 0 0 1rem; line-height: 1.15; }
-      h1 {
-        font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-      }
-      h2 { font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight: 700; letter-spacing: 0.01em; }
-      h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; }
-
-      .eyebrow {
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 0.65rem;
-      }
-      .muted { color: var(--muted); }
-
-      /* ── Buttons ────────────────────────────────────────────── */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
-        padding: 12px 24px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        border: 1px solid transparent;
-      }
-      .btn-dark {
-        background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
-        color: #15181f;
-        border-color: #c6a155;
-      }
-      .btn-light {
-        background: rgba(8, 11, 16, 0.58);
-        color: var(--ink);
-        border-color: rgba(214, 177, 95, 0.65);
-      }
       .cta-row { margin-top: 1.3rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
       .cta-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.6rem; }
 
@@ -138,7 +31,7 @@
       }
       .hero p { max-width: 60ch; font-size: 1.05rem; line-height: 1.65; }
 
-      /* ── Differentiator: Warum Venezia? ─────────────────────── */
+      /* ── Differentiator ─────────────────────────────────────── */
       .differentiator {
         background: linear-gradient(180deg, #0c1018 0%, #111520 100%);
         border-top: 1px solid var(--border);
@@ -157,7 +50,7 @@
       .diff-steps::before {
         content: '';
         position: absolute;
-        top: 7px; /* exact center of 14px dot */
+        top: 7px;
         left: 10%;
         right: 10%;
         height: 2px;
@@ -174,106 +67,52 @@
         position: relative;
       }
       .diff-step-node {
-        width: 14px;
-        height: 14px;
+        width: 14px; height: 14px;
         border-radius: 50%;
         background: var(--accent);
         flex-shrink: 0;
         z-index: 1;
       }
-      .diff-step:last-child .diff-step-node {
-        width: 14px;
-        height: 14px;
-        box-shadow: 0 0 0 4px rgba(214,177,95,0.2);
-      }
+      .diff-step:last-child .diff-step-node { box-shadow: 0 0 0 4px rgba(214,177,95,0.2); }
       .diff-step-text { font-size: 0.72rem; font-weight: 500; color: var(--muted); line-height: 1.45; max-width: 7rem; letter-spacing: 0.01em; }
 
-      .diff-footer {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 2rem;
-      }
+      .diff-footer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; }
       .diff-claim {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--ink);
-        line-height: 1.55;
-        margin: 0;
-        border-left: 3px solid var(--accent);
-        padding-left: 1.1rem;
+        font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.55; margin: 0;
+        border-left: 3px solid var(--accent); padding-left: 1.1rem;
       }
       .diff-stats { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
       .diff-stat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; padding: 0 1.8rem; }
       .diff-stat:first-child { padding-left: 0; }
       .diff-stat-num {
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        font-weight: 800;
+        font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 800;
         background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.1;
-        white-space: nowrap;
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        line-height: 1.1; white-space: nowrap;
       }
       .diff-stat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
       .diff-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
 
-      /* ── Section alternate background ───────────────────────── */
+      /* ── Section alternate ──────────────────────────────────── */
       .section-alt { background: var(--gray); }
       .section-alt .service-card { background: #11161f; }
       .section-alt .process-step { background: #11161f; }
 
       /* ── Division badge ─────────────────────────────────────── */
       .division-badge {
-        display: inline-flex;
-        align-items: center;
-        border: 1px solid rgba(214, 177, 95, 0.35);
-        border-radius: 6px;
-        padding: 0.3rem 0.85rem;
-        font-size: 0.67rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: rgba(214, 177, 95, 0.07);
-        margin-bottom: 0.85rem;
+        display: inline-flex; align-items: center;
+        border: 1px solid rgba(214, 177, 95, 0.35); border-radius: 6px;
+        padding: 0.3rem 0.85rem; font-size: 0.67rem; font-weight: 700;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+        background: rgba(214, 177, 95, 0.07); margin-bottom: 0.85rem;
       }
-
-      /* ── Division focus note ────────────────────────────────── */
-      .division-focus-note {
-        margin-top: 1.5rem;
-        padding: 0.9rem 1.25rem;
-        border-left: 3px solid var(--accent);
-        background: rgba(214, 177, 95, 0.04);
-        border-radius: 0 8px 8px 0;
-        font-size: 0.85rem;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-      .division-focus-note strong { color: var(--accent); font-weight: 700; }
 
       /* ── Services ───────────────────────────────────────────── */
-      .services-grid {
-        margin-top: 2.5rem;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1.25rem;
-      }
-      .services-grid-2 {
-        margin-top: 2.5rem;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.25rem;
-      }
+      .services-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+      .services-grid-2 { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
       .service-card {
-        background: var(--gray);
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+        background: var(--gray); border-radius: 10px; border: 1px solid var(--border);
+        padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;
       }
       .service-icon { width: 34px; height: 34px; color: var(--accent); margin-bottom: 0.3rem; }
       .service-icon svg { width: 100%; height: 100%; }
@@ -281,113 +120,46 @@
       .service-card p { margin: 0; color: var(--muted); font-size: 0.83rem; line-height: 1.5; }
 
       /* ── Für wen ────────────────────────────────────────────── */
-      .whom-list {
-        margin-top: 3rem;
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-      }
+      .whom-list { margin-top: 3rem; display: flex; flex-direction: column; padding-left: 2rem; }
       .whom-item {
-        display: grid;
-        grid-template-columns: 13rem 1fr;
-        gap: 3rem;
-        align-items: start;
-        padding: 2.25rem 0;
-        border-top: 1px solid var(--border);
+        display: grid; grid-template-columns: 13rem 1fr; gap: 3rem;
+        align-items: start; padding: 2.25rem 0; border-top: 1px solid var(--border);
       }
       .whom-item:last-child { border-bottom: 1px solid var(--border); }
-      .whom-badge {
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-        color: var(--accent);
-        padding-top: 0.15rem;
-        display: block;
-      }
-      .whom-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-      }
+      .whom-badge { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); padding-top: 0.15rem; display: block; }
+      .whom-content { display: flex; flex-direction: column; gap: 0.45rem; }
       .whom-content h3 { font-size: 1.05rem; margin: 0; line-height: 1.3; font-weight: 600; }
       .whom-desc { color: var(--muted); font-size: 0.83rem; line-height: 1.65; margin: 0; }
 
       /* ── Logo grid ──────────────────────────────────────────── */
-      .logo-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        align-items: stretch;
-      }
+      .logo-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; align-items: stretch; }
       .logo-tile {
-        background: #fff;
-        border-radius: 10px;
-        padding: 1.1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1;
-        min-width: 160px;
-        max-width: 240px;
+        background: #fff; border-radius: 10px; padding: 1.1rem 2rem;
+        display: flex; align-items: center; justify-content: center;
+        flex: 1; min-width: 160px; max-width: 240px;
       }
       .logo-tile img { max-height: 46px; width: auto; max-width: 150px; object-fit: contain; }
 
       /* ── Sport reference tags ───────────────────────────────── */
       .sport-refs { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; }
       .sport-ref-tag {
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 0.4rem 0.9rem;
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: var(--muted);
-        letter-spacing: 0.05em;
-        background: var(--gray);
+        border: 1px solid var(--border); border-radius: 6px;
+        padding: 0.4rem 0.9rem; font-size: 0.78rem; font-weight: 600;
+        color: var(--muted); letter-spacing: 0.05em; background: var(--gray);
       }
 
       /* ── F1 gallery ─────────────────────────────────────────── */
-      .f1-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.9rem;
-        margin-top: 2rem;
-      }
-      .f1-gallery img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-      }
+      .f1-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 2rem; }
+      .f1-gallery img { width: 100%; height: 230px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
 
       /* ── Process ────────────────────────────────────────────── */
-      .process-grid {
-        margin-top: 3rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-      }
-      .process-step {
-        background: var(--gray);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 1.75rem 1.5rem;
-      }
-      .step-num {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: rgba(214, 177, 95, 0.2);
-        line-height: 1;
-        margin-bottom: 0.6rem;
-      }
+      .process-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .process-step { background: var(--gray); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem 1.5rem; }
+      .step-num { font-size: 2.8rem; font-weight: 800; color: rgba(214, 177, 95, 0.2); line-height: 1; margin-bottom: 0.6rem; }
       .step-num.gold-2 { color: rgba(214, 177, 95, 0.55); }
       .step-num.gold-3 {
         background: linear-gradient(120deg, #f5e7ae 0%, #d7b769 45%, #ab7b33 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       }
       .process-step h3 { font-size: 1rem; margin: 0 0 0.4rem; }
       .process-step p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin: 0; }
@@ -395,39 +167,15 @@
       /* ── CTA ────────────────────────────────────────────────── */
       .cta { background: linear-gradient(130deg, #8f6429 0%, #ccab63 50%, #9e6f2f 100%); color: #12151b; }
       .cta .eyebrow {
-        color: #12151b;
-        font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-        text-transform: none;
-        letter-spacing: 0.01em;
-        font-weight: 800;
-        margin-bottom: 0.6rem;
+        color: #12151b; font-size: clamp(1.9rem, 3.5vw, 2.8rem); text-transform: none;
+        letter-spacing: 0.01em; font-weight: 800; margin-bottom: 0.6rem;
       }
-      .cta h2 {
-        font-size: clamp(0.92rem, 1.4vw, 1.05rem);
-        font-weight: 500;
-        color: rgba(18, 21, 27, 0.7);
-        letter-spacing: 0.01em;
-        margin-bottom: 1.25rem;
-      }
+      .cta h2 { font-size: clamp(0.92rem, 1.4vw, 1.05rem); font-weight: 500; color: rgba(18, 21, 27, 0.7); letter-spacing: 0.01em; margin-bottom: 1.25rem; }
       .cta .btn-dark { background: #12151b; color: var(--accent); border-color: rgba(18, 21, 27, 0.5); }
       .cta-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; align-items: center; }
       .cta-photo { display: flex; flex-direction: column; align-items: center; }
-      .cta-photo img {
-        width: min(100%, 340px);
-        height: 420px;
-        object-fit: cover;
-        object-position: center top;
-        border-radius: 12px;
-        border: 2px solid rgba(18, 21, 27, 0.34);
-      }
-      .cta-signature {
-        font-family: 'Parisienne', cursive;
-        font-size: 2.2rem;
-        color: #12151b;
-        margin-top: 0.6rem;
-        text-align: center;
-        display: block;
-      }
+      .cta-photo img { width: min(100%, 340px); height: 420px; object-fit: cover; object-position: center top; border-radius: 12px; border: 2px solid rgba(18, 21, 27, 0.34); }
+      .cta-signature { font-family: 'Parisienne', cursive; font-size: 2.2rem; color: #12151b; margin-top: 0.6rem; text-align: center; display: block; }
       .cta-subline { margin: 0.5rem 0 1.3rem; font-size: 0.93rem; font-weight: 600; }
       .cta h2 { color: #12151b; }
       .cta-btn-mobile { display: none; }
@@ -453,22 +201,6 @@
       textarea { min-height: 130px; resize: vertical; }
       #form-status { color: var(--muted); margin: 0; font-size: 0.88rem; }
 
-      /* ── Footer ─────────────────────────────────────────────── */
-      footer { background: var(--gray); border-top: 1px solid var(--border); }
-      .footer-grid { padding: 54px 0 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
-      .footer-title { margin: 0 0 0.65rem; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; }
-      .footer-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-      .footer-links a { color: var(--accent); font-size: 0.88rem; }
-      .footer-links a:hover { opacity: 0.75; }
-      .footer-bottom { border-top: 1px solid var(--border); padding: 0.8rem 0; display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
-      .footer-bottom span { color: var(--muted); font-size: 0.74rem; }
-      .footer-bottom a { color: var(--muted); font-size: 0.74rem; opacity: 0.55; transition: opacity 0.2s; }
-      .footer-bottom a:hover { opacity: 1; }
-
-      /* ── WhatsApp Float ─────────────────────────────────────── */
-      .whatsapp-float { position: fixed; right: 1rem; bottom: 1rem; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #25d366 0%, #159e4d 100%); box-shadow: 0 10px 24px rgba(0,0,0,0.35); z-index: 30; pointer-events: none; display: flex; align-items: center; justify-content: center; }
-      .whatsapp-float svg { width: 26px; height: 26px; fill: #fff; display: block; }
-
       /* ── Thank Modal ────────────────────────────────────────── */
       #thank-modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; }
       .modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); cursor: pointer; }
@@ -478,28 +210,8 @@
       .modal-box h3 { margin: 0 0 0.6rem; font-size: 1.3rem; color: var(--ink); }
       .modal-box p { color: var(--muted); font-size: 0.93rem; line-height: 1.6; margin: 0 0 1.5rem; }
 
-      /* ── Burger ─────────────────────────────────────────────── */
-      .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; padding: 0 10px; flex-shrink: 0; }
-      .burger span { display: block; width: 100%; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
-      .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-      .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-      /* ── Mobile Nav ─────────────────────────────────────────── */
-      .mobile-nav { position: fixed; top: 70px; left: 0; right: 0; z-index: 18; background: rgba(6,8,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.22s ease, visibility 0.22s, transform 0.22s ease; pointer-events: none; }
-      .mobile-nav.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
-      .mobile-nav-inner { display: flex; flex-direction: column; }
-      .mobile-nav a { display: flex; align-items: center; padding: 1rem 1.25rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid rgba(49,56,70,0.5); transition: color 0.15s, background 0.15s; }
-      .mobile-nav a:last-child { border-bottom: none; }
-      .mobile-nav a:hover { color: var(--accent); background: rgba(214,177,95,0.05); }
-
       /* ── Tablet (≤ 900px) ───────────────────────────────────── */
       @media (max-width: 900px) {
-        .nav-row { grid-template-columns: 1fr auto; min-height: 64px; gap: 0; }
-        .nav-links { display: none; }
-        .burger { display: flex; }
-        main { padding-top: 64px; }
-        .mobile-nav { top: 64px; }
         section { padding: 72px 0; }
         h2 { font-size: clamp(1.2rem, 2.4vw, 1.6rem); }
         .diff-intro h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); }
@@ -524,56 +236,25 @@
 
       /* ── Mobile (≤ 600px) ───────────────────────────────────── */
       @media (max-width: 600px) {
-        .nav-row { min-height: 60px; }
-        main { padding-top: 60px; }
-        .mobile-nav { top: 60px; }
         section { padding: 52px 0; }
-        .logo img { width: 140px; }
-
-        /* Typography */
         h1 { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
         h2 { font-size: 1.15rem; }
         .diff-intro h2 { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
         .cta .eyebrow { font-size: clamp(1.3rem, 7vw, 1.75rem); }
         .cta h2 { font-size: 0.88rem; }
-
-        /* Hero */
         .hero-content { min-height: min(70vh, 520px); padding: 2rem 0; }
         .hero p { font-size: 0.9rem; line-height: 1.6; }
         .cta-row { flex-direction: column; }
         .cta-row .btn { width: 100%; justify-content: center; }
-
-        /* Services: single column on mobile */
         .services-grid { grid-template-columns: 1fr; }
         .services-grid-2 { grid-template-columns: 1fr; }
         .service-card { padding: 1.25rem; }
         .service-card h3 { overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
-
-        /* Warum Venezia — vertical timeline */
-        .diff-steps {
-          flex-direction: column;
-          gap: 0;
-          margin-bottom: 2rem;
-        }
-        .diff-steps::before {
-          top: 7px;
-          left: 6px;
-          right: auto;
-          bottom: 7px;
-          width: 2px;
-          height: auto;
-          background: linear-gradient(to bottom, rgba(214,177,95,0.65), rgba(214,177,95,0.2));
-        }
-        .diff-step {
-          flex-direction: row;
-          text-align: left;
-          align-items: center;
-          padding: 0.7rem 0;
-          gap: 1rem;
-        }
+        .diff-steps { flex-direction: column; gap: 0; margin-bottom: 2rem; }
+        .diff-steps::before { top: 7px; left: 6px; right: auto; bottom: 7px; width: 2px; height: auto; background: linear-gradient(to bottom, rgba(214,177,95,0.65), rgba(214,177,95,0.2)); }
+        .diff-step { flex-direction: row; text-align: left; align-items: center; padding: 0.7rem 0; gap: 1rem; }
         .diff-step-text { max-width: none; font-size: 0.8rem; font-weight: 600; }
-        .diff-footer { grid-template-columns: 1fr; }
-        .diff-footer { margin-top: 2rem; }
+        .diff-footer { grid-template-columns: 1fr; margin-top: 2rem; }
         .diff-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 1.5rem; gap: 0; }
         .diff-stat { padding: 0.75rem 0; align-items: center; border-right: 1px solid var(--border); }
         .diff-stat:last-child { border-right: none; }
@@ -581,19 +262,11 @@
         .diff-divider { display: none; }
         .diff-stat-num { font-size: clamp(1.15rem, 4vw, 1.4rem); }
         .diff-stat-label { font-size: 0.6rem; }
-
-        /* Für wen */
         .whom-list { padding-left: 0; margin-top: 2rem; }
         .whom-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 0; }
-
-        /* Gallery */
         .f1-gallery { grid-template-columns: 1fr; }
         .f1-gallery img { height: 200px; }
-
-        /* Process */
         .process-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
-
-        /* CTA */
         .cta-grid { gap: 2rem; }
         .cta-photo { flex-direction: column; align-items: center; }
         .cta-photo img { width: 100%; max-width: 280px; height: 300px; }
@@ -601,55 +274,16 @@
         .cta-btn-desktop { display: none; }
         .cta-btn-mobile { display: inline-flex; width: 100%; justify-content: center; }
         .cta-subline { font-size: 0.82rem; }
-
-        /* Logos */
         .logo-grid { gap: 0.65rem; }
         .logo-tile { min-width: 110px; padding: 0.9rem 1.25rem; overflow: hidden; }
         .logo-tile img { max-height: 34px; }
-
-        /* Contact */
         .contact-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
         .panel { padding: 1.1rem; }
-
-        /* Footer */
-        .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
-        .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-row">
-        <a class="logo" href="#top" aria-label="Venezia Home">
-          <img src="./images/venezia-logo.svg" alt="Venezia Sales Solution" />
-        </a>
-        <nav class="nav-links">
-          <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
-          <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
-          <a href="#references" data-i18n="nav_references">Referenzen</a>
-          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-        </nav>
-        <div class="right-controls">
-          <div class="lang-switcher" aria-label="Language switch">
-            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">
-              <img id="lang-flag-icon" src="./images/flags/gb.svg" alt="English" />
-            </button>
-          </div>
-          <button class="burger" id="burger-btn" type="button" aria-label="Menü öffnen" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <div class="mobile-nav-inner">
-        <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
-        <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
-        <a href="#references" data-i18n="nav_references">Referenzen</a>
-        <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-      </div>
-    </div>
+    <header class="site-header"></header>
 
     <main id="top">
 
@@ -798,8 +432,6 @@
               <p data-i18n="service_4_text">Strukturierter Markteintritt für internationale Clubs im deutschsprachigen Raum. Schwerpunkt: Bayern und Baden-Württemberg.</p>
             </article>
           </div>
-
-
         </div>
       </section>
 
@@ -936,7 +568,7 @@
                   </div>
                   <div class="ci-text">
                     <small data-i18n="contact_phone_wa_label">Telefon &amp; WhatsApp</small>
-                    <a href="tel:+4915153860607">+49 1515 3860607</a>
+                    <a href="tel:+4917680280241">+49 176 80280241</a>
                   </div>
                 </li>
                 <li class="contact-info-item align-top">
@@ -960,7 +592,7 @@
                 <label for="email" data-i18n="form_email">E-Mail</label>
                 <input id="email" name="email" type="email" placeholder="ihre@email.de" data-i18n-placeholder="form_email_ph" required />
                 <label for="phone"><span data-i18n="form_phone">Telefon</span> <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
-                <input id="phone" name="phone" type="tel" placeholder="+49 151 …" data-i18n-placeholder="form_phone_ph" />
+                <input id="phone" name="phone" type="tel" placeholder="+49 176 …" data-i18n-placeholder="form_phone_ph" />
                 <label for="msg" data-i18n="form_message">Nachricht</label>
                 <textarea id="msg" name="message" placeholder="Wobei können wir Sie unterstützen?" data-i18n-placeholder="form_message_ph" required></textarea>
                 <button class="btn btn-dark" type="submit" data-i18n="form_submit">Anfrage senden</button>
@@ -972,36 +604,7 @@
       </section>
     </main>
 
-    <footer>
-      <div class="container footer-grid">
-        <div>
-          <img src="./images/venezia-logo.svg" alt="Venezia" style="width:170px" />
-          <p class="muted" style="margin:0.75rem 0 0.15rem;font-size:0.84rem;font-weight:600;">Venezia Sales Solution</p>
-          <p class="muted" style="margin:0;font-size:0.82rem;line-height:1.6;">Marktstrasse 4<br />75365 Calw</p>
-        </div>
-        <div class="footer-links">
-          <p class="footer-title" data-i18n="footer_nav">Navigation</p>
-          <ul>
-            <li><a href="#sports" data-i18n="nav_sports">Sportbusiness</a></li>
-            <li><a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a></li>
-            <li><a href="#references" data-i18n="nav_references">Referenzen</a></li>
-            <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
-          <ul>
-            <li><a href="#" data-i18n="footer_imprint">Impressum</a></li>
-            <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
-            <li><a href="#" data-i18n="footer_terms">AGB</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom container">
-        <span>© <span id="year"></span> Venezia Sales Solution</span>
-        <a href="https://uifactory.de" target="_blank" rel="noopener" data-i18n="footer_webdesign">Webdesign von uifactory.de</a>
-      </div>
-    </footer>
+    <footer></footer>
 
     <div id="thank-modal" role="dialog" aria-modal="true" aria-labelledby="thank-title">
       <div class="modal-overlay" onclick="closeThankModal()"></div>
@@ -1015,24 +618,16 @@
       </div>
     </div>
 
-    <div class="whatsapp-float" aria-hidden="true">
-      <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-    </div>
-
+    <script src="./components.js"></script>
     <script>
-      const translations = {
+      const PAGE_TRANSLATIONS = {
         de: {
-          nav_sports: "Sportbusiness",
-          nav_infrastructure: "Infrastruktur",
-          nav_references: "Referenzen",
-          nav_contact: "Kontakt",
           hero_eyebrow: "Internationale Vertriebsagentur · Sport · Infrastruktur · Business Development",
           hero_title: "We Sell Growth.",
           hero_text: "Wir entwickeln Vertriebsstrukturen, die aus Kontakten Kunden machen — und aus Kunden Umsatz. International. Messbar.",
           hero_cta: "Jetzt Erstgespräch sichern",
           hero_services: "Unsere Leistungen",
           cta_note: "Kostenlos · Unverbindlich",
-          diff_eyebrow: "Warum Venezia?",
           diff_title: "Wir sind Vertriebsprofis. Keine Berater.",
           diff_sub: "Andere Agenturen vermitteln Kontakte. Wir entwickeln Vertriebsprozesse, führen Verhandlungen und begleiten Abschlüsse — bis das Geld fließt.",
           diff_step_1: "Entscheider identifizieren",
@@ -1041,28 +636,20 @@
           diff_step_4: "Abschlüsse begleiten",
           diff_step_5: "Kontakte in Umsatz verwandeln",
           diff_claim: "20+ Jahre internationale Vertriebserfahrung in Sponsoring, Marktentwicklung und Premium-B2B.",
-          stat_1_num: "20+",
-          stat_1_label: "Jahre Erfahrung",
-          stat_2_num: "DACH · IT",
-          stat_2_label: "Märkte",
-          stat_3_num: "B2B",
-          stat_3_label: "Entscheiderebene",
-          whom_eyebrow: "Für wen wir arbeiten",
+          stat_1_num: "20+", stat_1_label: "Jahre Erfahrung",
+          stat_2_num: "DACH · IT", stat_2_label: "Märkte",
+          stat_3_num: "B2B", stat_3_label: "Entscheiderebene",
           whom_title: "Drei Zielgruppen. Ein gemeinsamer Nenner: Echter Vertrieb.",
           whom_text: "Sportclub, Netzbetreiber oder Unternehmen — überall wo B2B-Deals zählen, ist Venezia der richtige Partner.",
-          whom_1_badge: "Sportbusiness",
-          whom_1_title: "Clubs, Verbände & Veranstalter",
+          whom_1_badge: "Sportbusiness", whom_1_title: "Clubs, Verbände & Veranstalter",
           whom_1_text: "Sponsoren, Hospitality oder neue Umsatzquellen — wir identifizieren die richtigen Entscheider und begleiten jeden Abschluss.",
-          whom_2_badge: "Infrastruktur",
-          whom_2_title: "Netzbetreiber & Projektentwickler",
+          whom_2_badge: "Infrastruktur", whom_2_title: "Netzbetreiber & Projektentwickler",
           whom_2_text: "D2D-Vertrieb, Vorvermarktung oder Immobilienvermittlung — wir liefern Quoten, keine Präsentationen.",
-          whom_3_badge: "Geschäftsentwicklung",
-          whom_3_title: "Unternehmen & Investoren",
+          whom_3_badge: "Geschäftsentwicklung", whom_3_title: "Unternehmen & Investoren",
           whom_3_text: "Deutschen Markt erschließen oder Premium-Netzwerke aktivieren? Wir verbinden Entscheider — bis zum Vertragsabschluss.",
           sports_badge: "Division 01 — Venezia Sportbusiness",
           sports_title: "Sponsoring und Sportpartnerschaften, die Umsatz erzeugen.",
           sports_text: "Identifikation, Verhandlung, Abschluss. Schwerpunkt: Deutsche Mittelständler als Sponsoren für Juventus FC und VfB Stuttgart.",
-
           service_1_title: "Sponsoring & Partnerschaftsentwicklung",
           service_1_text: "Identifikation, Erstansprache, Verhandlung — auf Entscheiderebene.",
           service_2_title: "Hospitality & VIP-Vertrieb",
@@ -1078,14 +665,9 @@
           service_5_text: "Vorvermarktung, Quotenaufbau, strukturierte D2D-Prozesse — messbare Ergebnisse.",
           service_6_title: "Luxusimmobilien & Premium-Vermittlung",
           service_6_text: "Diskrete Off-Market-Vermittlung exklusiver Objekte für internationale Käufer und Verkäufer.",
-          refs_eyebrow: "Referenzen & Erfahrung",
           refs_title: "Erfahrung in internationalen Sport- und Premium-Business-Umgebungen.",
-          sport_envs_eyebrow: "Sport & Premium-Bereiche",
-          sport_ref_1: "Audi Motorsport · DTM",
-          sport_ref_2: "Le Mans 24h",
-          sport_ref_3: "Formel 1",
-          sport_ref_4: "UEFA Champions League",
-          process_eyebrow: "So arbeiten wir zusammen",
+          sport_ref_1: "Audi Motorsport · DTM", sport_ref_2: "Le Mans 24h",
+          sport_ref_3: "Formel 1", sport_ref_4: "UEFA Champions League",
           process_title: "Drei Schritte. Messbare Ergebnisse.",
           process_1_title: "Potenzialanalyse",
           process_1_text: "30 Minuten Erstgespräch: Wir klären, welche Vertriebshebel für euch existieren — konkret, ohne Umwege.",
@@ -1097,45 +679,29 @@
           cta_title: "Sprechen Sie mit uns — bevor Ihre Mitbewerber es tun.",
           cta_subline: "Über 20 Jahre Vertriebserfahrung. Direkter Zugang zu Premium Sport Business und internationalen Märkten.",
           cta_btn: "Jetzt Anfragen",
-          contact_eyebrow: "Kontakt",
           contact_title: "Bereit für den nächsten Schritt?",
           contact_left_title: "Direktkontakt",
           contact_left_text: "Wir melden uns schnell mit einem konkreten Vorschlag.",
           contact_email_label: "E-Mail",
           contact_phone_wa_label: "Telefon & WhatsApp",
           contact_addr_label: "Adresse",
-          form_name: "Name",
-          form_email: "E-Mail",
-          form_phone: "Telefon",
-          form_message: "Nachricht",
-          form_name_ph: "Ihr Name",
-          form_email_ph: "ihre@email.de",
-          form_phone_ph: "+49 151 …",
+          form_name: "Name", form_email: "E-Mail", form_phone: "Telefon", form_message: "Nachricht",
+          form_name_ph: "Ihr Name", form_email_ph: "ihre@email.de",
+          form_phone_ph: "+49 176 …",
           form_message_ph: "Wobei können wir Sie unterstützen?",
           form_submit: "Anfrage senden",
           modal_title: "Vielen Dank!",
           modal_text: "Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.",
           modal_close: "Schließen",
-          footer_nav: "Navigation",
-          footer_guidelines: "Richtlinien",
-          footer_imprint: "Impressum",
-          footer_privacy: "Datenschutz",
-          footer_terms: "AGB",
-          footer_webdesign: "Webdesign von uifactory.de",
           page_title: "Venezia Sales Solution | Internationale Vertriebsagentur"
         },
         en: {
-          nav_sports: "Sports Business",
-          nav_infrastructure: "Infrastructure",
-          nav_references: "References",
-          nav_contact: "Contact",
           hero_eyebrow: "International Sales Agency · Sport · Infrastructure · Business Development",
           hero_title: "We Sell Growth.",
           hero_text: "We build sales structures that turn contacts into clients — and clients into revenue. International. Measurable.",
           hero_cta: "Book an intro call",
           hero_services: "Our Services",
           cta_note: "Free · Non-binding",
-          diff_eyebrow: "Why Venezia?",
           diff_title: "We are sales professionals. Not consultants.",
           diff_sub: "Other agencies broker contacts. We develop sales processes, lead negotiations and close deals — until the money flows.",
           diff_step_1: "Identify decision-makers",
@@ -1144,28 +710,20 @@
           diff_step_4: "Close deals",
           diff_step_5: "Turn contacts into revenue",
           diff_claim: "20+ years of international sales experience in sponsoring, market development and premium B2B.",
-          stat_1_num: "20+",
-          stat_1_label: "Years Experience",
-          stat_2_num: "DACH · IT",
-          stat_2_label: "Core Markets",
-          stat_3_num: "B2B",
-          stat_3_label: "Decision-Maker Level",
-          whom_eyebrow: "Who we work with",
+          stat_1_num: "20+", stat_1_label: "Years Experience",
+          stat_2_num: "DACH · IT", stat_2_label: "Core Markets",
+          stat_3_num: "B2B", stat_3_label: "Decision-Maker Level",
           whom_title: "Three target groups. One common denominator: real sales.",
           whom_text: "Sports club, network operator or company — wherever B2B deals matter, Venezia is the right partner.",
-          whom_1_badge: "Sports Business",
-          whom_1_title: "Clubs, Associations & Organizers",
+          whom_1_badge: "Sports Business", whom_1_title: "Clubs, Associations & Organizers",
           whom_1_text: "Sponsors, hospitality or new revenue streams — we identify the right decision-makers and close every deal.",
-          whom_2_badge: "Infrastructure",
-          whom_2_title: "Network Operators & Developers",
+          whom_2_badge: "Infrastructure", whom_2_title: "Network Operators & Developers",
           whom_2_text: "D2D sales, pre-marketing or property brokerage — we deliver quotas, not presentations.",
-          whom_3_badge: "Business Development",
-          whom_3_title: "Companies & Investors",
+          whom_3_badge: "Business Development", whom_3_title: "Companies & Investors",
           whom_3_text: "Enter the German market or activate premium networks? We connect decision-makers — until the contract is signed.",
           sports_badge: "Division 01 — Venezia Sports Business",
           sports_title: "Sponsoring and sports partnerships that generate revenue.",
           sports_text: "Identification, negotiation, close. Focus: German mid-sized companies as sponsors for Juventus FC and VfB Stuttgart.",
-
           service_1_title: "Sponsoring & Partnership Development",
           service_1_text: "Identification, outreach, negotiation — at decision-maker level.",
           service_2_title: "Hospitality & VIP Sales",
@@ -1181,14 +739,9 @@
           service_5_text: "Pre-marketing, quota growth, structured D2D processes — measurable results.",
           service_6_title: "Luxury Real Estate & Premium Brokerage",
           service_6_text: "Discreet off-market brokerage of exclusive properties for international buyers and sellers.",
-          refs_eyebrow: "References & Experience",
           refs_title: "Experience within international sports & premium business environments.",
-          sport_envs_eyebrow: "Sport & Premium Environments",
-          sport_ref_1: "Audi Motorsport · DTM",
-          sport_ref_2: "Le Mans 24h",
-          sport_ref_3: "Formula 1",
-          sport_ref_4: "UEFA Champions League",
-          process_eyebrow: "How we work together",
+          sport_ref_1: "Audi Motorsport · DTM", sport_ref_2: "Le Mans 24h",
+          sport_ref_3: "Formula 1", sport_ref_4: "UEFA Champions League",
           process_title: "Three steps. Measurable results.",
           process_1_title: "Potential Analysis",
           process_1_text: "30-minute intro call: we clarify which sales levers exist for you — concrete, no detours.",
@@ -1200,146 +753,67 @@
           cta_title: "Talk to us — before your competitors do.",
           cta_subline: "20+ years of sales experience. Direct access to premium sport business and international markets.",
           cta_btn: "Get in Touch",
-          contact_eyebrow: "Contact",
           contact_title: "Ready for the next step?",
           contact_left_title: "Direct contact",
           contact_left_text: "We get back quickly with a concrete proposal.",
           contact_email_label: "Email",
           contact_phone_wa_label: "Phone & WhatsApp",
           contact_addr_label: "Address",
-          form_name: "Name",
-          form_email: "Email",
-          form_phone: "Phone",
-          form_message: "Message",
-          form_name_ph: "Your name",
-          form_email_ph: "your@email.com",
-          form_phone_ph: "+49 151 …",
+          form_name: "Name", form_email: "Email", form_phone: "Phone", form_message: "Message",
+          form_name_ph: "Your name", form_email_ph: "your@email.com",
+          form_phone_ph: "+49 176 …",
           form_message_ph: "How can we support you?",
           form_submit: "Send request",
           modal_title: "Thank you!",
           modal_text: "We have received your request and will get back to you as soon as possible.",
           modal_close: "Close",
-          footer_nav: "Navigation",
-          footer_guidelines: "Legal",
-          footer_imprint: "Imprint",
-          footer_privacy: "Privacy",
-          footer_terms: "Terms",
-          footer_webdesign: "Web design by uifactory.de",
           page_title: "Venezia Sales Solution | International Sales Agency"
         }
       };
 
-      const langToggleButton = document.getElementById("lang-toggle");
-      const langFlagIcon = document.getElementById("lang-flag-icon");
-      const status = document.getElementById("form-status");
-      let currentLang = "de";
+      initComponents(PAGE_TRANSLATIONS);
 
-      function updateLanguageToggle(lang) {
-        if (!langToggleButton) return;
-        if (lang === "de") {
-          if (langFlagIcon) { langFlagIcon.src = "./images/flags/gb.svg"; langFlagIcon.alt = "English"; }
-          langToggleButton.dataset.nextLang = "en";
-          langToggleButton.setAttribute("aria-label", "Switch to English");
-        } else {
-          if (langFlagIcon) { langFlagIcon.src = "./images/flags/de.svg"; langFlagIcon.alt = "Deutsch"; }
-          langToggleButton.dataset.nextLang = "de";
-          langToggleButton.setAttribute("aria-label", "Auf Deutsch umstellen");
-        }
-      }
-
-      function applyLanguage(lang) {
-        currentLang = lang;
-        document.documentElement.lang = lang;
-        const t = translations[lang];
-        if (t.page_title) document.title = t.page_title;
-        document.querySelectorAll("[data-i18n]").forEach((node) => {
-          const key = node.getAttribute("data-i18n");
-          if (t[key] === undefined) return;
-          node.textContent = t[key];
-        });
-        document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
-          const key = node.getAttribute("data-i18n-placeholder");
-          if (t[key] !== undefined) node.placeholder = t[key];
-        });
-        updateLanguageToggle(lang);
-        if (status) status.textContent = "";
-      }
-
-      langToggleButton?.addEventListener("click", () => {
-        applyLanguage(langToggleButton.dataset.nextLang || "en");
-      });
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      document.getElementById("contact-form").addEventListener("submit", async function (event) {
+      document.getElementById('contact-form').addEventListener('submit', async function(event) {
         event.preventDefault();
         const form = event.currentTarget;
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const message = document.getElementById("msg").value.trim();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('msg').value.trim();
         const btn = form.querySelector('button[type="submit"]');
+        const status = document.getElementById('form-status');
         btn.disabled = true;
-        status.textContent = "";
+        status.textContent = '';
         try {
-          const res = await fetch("https://formsubmit.co/ajax/info@agentur-venezia.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          const res = await fetch('https://formsubmit.co/ajax/info@agentur-venezia.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({
               name, email, message,
-              telefon: phone || "—",
-              _subject: currentLang === "de" ? "Neue Anfrage über venezia-sales.com" : "New request via venezia-sales.com",
-              _captcha: "false"
+              telefon: phone || '—',
+              _subject: window.venezia.getCurrentLang() === 'de'
+                ? 'Neue Anfrage über venezia-sales.com'
+                : 'New request via venezia-sales.com',
+              _captcha: 'false'
             })
           });
-          if (!res.ok) throw new Error("HTTP " + res.status);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
           form.reset();
-          document.getElementById("thank-modal").style.display = "flex";
+          document.getElementById('thank-modal').style.display = 'flex';
         } catch {
-          status.textContent = currentLang === "de"
-            ? "Fehler beim Senden. Bitte direkt an info@agentur-venezia.com schreiben."
-            : "Error sending. Please write directly to info@agentur-venezia.com.";
+          const lang = window.venezia.getCurrentLang();
+          status.textContent = lang === 'de'
+            ? 'Fehler beim Senden. Bitte direkt an info@agentur-venezia.com schreiben.'
+            : 'Error sending. Please write directly to info@agentur-venezia.com.';
         } finally {
           btn.disabled = false;
         }
       });
 
       function closeThankModal() {
-        document.getElementById("thank-modal").style.display = "none";
+        document.getElementById('thank-modal').style.display = 'none';
       }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") { closeThankModal(); closeBurger(); }
-      });
-
-      const burgerBtn = document.getElementById("burger-btn");
-      const mobileNav = document.getElementById("mobile-nav");
-
-      function openBurger() {
-        burgerBtn.classList.add("open");
-        burgerBtn.setAttribute("aria-expanded", "true");
-        mobileNav.classList.add("open");
-        mobileNav.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-      function closeBurger() {
-        burgerBtn.classList.remove("open");
-        burgerBtn.setAttribute("aria-expanded", "false");
-        mobileNav.classList.remove("open");
-        mobileNav.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      }
-
-      burgerBtn?.addEventListener("click", () => {
-        burgerBtn.classList.contains("open") ? closeBurger() : openBurger();
-      });
-      mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeBurger));
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".site-header") && !e.target.closest(".mobile-nav")) closeBurger();
-      });
-      window.addEventListener("resize", () => { if (window.innerWidth > 900) closeBurger(); });
-
-      applyLanguage(currentLang);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeThankModal(); });
     </script>
   </body>
 </html>

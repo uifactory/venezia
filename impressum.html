@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum | Venezia Sales Solution</title>
+    <meta name="description" content="Impressum der Venezia Sales Solution, Mario Venezia, Marktstrasse 4, 75365 Calw." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .imprint-wrap {
+        min-height: calc(100vh - 70px - 180px);
+        padding: 80px 0 96px;
+      }
+
+      .imprint-inner {
+        max-width: 680px;
+      }
+
+      .imprint-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+        transition: color 0.15s;
+      }
+      .imprint-back:hover { color: var(--accent); }
+      .imprint-back svg { width: 14px; height: 14px; }
+
+      .imprint-inner h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+      }
+
+      .imprint-divider {
+        width: 48px;
+        height: 3px;
+        background: var(--accent);
+        border-radius: 2px;
+        margin-bottom: 3rem;
+      }
+
+      .imprint-block {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .imprint-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .imprint-block h2 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .imprint-block p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.75;
+        margin: 0 0 0.5rem;
+      }
+      .imprint-block p:last-child { margin-bottom: 0; }
+
+      .imprint-block a {
+        color: var(--ink);
+        border-bottom: 1px solid rgba(214, 177, 95, 0.35);
+        transition: border-color 0.15s, color 0.15s;
+      }
+      .imprint-block a:hover { color: var(--accent); border-color: var(--accent); }
+
+      .imprint-contact-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .imprint-contact-item {
+        display: flex;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .imprint-contact-label {
+        color: var(--muted);
+        font-size: 0.82rem;
+        min-width: 70px;
+        padding-top: 0.1rem;
+      }
+      .imprint-contact-value { color: var(--ink); }
+      .imprint-contact-value a {
+        color: var(--ink);
+        border-bottom: 1px solid rgba(214, 177, 95, 0.35);
+        transition: border-color 0.15s, color 0.15s;
+      }
+      .imprint-contact-value a:hover { color: var(--accent); border-color: var(--accent); }
+
+      @media (max-width: 600px) {
+        .imprint-wrap { padding: 52px 0 72px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <main>
+      <section class="imprint-wrap">
+        <div class="container">
+          <div class="imprint-inner">
+
+            <a class="imprint-back" href="index.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              <span data-i18n="imprint_back">Zurück zur Startseite</span>
+            </a>
+
+            <h1 data-i18n="imprint_title">Impressum</h1>
+            <div class="imprint-divider"></div>
+
+            <!-- Angaben -->
+            <div class="imprint-block">
+              <h2 data-i18n="imprint_info_label">Angaben gemäß § 5 TMG</h2>
+              <p>
+                Mario Venezia<br />
+                Marktstrasse 4<br />
+                75365 Calw
+              </p>
+            </div>
+
+            <!-- Kontakt -->
+            <div class="imprint-block">
+              <h2 data-i18n="imprint_contact_title">Kontakt</h2>
+              <div class="imprint-contact-row">
+                <div class="imprint-contact-item">
+                  <span class="imprint-contact-label" data-i18n="imprint_phone_label">Telefon:</span>
+                  <span class="imprint-contact-value">
+                    <a href="tel:+4917680280241">+49 176 80280241</a>
+                  </span>
+                </div>
+                <div class="imprint-contact-item">
+                  <span class="imprint-contact-label" data-i18n="imprint_email_label">E-Mail:</span>
+                  <span class="imprint-contact-value">
+                    <a href="mailto:info@agentur-venezia.com">info@agentur-venezia.com</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Streitbeilegung -->
+            <div class="imprint-block">
+              <h2 data-i18n="imprint_dispute_title">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+              <p data-i18n="imprint_dispute_text">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="./components.js"></script>
+    <script>
+      initComponents({
+        de: {
+          imprint_back: "Zurück zur Startseite",
+          imprint_title: "Impressum",
+          imprint_info_label: "Angaben gemäß § 5 TMG",
+          imprint_contact_title: "Kontakt",
+          imprint_phone_label: "Telefon:",
+          imprint_email_label: "E-Mail:",
+          imprint_dispute_title: "Verbraucherstreitbeilegung / Universalschlichtungsstelle",
+          imprint_dispute_text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+          page_title: "Impressum | Venezia Sales Solution"
+        },
+        en: {
+          imprint_back: "Back to homepage",
+          imprint_title: "Site Notice",
+          imprint_info_label: "Information pursuant to § 5 TMG",
+          imprint_contact_title: "Contact",
+          imprint_phone_label: "Phone:",
+          imprint_email_label: "E-mail:",
+          imprint_dispute_title: "Dispute resolution proceedings in front of a consumer arbitration board",
+          imprint_dispute_text: "We are not willing or obliged to participate in dispute resolution proceedings in front of a consumer arbitration board.",
+          page_title: "Site Notice | Venezia Sales Solution"
+        }
+      });
+    </script>
+  </body>
+</html>
