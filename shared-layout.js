@@ -113,7 +113,7 @@
               <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
               <ul>
                 <li><a href="/impressum" data-i18n="footer_imprint">Impressum</a></li>
-                <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
+                <li><a href="/impressum" data-i18n="footer_privacy">Datenschutz</a></li>
               </ul>
             </div>
           </div>
