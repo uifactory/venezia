@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/shared-layout.css" />
     <style>
       :root {
         --accent: #d6b15f;
@@ -31,48 +32,6 @@
       }
 
       a { color: inherit; text-decoration: none; }
-      .container { width: min(88%, var(--max)); margin: 0 auto; }
-
-      /* ── Header ─────────────────────────────────────────────── */
-      .site-header {
-        position: fixed;
-        inset: 0 0 auto;
-        z-index: 20;
-        background: rgba(6, 8, 12, 0.9);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(8px);
-      }
-      .nav-row {
-        min-height: 70px;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
-        gap: 1rem;
-      }
-      .logo img { width: 168px; max-width: 100%; display: block; }
-      .nav-links { display: flex; justify-content: center; gap: 1rem; }
-      .nav-links a {
-        font-size: 0.85rem;
-        font-weight: 500;
-        letter-spacing: 0.01em;
-        color: var(--ink);
-        transition: color 0.15s;
-      }
-      .nav-links a:hover { color: var(--accent); }
-      .right-controls { display: flex; align-items: center; gap: 0.7rem; justify-self: end; }
-      .lang-switcher { display: inline-flex; }
-      .lang-flag {
-        border: 1px solid var(--border);
-        border-radius: 5px;
-        width: 26px; height: 18px;
-        padding: 0; line-height: 0;
-        background: #161c25;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.2s ease, border-color 0.2s ease;
-      }
-      .lang-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
       main { padding-top: 70px; }
       section { padding: 96px 0; }
       section.hero { padding: 0; }
@@ -453,20 +412,10 @@
       textarea { min-height: 130px; resize: vertical; }
       #form-status { color: var(--muted); margin: 0; font-size: 0.88rem; }
 
-      /* ── Footer ─────────────────────────────────────────────── */
-      footer { background: var(--gray); border-top: 1px solid var(--border); }
-      .footer-grid { padding: 54px 0 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
-      .footer-title { margin: 0 0 0.65rem; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; }
-      .footer-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-      .footer-links a { color: var(--accent); font-size: 0.88rem; }
-      .footer-links a:hover { opacity: 0.75; }
-      .footer-bottom { border-top: 1px solid var(--border); padding: 0.8rem 0; display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
-      .footer-bottom span { color: var(--muted); font-size: 0.74rem; }
-      .footer-bottom a { color: var(--muted); font-size: 0.74rem; opacity: 0.55; transition: opacity 0.2s; }
-      .footer-bottom a:hover { opacity: 1; }
-
       /* ── WhatsApp Float ─────────────────────────────────────── */
-      .whatsapp-float { position: fixed; right: 1rem; bottom: 1rem; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #25d366 0%, #159e4d 100%); box-shadow: 0 10px 24px rgba(0,0,0,0.35); z-index: 30; pointer-events: none; display: flex; align-items: center; justify-content: center; }
+      .whatsapp-float { position: fixed; right: 1rem; bottom: 1rem; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #25d366 0%, #159e4d 100%); box-shadow: 0 10px 24px rgba(0,0,0,0.35); z-index: 30; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: inherit; }
+      .whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.42); }
+      .whatsapp-float:focus-visible { outline: 3px solid #f5e7ae; outline-offset: 3px; }
       .whatsapp-float svg { width: 26px; height: 26px; fill: #fff; display: block; }
 
       /* ── Thank Modal ────────────────────────────────────────── */
@@ -478,28 +427,9 @@
       .modal-box h3 { margin: 0 0 0.6rem; font-size: 1.3rem; color: var(--ink); }
       .modal-box p { color: var(--muted); font-size: 0.93rem; line-height: 1.6; margin: 0 0 1.5rem; }
 
-      /* ── Burger ─────────────────────────────────────────────── */
-      .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; padding: 0 10px; flex-shrink: 0; }
-      .burger span { display: block; width: 100%; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
-      .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-      .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-      /* ── Mobile Nav ─────────────────────────────────────────── */
-      .mobile-nav { position: fixed; top: 70px; left: 0; right: 0; z-index: 18; background: rgba(6,8,12,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.22s ease, visibility 0.22s, transform 0.22s ease; pointer-events: none; }
-      .mobile-nav.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
-      .mobile-nav-inner { display: flex; flex-direction: column; }
-      .mobile-nav a { display: flex; align-items: center; padding: 1rem 1.25rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid rgba(49,56,70,0.5); transition: color 0.15s, background 0.15s; }
-      .mobile-nav a:last-child { border-bottom: none; }
-      .mobile-nav a:hover { color: var(--accent); background: rgba(214,177,95,0.05); }
-
       /* ── Tablet (≤ 900px) ───────────────────────────────────── */
       @media (max-width: 900px) {
-        .nav-row { grid-template-columns: 1fr auto; min-height: 64px; gap: 0; }
-        .nav-links { display: none; }
-        .burger { display: flex; }
         main { padding-top: 64px; }
-        .mobile-nav { top: 64px; }
         section { padding: 72px 0; }
         h2 { font-size: clamp(1.2rem, 2.4vw, 1.6rem); }
         .diff-intro h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); }
@@ -524,11 +454,8 @@
 
       /* ── Mobile (≤ 600px) ───────────────────────────────────── */
       @media (max-width: 600px) {
-        .nav-row { min-height: 60px; }
         main { padding-top: 60px; }
-        .mobile-nav { top: 60px; }
         section { padding: 52px 0; }
-        .logo img { width: 140px; }
 
         /* Typography */
         h1 { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
@@ -611,45 +538,12 @@
         .contact-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
         .panel { padding: 1.1rem; }
 
-        /* Footer */
-        .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
-        .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
       }
     </style>
+    <script src="/shared-layout.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-row">
-        <a class="logo" href="#top" aria-label="Venezia Home">
-          <img src="./images/venezia-logo.svg" alt="Venezia Sales Solution" />
-        </a>
-        <nav class="nav-links">
-          <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
-          <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
-          <a href="#references" data-i18n="nav_references">Referenzen</a>
-          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-        </nav>
-        <div class="right-controls">
-          <div class="lang-switcher" aria-label="Language switch">
-            <button id="lang-toggle" class="lang-flag" type="button" data-next-lang="en" aria-label="Switch to English">
-              <img id="lang-flag-icon" src="./images/flags/gb.svg" alt="English" />
-            </button>
-          </div>
-          <button class="burger" id="burger-btn" type="button" aria-label="Menü öffnen" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <div class="mobile-nav-inner">
-        <a href="#sports" data-i18n="nav_sports">Sportbusiness</a>
-        <a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a>
-        <a href="#references" data-i18n="nav_references">Referenzen</a>
-        <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-      </div>
-    </div>
+    <venezia-site-header lang-switch="true"></venezia-site-header>
 
     <main id="top">
 
@@ -936,7 +830,8 @@
                   </div>
                   <div class="ci-text">
                     <small data-i18n="contact_phone_wa_label">Telefon &amp; WhatsApp</small>
-                    <a href="tel:+4915153860607">+49 1515 3860607</a>
+                    <a href="tel:+4917680280241">+49 17680280241</a><br />
+                    <a href="https://wa.me/4917680280241" data-i18n="contact_whatsapp_link">WhatsApp Chat</a>
                   </div>
                 </li>
                 <li class="contact-info-item align-top">
@@ -960,7 +855,7 @@
                 <label for="email" data-i18n="form_email">E-Mail</label>
                 <input id="email" name="email" type="email" placeholder="ihre@email.de" data-i18n-placeholder="form_email_ph" required />
                 <label for="phone"><span data-i18n="form_phone">Telefon</span> <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
-                <input id="phone" name="phone" type="tel" placeholder="+49 151 …" data-i18n-placeholder="form_phone_ph" />
+                <input id="phone" name="phone" type="tel" placeholder="+49 176 80280241" data-i18n-placeholder="form_phone_ph" />
                 <label for="msg" data-i18n="form_message">Nachricht</label>
                 <textarea id="msg" name="message" placeholder="Wobei können wir Sie unterstützen?" data-i18n-placeholder="form_message_ph" required></textarea>
                 <button class="btn btn-dark" type="submit" data-i18n="form_submit">Anfrage senden</button>
@@ -970,38 +865,10 @@
           </div>
         </div>
       </section>
+
     </main>
 
-    <footer>
-      <div class="container footer-grid">
-        <div>
-          <img src="./images/venezia-logo.svg" alt="Venezia" style="width:170px" />
-          <p class="muted" style="margin:0.75rem 0 0.15rem;font-size:0.84rem;font-weight:600;">Venezia Sales Solution</p>
-          <p class="muted" style="margin:0;font-size:0.82rem;line-height:1.6;">Marktstrasse 4<br />75365 Calw</p>
-        </div>
-        <div class="footer-links">
-          <p class="footer-title" data-i18n="footer_nav">Navigation</p>
-          <ul>
-            <li><a href="#sports" data-i18n="nav_sports">Sportbusiness</a></li>
-            <li><a href="#infrastructure" data-i18n="nav_infrastructure">Infrastruktur</a></li>
-            <li><a href="#references" data-i18n="nav_references">Referenzen</a></li>
-            <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
-          <ul>
-            <li><a href="#" data-i18n="footer_imprint">Impressum</a></li>
-            <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
-            <li><a href="#" data-i18n="footer_terms">AGB</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom container">
-        <span>© <span id="year"></span> Venezia Sales Solution</span>
-        <a href="https://uifactory.de" target="_blank" rel="noopener" data-i18n="footer_webdesign">Webdesign von uifactory.de</a>
-      </div>
-    </footer>
+    <venezia-site-footer></venezia-site-footer>
 
     <div id="thank-modal" role="dialog" aria-modal="true" aria-labelledby="thank-title">
       <div class="modal-overlay" onclick="closeThankModal()"></div>
@@ -1015,9 +882,9 @@
       </div>
     </div>
 
-    <div class="whatsapp-float" aria-hidden="true">
+    <a class="whatsapp-float" href="https://wa.me/4917680280241" aria-label="Contact us on WhatsApp">
       <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-    </div>
+    </a>
 
     <script>
       const translations = {
@@ -1103,6 +970,7 @@
           contact_left_text: "Wir melden uns schnell mit einem konkreten Vorschlag.",
           contact_email_label: "E-Mail",
           contact_phone_wa_label: "Telefon & WhatsApp",
+          contact_whatsapp_link: "WhatsApp Chat",
           contact_addr_label: "Adresse",
           form_name: "Name",
           form_email: "E-Mail",
@@ -1110,7 +978,7 @@
           form_message: "Nachricht",
           form_name_ph: "Ihr Name",
           form_email_ph: "ihre@email.de",
-          form_phone_ph: "+49 151 …",
+          form_phone_ph: "+49 176 80280241",
           form_message_ph: "Wobei können wir Sie unterstützen?",
           form_submit: "Anfrage senden",
           modal_title: "Vielen Dank!",
@@ -1120,7 +988,12 @@
           footer_guidelines: "Richtlinien",
           footer_imprint: "Impressum",
           footer_privacy: "Datenschutz",
-          footer_terms: "AGB",
+          imprint_title: "Impressum",
+          imprint_address: "Mario Venezia\nMarktstrasse 4\n75365 Calw",
+          imprint_contact_title: "Kontakt",
+          imprint_contact_text: "Telefon: +49 17680280241\nE-Mail: info@agentur-venezia.com",
+          imprint_dispute_title: "Verbraucher­streit­beilegung/Universal­schlichtungs­stelle",
+          imprint_dispute_text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
           footer_webdesign: "Webdesign von uifactory.de",
           page_title: "Venezia Sales Solution | Internationale Vertriebsagentur"
         },
@@ -1206,6 +1079,7 @@
           contact_left_text: "We get back quickly with a concrete proposal.",
           contact_email_label: "Email",
           contact_phone_wa_label: "Phone & WhatsApp",
+          contact_whatsapp_link: "WhatsApp Chat",
           contact_addr_label: "Address",
           form_name: "Name",
           form_email: "Email",
@@ -1213,7 +1087,7 @@
           form_message: "Message",
           form_name_ph: "Your name",
           form_email_ph: "your@email.com",
-          form_phone_ph: "+49 151 …",
+          form_phone_ph: "+49 176 80280241",
           form_message_ph: "How can we support you?",
           form_submit: "Send request",
           modal_title: "Thank you!",
@@ -1223,7 +1097,12 @@
           footer_guidelines: "Legal",
           footer_imprint: "Imprint",
           footer_privacy: "Privacy",
-          footer_terms: "Terms",
+          imprint_title: "Site Notice",
+          imprint_address: "Mario Venezia\nMarktstrasse 4\n75365 Calw",
+          imprint_contact_title: "Contact",
+          imprint_contact_text: "Phone: +49 17680280241\nE-mail: info@agentur-venezia.com",
+          imprint_dispute_title: "Dispute resolution proceedings in front of a consumer arbitration board",
+          imprint_dispute_text: "We are not willing or obliged to participate in dispute resolution proceedings in front of a consumer arbitration board.",
           footer_webdesign: "Web design by uifactory.de",
           page_title: "Venezia Sales Solution | International Sales Agency"
         }
@@ -1269,8 +1148,6 @@
         applyLanguage(langToggleButton.dataset.nextLang || "en");
       });
 
-      document.getElementById("year").textContent = new Date().getFullYear();
-
       document.getElementById("contact-form").addEventListener("submit", async function (event) {
         event.preventDefault();
         const form = event.currentTarget;
@@ -1309,35 +1186,8 @@
       }
 
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") { closeThankModal(); closeBurger(); }
+        if (e.key === "Escape") { closeThankModal(); }
       });
-
-      const burgerBtn = document.getElementById("burger-btn");
-      const mobileNav = document.getElementById("mobile-nav");
-
-      function openBurger() {
-        burgerBtn.classList.add("open");
-        burgerBtn.setAttribute("aria-expanded", "true");
-        mobileNav.classList.add("open");
-        mobileNav.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-      function closeBurger() {
-        burgerBtn.classList.remove("open");
-        burgerBtn.setAttribute("aria-expanded", "false");
-        mobileNav.classList.remove("open");
-        mobileNav.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      }
-
-      burgerBtn?.addEventListener("click", () => {
-        burgerBtn.classList.contains("open") ? closeBurger() : openBurger();
-      });
-      mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeBurger));
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".site-header") && !e.target.closest(".mobile-nav")) closeBurger();
-      });
-      window.addEventListener("resize", () => { if (window.innerWidth > 900) closeBurger(); });
 
       applyLanguage(currentLang);
     </script>

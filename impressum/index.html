@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impressum | Venezia Sales Solution</title>
+    <link rel="stylesheet" href="/shared-layout.css" />
+    <script src="/shared-layout.js"></script>
+    <style>
+      :root {
+        --accent: #d6b15f;
+        --ink: #f3ebda;
+        --white: #fdf8ed;
+        --gray: #181d26;
+        --muted: #b8ad97;
+        --border: #313846;
+        --max: 1200px;
+        --bg: #07090d;
+        --panel: #11151e;
+        --text: var(--ink);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background:
+          radial-gradient(1000px 460px at 50% -220px, rgba(214,177,95,0.14), transparent 70%),
+          linear-gradient(180deg, #0b1119 0%, #07090d 55%, #07090d 100%);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      main { flex: 1; max-width: 760px; width: 100%; margin: 0 auto; padding: calc(70px + 3rem) 1.2rem 3rem; }
+      @media (max-width: 900px) {
+        main { padding-top: calc(64px + 2.5rem); }
+      }
+      @media (max-width: 600px) {
+        main { padding-top: calc(60px + 2rem); }
+      }
+      h1 { margin: 0 0 1.5rem; font-size: clamp(1.6rem, 3.5vw, 2.1rem); }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.4rem;
+        display: grid;
+        gap: 1.3rem;
+      }
+      h2 { margin: 0 0 0.5rem; font-size: 1rem; }
+      p { margin: 0; line-height: 1.65; color: var(--muted); white-space: pre-line; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .back-link { display: inline-block; margin-top: 1.25rem; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <venezia-site-header></venezia-site-header>
+    <main>
+      <h1>Impressum</h1>
+      <article class="card">
+        <section>
+          <p>Mario Venezia
+Marktstrasse 4
+75365 Calw</p>
+        </section>
+        <section>
+          <h2>Kontakt</h2>
+          <p>Telefon: +49 17680280241
+E-Mail: info@agentur-venezia.com</p>
+        </section>
+        <section>
+          <h2>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h2>
+          <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </section>
+      </article>
+      <a class="back-link" href="/">← Zurück zur Startseite</a>
+    </main>
+    <venezia-site-footer></venezia-site-footer>
+  </body>
+</html>
