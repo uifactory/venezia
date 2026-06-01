@@ -453,23 +453,6 @@
       textarea { min-height: 130px; resize: vertical; }
       #form-status { color: var(--muted); margin: 0; font-size: 0.88rem; }
 
-      /* ── Impressum / Site Notice ─────────────────────────────── */
-      .imprint-section { background: #0c1018; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-      .imprint-wrap { max-width: 760px; }
-      .imprint-title { margin-bottom: 1.4rem; }
-      .imprint-card {
-        background: var(--gray);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 1.5rem;
-        display: grid;
-        gap: 1.4rem;
-      }
-      .imprint-block h3 { margin: 0 0 0.5rem; font-size: 1rem; }
-      .imprint-block p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
-      .imprint-address,
-      .imprint-contact { white-space: pre-line; }
-
       /* ── Footer ─────────────────────────────────────────────── */
       footer { background: var(--gray); border-top: 1px solid var(--border); }
       .footer-grid { padding: 54px 0 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
@@ -633,7 +616,6 @@
         /* Footer */
         .footer-grid { grid-template-columns: 1fr; padding: 36px 0 20px; }
         .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
-        .imprint-card { padding: 1.2rem; }
       }
     </style>
   </head>
@@ -992,28 +974,6 @@
         </div>
       </section>
 
-      <!-- ═══ IMPRESSUM ═══════════════════════════════════════════ -->
-      <section id="impressum" class="imprint-section">
-        <div class="container imprint-wrap">
-          <h2 class="imprint-title" data-i18n="imprint_title">Impressum</h2>
-          <article class="imprint-card">
-            <div class="imprint-block">
-              <p class="imprint-address" data-i18n="imprint_address">Mario Venezia
-Marktstrasse 4
-75365 Calw</p>
-            </div>
-            <div class="imprint-block">
-              <h3 data-i18n="imprint_contact_title">Kontakt</h3>
-              <p class="imprint-contact" data-i18n="imprint_contact_text">Telefon: +49 17680280241
-E-Mail: info@agentur-venezia.com</p>
-            </div>
-            <div class="imprint-block">
-              <h3 data-i18n="imprint_dispute_title">Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h3>
-              <p data-i18n="imprint_dispute_text">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-            </div>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer>
@@ -1035,7 +995,7 @@ E-Mail: info@agentur-venezia.com</p>
         <div class="footer-links">
           <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
           <ul>
-            <li><a href="#impressum" data-i18n="footer_imprint">Impressum</a></li>
+            <li><a href="/impressum" data-i18n="footer_imprint">Impressum</a></li>
             <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
           </ul>
         </div>
