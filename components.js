@@ -3,7 +3,7 @@
 const _HEADER_INNER = `
 <div class="container nav-row">
   <a class="logo" href="index.html" aria-label="Venezia Home">
-    <img src="./images/venezia-logo.svg" alt="Venezia Sales Solution" />
+    <img src="./images/logo2.jpeg" alt="Venezia Sales Solution" />
   </a>
   <nav class="nav-links">
     <a href="index.html#sports" data-i18n="nav_sports">Sportbusiness</a>
@@ -36,7 +36,7 @@ const _MOBILE_NAV = `
 const _FOOTER_INNER = `
 <div class="container footer-grid">
   <div>
-    <img src="./images/venezia-logo.svg" alt="Venezia" style="width:170px" />
+    <img src="./images/logo2.jpeg" alt="Venezia" style="height:80px;width:auto" />
     <p class="muted" style="margin:0.75rem 0 0.15rem;font-size:0.84rem;font-weight:600;">Venezia Sales Solution</p>
     <p class="muted" style="margin:0;font-size:0.82rem;line-height:1.6;">Marktstrasse 4<br />75365 Calw</p>
   </div>
