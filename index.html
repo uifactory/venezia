@@ -27,6 +27,15 @@
         max-width: 780px;
         padding: 3rem 0;
       }
+      .hero-kicker {
+        font-size: clamp(0.72rem, 1.6vw, 0.95rem);
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.6rem;
+        display: inline-block;
+      }
       .hero p { max-width: 60ch; font-size: 1.05rem; line-height: 1.65; }
 
       /* ── Differentiator ─────────────────────────────────────── */
@@ -242,7 +251,8 @@
         .cta .eyebrow { font-size: clamp(1.3rem, 7vw, 1.75rem); }
         .cta h2 { font-size: 0.88rem; }
         .hero { background-position: 50% 32%; background-size: cover; }
-        .hero-content { min-height: auto; justify-content: flex-start; padding: 1.5rem 0 2rem; }
+        .hero-content { min-height: auto; justify-content: flex-start; padding: 2.2rem 0 2.6rem; }
+        .hero-kicker { font-size: 0.7rem; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
         .hero p { font-size: 0.9rem; line-height: 1.6; }
         .cta-row { flex-direction: column; }
         .cta-row .btn { width: 100%; justify-content: center; }
@@ -291,6 +301,7 @@
       <section class="hero">
         <div class="container">
           <div class="hero-content">
+            <div class="hero-kicker" data-i18n="hero_kicker">SPORT | BUSINESS DEVELOPMENT | INFRASTRUCTURE</div>
             <h1 data-i18n="hero_title">WE SELL GROWTH</h1>
             <p data-i18n="hero_text">Wir schaffen internationale Vertriebserfolge durch strategische Marktöffnung, starke Netzwerke und konsequente Umsetzung.</p>
             <div class="cta-row">
@@ -623,6 +634,7 @@
     <script>
       const PAGE_TRANSLATIONS = {
         de: {
+          hero_kicker: "SPORT | BUSINESS DEVELOPMENT | INFRASTRUCTURE",
           hero_title: "WE SELL GROWTH",
           hero_text: "Wir schaffen internationale Vertriebserfolge durch strategische Marktöffnung, starke Netzwerke und konsequente Umsetzung.",
           hero_cta: "Jetzt Erstgespräch sichern",
@@ -697,6 +709,7 @@
           page_title: "Venezia Sales Solution | Internationale Vertriebsagentur"
         },
         en: {
+          hero_kicker: "SPORT | BUSINESS DEVELOPMENT | INFRASTRUCTURE",
           hero_title: "WE SELL GROWTH",
           hero_text: "We create international sales success through strategic market entry, strong networks and consistent execution.",
           hero_cta: "Book an intro call",
