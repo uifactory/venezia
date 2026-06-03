@@ -16,8 +16,8 @@
       /* ── Hero ───────────────────────────────────────────────── */
       .hero {
         color: var(--white);
-        background: linear-gradient(rgba(4, 5, 8, 0.74), rgba(7, 10, 14, 0.82)),
-          url("./images/allianz-arena2.jpg") center/cover no-repeat;
+        background: linear-gradient(130deg, rgba(5, 7, 11, 0.92) 0%, rgba(9, 12, 18, 0.72) 55%, rgba(5, 7, 11, 0.96) 100%),
+          url("./images/dark-hexagon.jpg") center/cover no-repeat;
       }
       .hero-content {
         min-height: min(75vh, 720px);
@@ -213,6 +213,7 @@
         section { padding: 72px 0; }
         h2 { font-size: clamp(1.2rem, 2.4vw, 1.6rem); }
         .diff-intro h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); }
+        .hero { background-position: 50% 45%; }
         .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .services-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .f1-gallery { grid-template-columns: repeat(2, 1fr); }
@@ -240,6 +241,7 @@
         .diff-intro h2 { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
         .cta .eyebrow { font-size: clamp(1.3rem, 7vw, 1.75rem); }
         .cta h2 { font-size: 0.88rem; }
+        .hero { background-position: 50% 30%; background-size: 160% auto; }
         .hero-content { min-height: min(70vh, 520px); padding: 2rem 0; }
         .hero p { font-size: 0.9rem; line-height: 1.6; }
         .cta-row { flex-direction: column; }
