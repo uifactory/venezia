@@ -53,7 +53,7 @@ const _FOOTER_INNER = `
     <p class="footer-title" data-i18n="footer_guidelines">Richtlinien</p>
     <ul>
       <li><a href="impressum.html" data-i18n="footer_imprint">Impressum</a></li>
-      <li><a href="#" data-i18n="footer_privacy">Datenschutz</a></li>
+      <li><a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a></li>
     </ul>
   </div>
 </div>
@@ -149,7 +149,13 @@ function initComponents(pageTranslations) {
 
   document.addEventListener('click', e => {
     const btn = e.target.closest('#lang-toggle');
-    if (btn) applyLanguage(btn.dataset.nextLang || 'en');
+    if (!btn) return;
+    const nextLang = btn.dataset.nextLang || 'en';
+    if (window.venezia?.applyLanguage) {
+      window.venezia.applyLanguage(nextLang);
+    } else {
+      applyLanguage(nextLang);
+    }
   });
 
   function openBurger() {
