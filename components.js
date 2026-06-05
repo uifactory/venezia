@@ -139,6 +139,10 @@ function initComponents(pageTranslations) {
       const key = node.getAttribute('data-i18n-placeholder');
       if (t[key] !== undefined) node.placeholder = t[key];
     });
+    document.querySelectorAll('[data-i18n-html]').forEach(node => {
+      const key = node.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) node.innerHTML = t[key];
+    });
     updateToggle(lang);
     const s = document.getElementById('form-status');
     if (s) s.textContent = '';
